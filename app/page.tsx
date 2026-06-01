@@ -308,6 +308,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TRUSTPILOT — activar cuando tengas cuenta */}
+      {/* <section className="py-10 px-4 bg-stone-50 border-y border-stone-200">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs text-stone-400 uppercase tracking-wider mb-4">Valoraciones verificadas</p>
+          <TrustpilotWidget businessUnitId="TU_BUSINESS_UNIT_ID" />
+        </div>
+      </section> */}
       <Footer />
     </div>
   );

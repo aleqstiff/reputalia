@@ -3,7 +3,7 @@
   <url>
     <loc>https://reputalia.es/</loc>
     <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
@@ -51,8 +51,38 @@
   <url>
     <loc>https://reputalia.es/blog/</loc>
     <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://reputalia.es/blog/que-hacer-si-me-difaman-en-internet/</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://reputalia.es/blog/como-funciona-derecho-al-olvido-google/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://reputalia.es/blog/que-es-el-knowledge-panel-google/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://reputalia.es/blog/como-salir-en-prensa-sin-ser-famoso/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://reputalia.es/blog/como-monitorizar-tu-reputacion-online/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://reputalia.es/proteccion-reputacion/difamacion-online/</loc>
