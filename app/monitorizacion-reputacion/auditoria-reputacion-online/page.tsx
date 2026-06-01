@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">
-        <Link href="/" className="hover:text-stone-600">Inicio</Link> › <Link href="/monitorizacion-reputacion/" className="hover:text-stone-600">Monitorización</Link> › <span className="text-stone-700">Auditoría gratuita</span>
+        <Link href="/" className="hover:text-stone-600">Inicio</Link> › <Link href="/monitorizacion-reputacion/" className="hover:text-stone-600">Monitorización</Link> › <span className="text-white/80">Auditoría gratuita</span>
       </nav>
-      <header className="py-16 px-4 text-center" style={{background:"#0f1729"}}>
+      <header className="py-16 px-4 text-center" style={{background:"var(--bg-mid)"}}>
         <div className="max-w-2xl mx-auto">
           <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{background:"#c9a84c22"}}>
             <Search className="w-6 h-6" style={{color:"#c9a84c"}} />

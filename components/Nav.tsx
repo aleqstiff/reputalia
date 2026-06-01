@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 const MENU = [
   {
@@ -10,24 +10,21 @@ const MENU = [
     items: [
       { label: "Difamación online", href: "/proteccion-reputacion/difamacion-online/" },
       { label: "Derecho al olvido", href: "/proteccion-reputacion/derecho-al-olvido/" },
-      { label: "Eliminar noticias en Google", href: "/proteccion-reputacion/eliminar-noticias-google/" },
+      { label: "Noticias negativas", href: "/proteccion-reputacion/eliminar-noticias-google/" },
       { label: "Suplantación de identidad", href: "/proteccion-reputacion/suplantacion-identidad/" },
-      { label: "Cuenta falsa Instagram", href: "/proteccion-reputacion/eliminar-cuenta-falsa-instagram/" },
       { label: "Contenido íntimo filtrado", href: "/proteccion-reputacion/contenido-intimo-filtrado/" },
-      { label: "OnlyFans / DMCA", href: "/proteccion-reputacion/eliminar-contenido-onlyfans/" },
-      { label: "Reseñas falsas", href: "/proteccion-reputacion/eliminar-resenas-falsas/" },
+      { label: "Reseñas falsas Google", href: "/proteccion-reputacion/eliminar-resenas-falsas/" },
     ],
   },
   {
     label: "Autoridad",
     href: "/autoridad-digital/",
     items: [
-      { label: "Salir en prensa", href: "/autoridad-digital/salir-en-prensa/" },
-      { label: "Aparecer en Forbes", href: "/autoridad-digital/aparecer-en-forbes/" },
       { label: "Knowledge Panel Google", href: "/autoridad-digital/knowledge-panel-google/" },
+      { label: "Aparecer en Forbes", href: "/autoridad-digital/aparecer-en-forbes/" },
+      { label: "Salir en prensa", href: "/autoridad-digital/salir-en-prensa/" },
       { label: "Marca personal en Google", href: "/autoridad-digital/marca-personal-google/" },
       { label: "Reputación en IA (GEO)", href: "/autoridad-digital/reputacion-ia-geo/" },
-      { label: "Verificación de perfiles", href: "/autoridad-digital/verificacion-perfiles/" },
     ],
   },
   {
@@ -38,39 +35,49 @@ const MENU = [
       { label: "Auditoría gratuita", href: "/monitorizacion-reputacion/auditoria-reputacion-online/" },
     ],
   },
-  { label: "Casos de éxito", href: "/casos-de-exito/", items: [] },
+  { label: "Resultados", href: "/casos-de-exito/", items: [] },
   { label: "Precios", href: "/precios/", items: [] },
 ];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const h = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", h);
+    return () => window.removeEventListener("scroll", h);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-stone-200 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "#0f1729" }}>
-            <span className="text-xs font-black" style={{ color: "#c9a84c" }}>P</span>
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "nav-glass shadow-lg shadow-black/20" : "bg-transparent border-b border-transparent"}`}>
+      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center relative overflow-hidden"
+            style={{ background: "linear-gradient(135deg, #1a2540, #0f1729)", border: "1px solid rgba(201,168,76,0.3)" }}>
+            <span className="text-sm font-black gradient-text">P</span>
           </div>
-          <span className="font-black text-lg" style={{ color: "#0f1729" }}>Prestior</span>
+          <span className="font-black text-lg text-white tracking-tight">Prestior</span>
         </Link>
 
+        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1">
           {MENU.map(item => (
             <div key={item.label} className="relative"
               onMouseEnter={() => item.items.length ? setActive(item.label) : null}
               onMouseLeave={() => setActive(null)}>
               <Link href={item.href}
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-stone-600 hover:text-stone-900 transition rounded-lg hover:bg-stone-50">
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors rounded-lg hover:bg-white/5">
                 {item.label}
-                {item.items.length > 0 && <ChevronDown className="w-3.5 h-3.5" />}
+                {item.items.length > 0 && <ChevronDown className="w-3.5 h-3.5 opacity-50" />}
               </Link>
               {item.items.length > 0 && active === item.label && (
-                <div className="absolute top-full left-0 mt-1 bg-white border border-stone-200 rounded-xl shadow-xl py-2 min-w-56 z-50">
+                <div className="absolute top-full left-0 mt-2 glass-strong py-2 min-w-52 z-50 shadow-2xl shadow-black/40">
                   {item.items.map(sub => (
                     <Link key={sub.href} href={sub.href}
-                      className="block px-4 py-2 text-sm text-stone-600 hover:text-stone-900 hover:bg-stone-50 transition">
+                      className="block px-4 py-2 text-sm text-white/60 hover:text-white hover:bg-white/5 transition-colors">
                       {sub.label}
                     </Link>
                   ))}
@@ -81,36 +88,29 @@ export default function Nav() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Link href="/contacto/" className="text-sm text-stone-600 hover:text-stone-900 font-medium transition">Contacto</Link>
-          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/"
-            className="text-sm font-semibold px-4 py-2 rounded-lg text-white transition"
-            style={{ background: "#0f1729" }}>
+          <Link href="/contacto/" className="text-sm text-white/60 hover:text-white transition-colors font-medium">Contacto</Link>
+          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-gold text-sm">
             Auditoría gratuita
           </Link>
         </div>
 
-        <button className="md:hidden p-2" onClick={() => setOpen(!open)}>
+        <button className="md:hidden text-white/70 hover:text-white" onClick={() => setOpen(!open)}>
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
+      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-stone-100 bg-white px-4 py-4 space-y-1">
+        <div className="md:hidden nav-glass border-t border-white/5 px-4 py-4 space-y-1">
           {MENU.map(item => (
             <div key={item.label}>
-              <Link href={item.href} onClick={() => setOpen(false)}
-                className="block py-2 text-sm font-semibold text-stone-800">{item.label}</Link>
+              <Link href={item.href} onClick={() => setOpen(false)} className="block py-2 text-sm font-semibold text-white">{item.label}</Link>
               {item.items.map(sub => (
-                <Link key={sub.href} href={sub.href} onClick={() => setOpen(false)}
-                  className="block py-1.5 pl-4 text-sm text-stone-500">{sub.label}</Link>
+                <Link key={sub.href} href={sub.href} onClick={() => setOpen(false)} className="block py-1.5 pl-4 text-sm text-white/50 hover:text-white/80">{sub.label}</Link>
               ))}
             </div>
           ))}
-          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" onClick={() => setOpen(false)}
-            className="block mt-3 text-center py-2.5 text-sm font-semibold text-white rounded-lg"
-            style={{ background: "#0f1729" }}>
-            Auditoría gratuita
-          </Link>
+          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" onClick={() => setOpen(false)} className="btn-gold block mt-3 text-center text-sm">Auditoría gratuita</Link>
         </div>
       )}
     </nav>

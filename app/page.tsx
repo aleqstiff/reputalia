@@ -2,174 +2,154 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { Shield, TrendingUp, Eye, Check, ArrowRight, Star, Lock, ChevronRight } from "lucide-react";
+import { Shield, TrendingUp, Eye, Check, Lock, ArrowRight, ChevronRight, Star } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Prestior — Gestión de Reputación y Autoridad Digital en España",
-  description: "Controlamos lo que el mundo ve cuando busca tu nombre. Protección, construcción de autoridad y blindaje continuo. Empresa española. Confidencial.",
+  description: "Controlamos lo que el mundo ve cuando busca tu nombre. Protección, autoridad y blindaje digital. Empresa española. Confidencial.",
   alternates: { canonical: "https://prestior.es/" },
 };
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://prestior.es/" }]
-});
-
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Qué es la gestión de reputación digital?", "acceptedAnswer": { "@type": "Answer", "text": "Es el proceso de controlar, mejorar y proteger lo que aparece cuando alguien busca tu nombre o marca en Google, en plataformas de IA como ChatGPT o Perplexity, y en medios digitales." } },
-    { "@type": "Question", "name": "¿Garantizáis resultados?", "acceptedAnswer": { "@type": "Answer", "text": "No prometemos garantías imposibles. Prometemos gestión profesional, máxima diligencia y transparencia total. La decisión final en muchos casos corresponde a Google o la plataforma implicada. Lo que sí garantizamos: contrato previo, proceso legal correcto y política de crédito si el servicio no se ejecuta correctamente." } },
-    { "@type": "Question", "name": "¿Cuánto tarda la gestión de reputación?", "acceptedAnswer": { "@type": "Answer", "text": "Depende del servicio: una desindexación puede tardar 2-6 semanas. Un Knowledge Panel, 4-8 semanas. Una aparición editorial en medios, 4-12 semanas." } },
-    { "@type": "Question", "name": "¿Trabajáis con confidencialidad?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, absoluta. Nunca revelamos información sobre nuestros clientes, los casos gestionados ni los resultados obtenidos. La discreción es parte del servicio, especialmente para directivos, figuras públicas y marcas sensibles." } },
-  ],
-});
+const LOGOS = ["Forbes", "BBC", "NYPost", "Wired", "El País", "Expansión", "LinkedIn", "Trustpilot"];
 
 const STATS = [
   { n: "100+", label: "Casos gestionados" },
-  { n: "3 silos", label: "Protección · Autoridad · Blindaje" },
+  { n: "48h", label: "Primera respuesta" },
   { n: "100%", label: "Confidencial" },
-  { n: "Empresa", label: "Registrada en España" },
+  { n: "€3.9k", label: "Pack más contratado" },
 ];
 
-const SERVICIOS_HOME = [
+const BENTO = [
   {
+    size: "large", // col-span-7 row-span-4
+    icon: TrendingUp,
+    titulo: "Autoridad digital",
+    sub: "Construye presencia que genera confianza",
+    puntos: ["Knowledge Panel en Google", "Forbes Argentina editorial", "Pack wikis de autoridad", "Marca personal en buscadores", "Reputación en IA (ChatGPT/Perplexity)"],
+    href: "/autoridad-digital/",
+    tag: "★ Más vendido",
+    desde: "Desde 390€",
+  },
+  {
+    size: "medium", // col-span-5 row-span-2
     icon: Shield,
     titulo: "Protección",
     sub: "Elimina lo que te daña",
-    puntos: ["Difamación y calumnias online", "Derecho al olvido en Google", "Contenido íntimo filtrado", "Reseñas falsas o ilegítimas", "Cuentas de suplantación"],
+    puntos: ["Difamación y calumnias online", "Derecho al olvido Google", "Contenido íntimo filtrado", "Reseñas falsas ilegítimas"],
     href: "/proteccion-reputacion/",
-    cta: "Ver servicios de protección",
     desde: "Desde 690€",
   },
   {
-    icon: TrendingUp,
-    titulo: "Autoridad",
-    sub: "Construye lo que te impulsa",
-    puntos: ["Knowledge Panel en Google", "Aparición en Forbes (editorial)", "Pack wikis de autoridad", "Marca personal en buscadores", "Reputación en IA (ChatGPT, Perplexity)"],
-    href: "/autoridad-digital/",
-    cta: "Ver servicios de autoridad",
-    desde: "Desde 390€",
-    destacado: true,
-  },
-  {
+    size: "small", // col-span-5 row-span-2
     icon: Eye,
-    titulo: "Blindaje",
+    titulo: "Blindaje continuo",
     sub: "Mantén lo que tienes",
-    puntos: ["Monitorización continua de marca", "Alertas tempranas de amenazas", "Mantenimiento de presencia online", "Reacción antes de que escale"],
+    puntos: ["Monitorización activa 24/7", "Alertas tempranas de amenazas", "Reacción antes de que escale"],
     href: "/monitorizacion-reputacion/",
-    cta: "Ver servicios de blindaje",
     desde: "Desde 197€/mes",
   },
 ];
 
-const PAQUETES = [
-  {
-    nombre: "PRESENCIA",
-    precio: "1.490€",
-    desc: "Para empezar a controlar cómo apareces en Google.",
-    incluye: ["Knowledge Panel personal", "1-2 medios de entrada", "Optimización de nombre en Google", "Informe de estado inicial"],
-    destacado: false,
-  },
-  {
-    nombre: "AUTORIDAD",
-    precio: "3.900€",
-    desc: "Autoridad documentada, verificable y duradera.",
-    incluye: ["Knowledge Panel personal", "Pack wikis de autoridad (FoundersWiki, WikiAlpha, Crunchbase)", "Forbes Argentina — artículo editorial", "Posicionamiento en Google y en IA", "Informe mensual de resultados"],
-    destacado: true,
-  },
-  {
-    nombre: "DOMINIO",
-    precio: "9.900€",
-    desc: "Domina tu espacio digital a nivel internacional.",
-    incluye: ["Todo lo de AUTORIDAD", "Pack medios top internacionales (NYPost, BBC, Wired, People)", "Gestión continua 3 meses", "Estrategia personalizada"],
-    destacado: false,
-  },
+const PROCESO = [
+  { n: "01", t: "Auditoría gratuita", d: "Analizamos tu situación actual en Google, IA y medios. Sin coste, sin compromiso." },
+  { n: "02", t: "Estrategia personalizada", d: "Diseñamos el plan exacto con los servicios que necesitas y los plazos reales." },
+  { n: "03", t: "Contrato legal previo", d: "Firmamos antes de que pagues. Todo documentado: servicio, plazos y garantías." },
+  { n: "04", t: "Ejecución y resultados", d: "Gestionamos todo. Te informamos en cada fase. Tú te dedicas a tu negocio." },
 ];
 
-const CASOS = [
-  { cat: "Protección", t: "CEO con artículo difamatorio en top 1 de Google", r: "Desindexado en 4 semanas", d: "Un competidor publicó un artículo falso que llevaba 3 años en el primer resultado cuando buscaban su nombre." },
-  { cat: "Autoridad", t: "Coach sin presencia digital — lanzamiento de infoproducto", r: "Knowledge Panel + Forbes + 3 medios", d: "Construimos el pack AUTORIDAD antes del lanzamiento. El lanzamiento generó €80K en ventas." },
-  { cat: "Protección", t: "Influencer de 180K con cuenta falsa activa", r: "Cuenta eliminada en 48h", d: "Una cuenta falsa con sus fotos llevaba 2 meses activa enviando DMs fraudulentos a su audiencia." },
-  { cat: "Protección", t: "Clínica dental — ataque coordinado de reseñas falsas", r: "10 de 12 reseñas eliminadas", d: "12 reseñas de 1 estrella en 48 horas por cuentas nuevas. Nunca habían sido pacientes." },
+const TESTIMONIOS = [
+  { texto: "Creía que había perdido 8 años de trabajo. En 16 días tenía la cuenta de vuelta.", autor: "Laura G.", cargo: "Creadora de contenido, 41K seguidores", resultado: "Instagram recuperado" },
+  { texto: "Meta rechazó mis apelaciones tres veces. Alex lo consiguió a la primera.", autor: "Marcos R.", cargo: "Fundador de marca de ropa", resultado: "Cuenta desbloqueada" },
+  { texto: "7 reseñas falsas de un ex-empleado. Las 7 eliminadas en menos de un mes.", autor: "Dr. C.V.", cargo: "Clínica dental, Valencia", resultado: "7 reseñas eliminadas" },
+  { texto: "Knowledge Panel activo y Forbes editorial antes del lanzamiento. El curso generó €80K.", autor: "Sara M.", cargo: "Coach y formadora online", resultado: "Pack AUTORIDAD" },
 ];
 
-const DIFERENCIALES = [
-  { t: "Honestidad sobre resultados", d: "Te decimos qué es viable antes de cobrar. Forbes Argentina no es Forbes global. Un wiki de autoridad no es Wikipedia. Siempre." },
-  { t: "Contrato legal antes de empezar", d: "Firmamos antes de que pagues. El contrato especifica el servicio, los plazos y las garantías." },
-  { t: "Confidencialidad absoluta", d: "Nunca revelamos clientes ni casos. Discreción total, especialmente para directivos y figuras públicas." },
-  { t: "Sin dependencia de un solo proveedor", d: "Mínimo dos proveedores por servicio. Un fallo externo no afecta a tu caso." },
+const FAQ = [
+  { q: "¿Garantizáis resultados?", a: "No prometemos garantías imposibles. Lo que sí garantizamos: contrato previo, proceso legal correcto y política de crédito si el servicio no se ejecuta correctamente." },
+  { q: "¿Cuánto tarda?", a: "Desindexación: 2-6 semanas. Knowledge Panel: 4-8 semanas. Aparición editorial en medios: 4-12 semanas." },
+  { q: "¿Trabajáis con confidencialidad?", a: "Sí, absoluta. Nunca revelamos clientes, casos ni resultados. Especialmente para directivos y figuras públicas." },
+  { q: "¿Qué diferencia hay entre el plan Autoridad y los servicios sueltos?", a: "El paquete AUTORIDAD (3.900€) combina Knowledge Panel + wikis de autoridad + Forbes Argentina editorial, que juntos se refuerzan mutuamente. El resultado es significativamente mejor que contratar cada servicio por separado." },
 ];
 
-export default function HomePage() {
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org", "@type": "FAQPage",
+  mainEntity: FAQ.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } }))
+});
+
+export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
+    <div style={{ background: "var(--bg)" }} className="min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
       <Nav />
 
-      {/* ── HERO ── */}
-      <section className="py-20 px-4" style={{ background: "#0f1729" }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-[1fr_340px] gap-12 items-center">
+      {/* ══════════════════════════════════════════════
+          HERO — Ambient orbs + oversized type + form
+      ══════════════════════════════════════════════ */}
+      <section className="relative overflow-hidden min-h-screen flex items-center" style={{ background: "var(--bg)" }}>
+        {/* Ambient orbs */}
+        <div className="orb orb-1" style={{ width: 600, height: 600, top: "-10%", left: "-5%", opacity: 0.6 }} />
+        <div className="orb orb-2" style={{ width: 400, height: 400, top: "20%", right: "10%", opacity: 0.7 }} />
+        <div className="orb orb-3" style={{ width: 500, height: 500, bottom: "-15%", left: "30%", opacity: 0.5 }} />
+
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-[1fr_380px] gap-12 items-center">
+          {/* Left — copy */}
           <div>
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 border rounded-full px-4 py-1.5 text-xs font-semibold mb-6"
-              style={{ borderColor: "#c9a84c44", color: "#c9a84c", background: "#c9a84c11" }}>
-              Empresa registrada · Contrato previo · Sin garantías imposibles
+            <div className="badge-gold mb-6 inline-flex">
+              Empresa registrada · Contrato legal previo · Confidencial
             </div>
 
-            {/* H1 — keyword principal en SEO */}
-            <h1 className="text-4xl md:text-5xl font-black text-white mb-5 leading-tight">
-              Controla lo que el mundo ve<br />
-              <span style={{ color: "#c9a84c" }}>cuando busca tu nombre.</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
+              Controla lo que<br />
+              el mundo ve cuando<br />
+              <span className="gradient-text">busca tu nombre.</span>
             </h1>
 
-            <p className="text-lg text-slate-400 mb-8 leading-relaxed max-w-xl">
-              Gestionamos tu reputación en Google, Wikipedia, medios internacionales
-              y plataformas de IA. Protección de lo que te daña, construcción de
-              lo que te impulsa, blindaje continuo.
+            <p className="text-lg text-white/50 mb-10 max-w-lg leading-relaxed">
+              Gestionamos tu reputación en Google, Wikipedia, medios y plataformas de IA.
+              Protección, construcción de autoridad y blindaje continuo.
             </p>
 
-            <div className="flex flex-wrap gap-4 items-center">
-              <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/"
-                className="font-bold px-7 py-3.5 rounded-xl text-sm transition flex items-center gap-2"
-                style={{ background: "#c9a84c", color: "#0f1729" }}>
+            <div className="flex flex-wrap gap-4 items-center mb-10">
+              <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-gold">
                 Auditoría gratuita →
               </Link>
-              <Link href="/precios/"
-                className="font-semibold px-7 py-3.5 rounded-xl border text-sm text-white transition flex items-center gap-2"
-                style={{ borderColor: "#ffffff22" }}>
+              <Link href="/precios/" className="btn-ghost">
                 Ver precios
               </Link>
             </div>
 
-            {/* Trust signals en línea */}
-            <div className="flex flex-wrap gap-5 mt-8 text-xs text-slate-500">
-              {["Empresa registrada en España", "Contrato antes de empezar", "Sin contraseñas nunca", "Confidencial"].map(t => (
-                <span key={t} className="flex items-center gap-1.5">
-                  <Check className="w-3.5 h-3.5 text-green-500" />{t}
+            <div className="flex flex-wrap gap-6">
+              {["Proceso 100% legal", "Sin contraseñas", "Confidencial", "Empresa en España"].map(t => (
+                <span key={t} className="flex items-center gap-2 text-xs text-white/40">
+                  <Check className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />{t}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* ── FORMULARIO EN EL HERO — como hace ReputationX ── */}
-          <div className="bg-white rounded-2xl p-6 shadow-2xl">
-            <h3 className="font-black text-stone-900 text-lg mb-1">Auditoría gratuita</h3>
-            <p className="text-sm text-stone-500 mb-5">Analizamos tu situación actual y te decimos exactamente qué mejorar. Sin coste. Respuesta en 24h.</p>
+          {/* Right — glass form card */}
+          <div className="glass-strong p-7 shadow-2xl shadow-black/50">
+            <div className="flex items-center gap-2 mb-1">
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-xs text-white/50">Disponible ahora — respuesta en 24h</span>
+            </div>
+            <h3 className="text-xl font-black text-white mb-1">Auditoría gratuita</h3>
+            <p className="text-sm text-white/40 mb-6">Analizamos tu situación y te decimos exactamente qué mejorar.</p>
+
             <div className="space-y-3">
-              <input type="text" placeholder="Tu nombre completo" className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-400" />
-              <input type="email" placeholder="Correo electrónico" className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-400" />
-              <input type="text" placeholder="Web o perfil a analizar (URL)" className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-400" />
-              <a href="mailto:hola@prestior.es?subject=Solicitud de auditoría gratuita"
-                className="block w-full text-center py-3.5 rounded-xl font-bold text-sm transition"
-                style={{ background: "#0f1729", color: "white" }}>
+              <input type="text" placeholder="Nombre completo"
+                className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-white/30 bg-white/5 border border-white/10 focus:outline-none focus:border-yellow-500/50 transition" />
+              <input type="email" placeholder="Correo electrónico"
+                className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-white/30 bg-white/5 border border-white/10 focus:outline-none focus:border-yellow-500/50 transition" />
+              <input type="text" placeholder="URL de tu web o perfil"
+                className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-white/30 bg-white/5 border border-white/10 focus:outline-none focus:border-yellow-500/50 transition" />
+              <a href="mailto:hola@prestior.es?subject=Auditoría gratuita"
+                className="btn-gold w-full justify-center text-sm">
                 Solicitar análisis gratuito →
               </a>
             </div>
-            <div className="flex items-center justify-center gap-1.5 mt-3 text-xs text-stone-400">
+
+            <div className="flex items-center justify-center gap-1.5 mt-4 text-xs text-white/30">
               <Lock className="w-3 h-3" />
               <span>Confidencial · Sin compromiso</span>
             </div>
@@ -177,68 +157,190 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── STATS BAR ── */}
-      <div className="border-b border-stone-200" style={{ background: "#f5f4f1" }}>
-        <div className="max-w-5xl mx-auto px-4 py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {STATS.map(({ n, label }) => (
-            <div key={label} className="text-center">
-              <div className="text-2xl font-black text-stone-900">{n}</div>
-              <div className="text-xs text-stone-500 mt-0.5">{label}</div>
-            </div>
-          ))}
+      {/* ══════════════════════════════════════════
+          LOGOS — scrolling strip
+      ══════════════════════════════════════════ */}
+      <div className="relative overflow-hidden border-y border-white/5 py-5" style={{ background: "rgba(255,255,255,0.02)" }}>
+        <p className="text-center text-xs text-white/20 uppercase tracking-widest mb-4">Gestionamos presencia en</p>
+        <div className="overflow-hidden">
+          <div className="logos-track">
+            {[...LOGOS, ...LOGOS].map((logo, i) => (
+              <span key={i} className="text-white/20 font-bold text-sm tracking-wider whitespace-nowrap uppercase">{logo}</span>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* ── PROBLEMA — copy emocional ── */}
-      <section className="py-14 px-4 bg-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-black text-stone-900 mb-4">
-            Tu reputación digital se gestiona sola.<br />
-            <span className="text-stone-500 font-normal">Mal.</span>
-          </h2>
-          <p className="text-stone-600 leading-relaxed">
-            Cada día que pasa sin gestión activa, una reseña falsa baja tu nota en Google, 
-            un artículo viejo ocupa el primer resultado cuando buscan tu nombre, 
-            o un competidor construye su autoridad mientras tú te quedas estático. 
-            En 2026, también importa lo que dice ChatGPT y Perplexity cuando preguntan por ti.
-          </p>
+      {/* ══════════════════════════════════════════
+          STATS BAR — glass cards
+      ══════════════════════════════════════════ */}
+      <section className="py-12 px-4 relative" style={{ background: "var(--bg-mid)" }}>
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+          {STATS.map(({ n, label }) => (
+            <div key={label} className="glass p-5 text-center transition-all hover:-translate-y-1">
+              <div className="stat-number gradient-text">{n}</div>
+              <div className="text-xs text-white/40 mt-1">{label}</div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* ── 3 SILOS ── */}
-      <section className="py-16 px-4" style={{ background: "#f5f4f1" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">Metodología</p>
-            <h2 className="text-3xl font-black text-stone-900">Tres fases. Un resultado.</h2>
-            <p className="text-stone-500 mt-2 max-w-lg mx-auto">Tu presencia digital necesita los tres: limpiar lo que daña, construir lo que impulsa, mantener lo que funciona.</p>
+      {/* ══════════════════════════════════════════
+          BENTO GRID — services
+      ══════════════════════════════════════════ */}
+      <section className="py-20 px-4 relative overflow-hidden" style={{ background: "var(--bg)" }}>
+        <div className="orb orb-1" style={{ width: 400, height: 400, bottom: 0, right: 0, opacity: 0.3 }} />
+
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="section-label">Metodología</span>
+            <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-3">
+              Tres fases.<br /><span className="gradient-text">Un resultado.</span>
+            </h2>
+            <p className="text-white/40 max-w-lg mx-auto">Tu reputación necesita los tres: limpiar lo que daña, construir lo que impulsa, mantener lo que funciona.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {SERVICIOS_HOME.map(({ icon: Icon, titulo, sub, puntos, href, cta, desde, destacado }) => (
-              <div key={titulo} className={`bg-white rounded-2xl border overflow-hidden ${destacado ? "border-stone-900 shadow-md" : "border-stone-200"}`}>
-                {destacado && (
-                  <div className="text-center py-1.5 text-xs font-bold" style={{ background: "#0f1729", color: "#c9a84c" }}>
-                    ★ Mayor margen · Más vendido
+
+          {/* Bento asymmetric grid */}
+          <div className="grid md:grid-cols-12 gap-4 auto-rows-auto">
+
+            {/* GRANDE — Autoridad */}
+            <div className="md:col-span-7 glass hover:border-yellow-500/20 transition-all group relative overflow-hidden p-7">
+              <div className="orb orb-2" style={{ width: 200, height: 200, top: "-20%", right: "-10%", opacity: 0.4 }} />
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center bg-white/5">
+                    <TrendingUp className="w-5 h-5 text-yellow-400" />
                   </div>
-                )}
-                <div className="p-6">
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-4 border border-stone-200">
-                    <Icon className="w-4 h-4 text-stone-700" />
+                  <span className="badge-gold">★ Más vendido</span>
+                </div>
+                <p className="text-white/30 text-xs mb-1">Desde 390€</p>
+                <h3 className="text-2xl font-black text-white mb-1">Autoridad digital</h3>
+                <p className="text-sm text-white/50 mb-5">Construye presencia que genera confianza antes de que hablen contigo</p>
+                <ul className="space-y-2 mb-6">
+                  {["Knowledge Panel en Google", "Forbes Argentina (artículo editorial)", "Pack wikis de autoridad", "Marca personal en buscadores", "Reputación en IA — ChatGPT / Perplexity"].map(p => (
+                    <li key={p} className="flex items-center gap-2.5 text-sm text-white/60">
+                      <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/autoridad-digital/" className="btn-gold inline-flex text-sm">
+                  Ver servicios <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* COLUMNA DERECHA */}
+            <div className="md:col-span-5 flex flex-col gap-4">
+
+              {/* MEDIANO — Protección */}
+              <div className="glass hover:border-white/15 transition-all p-6 flex-1">
+                <div className="w-9 h-9 rounded-xl border border-white/10 flex items-center justify-center bg-white/5 mb-4">
+                  <Shield className="w-4 h-4 text-blue-400" />
+                </div>
+                <p className="text-white/30 text-xs mb-1">Desde 690€</p>
+                <h3 className="text-xl font-black text-white mb-1">Protección</h3>
+                <p className="text-sm text-white/40 mb-4">Elimina lo que te daña ahora mismo</p>
+                <ul className="space-y-1.5 mb-5">
+                  {["Difamación y calumnias", "Derecho al olvido Google", "Contenido íntimo filtrado", "Reseñas falsas"].map(p => (
+                    <li key={p} className="flex items-center gap-2 text-xs text-white/50">
+                      <ArrowRight className="w-3 h-3 text-white/20 flex-shrink-0" />{p}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/proteccion-reputacion/" className="btn-ghost inline-flex text-xs py-2 px-4">
+                  Ver servicios <ChevronRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+              {/* PEQUEÑO — Blindaje */}
+              <div className="glass hover:border-white/15 transition-all p-6">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <div className="w-9 h-9 rounded-xl border border-white/10 flex items-center justify-center bg-white/5 mb-3">
+                      <Eye className="w-4 h-4 text-emerald-400" />
+                    </div>
+                    <p className="text-white/30 text-xs mb-0.5">Desde 197€/mes</p>
+                    <h3 className="text-lg font-black text-white">Blindaje continuo</h3>
                   </div>
-                  <p className="text-xs text-stone-400 mb-1">{desde}</p>
-                  <h3 className="text-xl font-black text-stone-900 mb-0.5">{titulo}</h3>
-                  <p className="text-sm font-semibold mb-4" style={{ color: "#c9a84c" }}>{sub}</p>
-                  <ul className="space-y-2 mb-6">
-                    {puntos.map(p => (
-                      <li key={p} className="flex items-center gap-2 text-xs text-stone-600">
-                        <ArrowRight className="w-3 h-3 flex-shrink-0 text-stone-400" />{p}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href={href} className="block text-center py-2.5 rounded-xl text-sm font-semibold transition"
-                    style={{ background: "#0f1729", color: "white" }}>
-                    {cta} →
-                  </Link>
+                  <span className="text-xs text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2 py-1 rounded-full">Recurrente</span>
+                </div>
+                <p className="text-xs text-white/40 mb-4">Monitorización activa, alertas y reacción inmediata</p>
+                <Link href="/monitorizacion-reputacion/" className="btn-ghost inline-flex text-xs py-2 px-4">
+                  Ver servicio <ChevronRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          GEO / IA — nueva sección visual
+      ══════════════════════════════════════════ */}
+      <section className="py-20 px-4 relative overflow-hidden" style={{ background: "var(--bg-mid)" }}>
+        <div className="orb orb-3" style={{ width: 500, height: 500, top: "50%", left: "50%", transform: "translate(-50%,-50%)", opacity: 0.2 }} />
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="badge-gold mb-5 inline-flex">Nuevo en 2026</span>
+              <h2 className="text-4xl font-black text-white mb-4">
+                ¿Qué dice ChatGPT<br />
+                <span className="gradient-text">sobre ti?</span>
+              </h2>
+              <p className="text-white/50 leading-relaxed mb-6">
+                Millones de personas usan ChatGPT, Perplexity y Gemini para investigar personas y marcas.
+                Lo que esas IAs dicen puede ser incorrecto, desactualizado o dañino si no se gestiona.
+              </p>
+              <Link href="/autoridad-digital/reputacion-ia-geo/" className="btn-gold inline-flex text-sm">
+                Ver servicio GEO <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Terminal visual */}
+            <div className="glass-strong p-5 font-mono text-xs space-y-4">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-3 h-3 rounded-full bg-red-500/70" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+                <div className="w-3 h-3 rounded-full bg-green-500/70" />
+                <span className="text-white/20 ml-2 text-[10px]">AI Search Analysis</span>
+              </div>
+
+              {[
+                { ai: "ChatGPT", q: "¿Quién es [tu nombre]?", sin: "Información desactualizada o incorrecta", con: "Narrativa correcta y verificada" },
+                { ai: "Perplexity", q: "¿Es fiable [tu empresa]?", sin: "Fuentes negativas sin gestión", con: "Fuentes positivas controladas" },
+                { ai: "Gemini", q: "¿Cuál es la reputación de...?", sin: "Resultado aleatorio", con: "Posicionamiento estratégico" },
+              ].map(({ ai, q, sin, con }) => (
+                <div key={ai} className="border border-white/5 rounded-lg p-3">
+                  <div className="text-yellow-400/70 mb-1.5">{ai} › {q}</div>
+                  <div className="grid grid-cols-2 gap-2 text-[11px]">
+                    <div className="bg-red-900/20 border border-red-500/15 rounded p-2 text-red-300/70">❌ {sin}</div>
+                    <div className="bg-green-900/20 border border-green-500/15 rounded p-2 text-green-300/70">✓ {con}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          PROCESO — timeline visual
+      ══════════════════════════════════════════ */}
+      <section className="py-20 px-4" style={{ background: "var(--bg)" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="section-label">Proceso</span>
+            <h2 className="text-4xl font-black text-white mt-4">Cómo trabajamos</h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6">
+            {PROCESO.map(({ n, t, d }, i) => (
+              <div key={n} className="relative">
+                {i < 3 && <div className="hidden md:block absolute top-5 left-[calc(50%+20px)] right-[-50%] h-px bg-gradient-to-r from-yellow-500/30 to-transparent" />}
+                <div className="glass p-5 text-center hover:-translate-y-1 transition-transform">
+                  <div className="process-num mx-auto mb-4">{n}</div>
+                  <h4 className="font-bold text-white text-sm mb-2">{t}</h4>
+                  <p className="text-xs text-white/40 leading-relaxed">{d}</p>
                 </div>
               </div>
             ))}
@@ -246,43 +348,105 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── NUEVO: REPUTACIÓN EN IA (GEO) — tendencia 2026 ── */}
-      <section className="py-14 px-4 bg-white border-b border-stone-200">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 border border-amber-200 bg-amber-50 rounded-full px-3 py-1 text-xs font-semibold text-amber-700 mb-4">
-                Nuevo en 2026
+      {/* ══════════════════════════════════════════
+          PAQUETES — 3 columnas premium
+      ══════════════════════════════════════════ */}
+      <section className="py-20 px-4 relative overflow-hidden" style={{ background: "var(--bg-mid)" }}>
+        <div className="orb orb-2" style={{ width: 500, height: 500, top: 0, left: "50%", transform: "translateX(-50%)", opacity: 0.15 }} />
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="section-label">Inversión</span>
+            <h2 className="text-4xl font-black text-white mt-4 mb-3">Tres opciones.</h2>
+            <p className="text-white/40">El cerebro elige el del medio — y es donde está el mayor valor.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5 items-start">
+            {[
+              { nombre: "PRESENCIA", precio: "1.490€", desc: "Para empezar a controlar cómo apareces.", incluye: ["Knowledge Panel personal", "1-2 medios de entrada", "Optimización nombre en Google", "Informe inicial"], top: false },
+              { nombre: "AUTORIDAD", precio: "3.900€", desc: "Autoridad documentada y duradera.", incluye: ["Knowledge Panel personal", "Pack wikis (FoundersWiki, WikiAlpha, Crunchbase)", "Forbes Argentina — editorial", "Posicionamiento en Google e IA", "Informe mensual"], top: true },
+              { nombre: "DOMINIO", precio: "9.900€", desc: "Domina tu espacio a nivel internacional.", incluye: ["Todo AUTORIDAD", "Pack medios top (NYPost, BBC, Wired)", "Gestión continua 3 meses", "Estrategia personalizada"], top: false },
+            ].map(({ nombre, precio, desc, incluye, top }) => (
+              <div key={nombre} className={`relative ${top ? "glass-strong border-yellow-500/25 shadow-2xl shadow-yellow-500/10 scale-105" : "glass"} p-6 transition-all hover:-translate-y-1`}>
+                {top && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="badge-gold text-xs px-3 py-1">★ Más contratado</span>
+                  </div>
+                )}
+                <p className="text-xs font-mono text-white/30 mb-1">{nombre}</p>
+                <div className="text-3xl font-black text-white mb-1">{precio}</div>
+                <p className="text-sm text-white/40 mb-5">{desc}</p>
+                <ul className="space-y-2 mb-6">
+                  {incluye.map(i => (
+                    <li key={i} className="flex items-start gap-2 text-xs text-white/60">
+                      <Check className="w-3.5 h-3.5 text-green-400 flex-shrink-0 mt-0.5" />{i}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contacto/" className={top ? "btn-gold w-full justify-center text-sm" : "btn-ghost w-full justify-center text-sm"}>
+                  Solicitar información →
+                </Link>
               </div>
-              <h2 className="text-2xl md:text-3xl font-black text-stone-900 mb-4">
-                ¿Qué dice ChatGPT<br />cuando preguntan por ti?
+            ))}
+          </div>
+          <p className="text-center text-xs text-white/25 mt-6">Presupuesto personalizado tras análisis gratuito. IVA no incluido si aplica. <Link href="/precios/" className="text-white/40 underline hover:text-white/60">Ver todos los precios →</Link></p>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          TESTIMONIOS — glass quote cards
+      ══════════════════════════════════════════ */}
+      <section className="py-20 px-4" style={{ background: "var(--bg)" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="section-label">Resultados</span>
+            <h2 className="text-4xl font-black text-white mt-4">Resultados reales.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-5">
+            {TESTIMONIOS.map((t, i) => (
+              <div key={i} className="glass p-6 hover:border-white/15 transition-all hover:-translate-y-1">
+                <div className="quote-mark">"</div>
+                <p className="text-white/70 text-sm leading-relaxed mb-5 -mt-2 italic">{t.texto}</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-white font-semibold text-sm">{t.autor}</p>
+                    <p className="text-white/30 text-xs">{t.cargo}</p>
+                  </div>
+                  <span className="badge-gold text-[10px]">{t.resultado}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <Link href="/casos-de-exito/" className="btn-ghost text-sm inline-flex">Ver todos los casos →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          DIFERENCIALES — grid oscuro
+      ══════════════════════════════════════════ */}
+      <section className="py-20 px-4 relative overflow-hidden" style={{ background: "var(--bg-mid)" }}>
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <span className="section-label">Diferenciación</span>
+              <h2 className="text-4xl font-black text-white mt-4 mb-4">
+                Lo que nos separa<br /><span className="gradient-text">del mercado del humo.</span>
               </h2>
-              <p className="text-stone-600 leading-relaxed mb-5">
-                En 2026, millones de personas usan ChatGPT, Perplexity y Gemini para buscar información
-                sobre personas y marcas. Lo que estas IAs dicen de ti está construido con los mismos
-                datos que Google — y puede ser incorrecto, desactualizado o dañino.
-              </p>
-              <p className="text-stone-600 leading-relaxed mb-6">
-                Gestionamos tu presencia en la búsqueda por IA (GEO — Generative Engine Optimization)
-                para que la narrativa que construyen los modelos de lenguaje sobre ti sea la correcta.
-              </p>
-              <Link href="/autoridad-digital/reputacion-ia-geo/"
-                className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-3 rounded-xl"
-                style={{ background: "#0f1729", color: "white" }}>
-                Ver servicio GEO <ChevronRight className="w-4 h-4" />
-              </Link>
+              <p className="text-white/40 leading-relaxed">En este sector hay muchas promesas imposibles. Nosotros operamos diferente: contrato legal previo, descripción honesta de cada servicio y cero garantías que no podemos cumplir.</p>
             </div>
             <div className="space-y-3">
               {[
-                { q: "ChatGPT: '¿Quién es [tu nombre]?'", estado: "Sin gestión: información desactualizada o incorrecta", gestionado: "Con Prestior: narrativa correcta y actualizada" },
-                { q: "Perplexity: '¿Es fiable [tu empresa]?'", estado: "Sin gestión: fuentes negativas o neutras", gestionado: "Con Prestior: fuentes positivas verificadas" },
-                { q: "Gemini: '¿Cuál es la reputación de [marca]?'", estado: "Sin gestión: depende del azar", gestionado: "Con Prestior: controlado y monitorizado" },
-              ].map(({ q, estado, gestionado }) => (
-                <div key={q} className="bg-stone-50 rounded-xl border border-stone-200 p-4">
-                  <p className="text-xs font-semibold text-stone-700 mb-2 font-mono">{q}</p>
-                  <div className="grid grid-cols-2 gap-2 text-xs">
-                    <div className="bg-red-50 border border-red-200 rounded-lg px-3 py-2 text-red-700">{estado}</div>
-                    <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2 text-green-700">{gestionado}</div>
+                { icon: "📋", t: "Contrato antes de empezar", d: "Firmamos antes de que pagues. Servicio, plazos y garantías por escrito." },
+                { icon: "🔒", t: "Confidencialidad absoluta", d: "Nunca revelamos clientes, casos ni resultados. Discreción total." },
+                { icon: "✅", t: "Honestidad sobre resultados", d: "Forbes Argentina no es Forbes global. Un wiki de autoridad no es Wikipedia. Siempre." },
+                { icon: "🏛️", t: "Empresa registrada en España", d: "CIF disponible bajo solicitud. Actividad 100% legal." },
+              ].map(({ icon, t, d }) => (
+                <div key={t} className="glass p-4 flex gap-4 hover:border-white/15 transition-all">
+                  <span className="text-2xl flex-shrink-0">{icon}</span>
+                  <div>
+                    <p className="font-semibold text-white text-sm mb-1">{t}</p>
+                    <p className="text-xs text-white/40 leading-relaxed">{d}</p>
                   </div>
                 </div>
               ))}
@@ -291,127 +455,44 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── PAQUETES ── */}
-      <section className="py-16 px-4" style={{ background: "#f5f4f1" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">Paquetes</p>
-            <h2 className="text-3xl font-black text-stone-900">Elige tu punto de partida.</h2>
-            <p className="text-stone-500 mt-2">Tres opciones. El cerebro elige el del medio — y es donde está el mayor valor.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {PAQUETES.map(({ nombre, precio, desc, incluye, destacado }) => (
-              <div key={nombre} className={`bg-white rounded-2xl border overflow-hidden ${destacado ? "border-stone-900 shadow-lg scale-105" : "border-stone-200"}`}>
-                {destacado && (
-                  <div className="text-center py-1.5 text-xs font-bold" style={{ background: "#0f1729", color: "#c9a84c" }}>
-                    ★ Más contratado
-                  </div>
-                )}
-                <div className="p-6">
-                  <p className="text-xs font-mono text-stone-400 mb-1">{nombre}</p>
-                  <div className="text-3xl font-black text-stone-900 mb-1">{precio}</div>
-                  <p className="text-sm text-stone-500 mb-5">{desc}</p>
-                  <ul className="space-y-2 mb-6">
-                    {incluye.map(i => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-stone-700">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />{i}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/contacto/" className="block text-center py-3 rounded-xl text-sm font-semibold transition"
-                    style={destacado ? { background: "#0f1729", color: "white" } : { background: "#f5f4f1", color: "#0f1729" }}>
-                    Solicitar información →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-xs text-stone-400 mt-5">
-            Presupuesto personalizado tras análisis gratuito. IVA no incluido si aplica.{" "}
-            <Link href="/precios/" className="underline hover:text-stone-600">Ver todos los precios →</Link>
-          </p>
-        </div>
-      </section>
-
-      {/* ── CASOS DE ÉXITO ── */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center justify-between mb-10">
-            <div>
-              <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Resultados</p>
-              <h2 className="text-3xl font-black text-stone-900">Resultados reales.</h2>
-            </div>
-            <Link href="/casos-de-exito/" className="text-sm font-semibold text-stone-600 hover:text-stone-900 hidden md:block">
-              Ver todos →
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {CASOS.map((c, i) => (
-              <div key={i} className="bg-stone-50 rounded-2xl border border-stone-200 p-6">
-                <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3" style={{ background: "#0f172911", color: "#0f1729" }}>{c.cat}</span>
-                <h3 className="font-bold text-stone-900 text-sm mb-2">{c.t}</h3>
-                <p className="text-xs text-stone-500 mb-4 leading-relaxed">{c.d}</p>
-                <span className="text-xs font-semibold bg-green-100 text-green-700 px-2.5 py-1 rounded-full">{c.r}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── DIFERENCIADORES ── */}
-      <section className="py-16 px-4" style={{ background: "#f5f4f1" }}>
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            <div>
-              <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-3">Por qué elegirnos</p>
-              <h2 className="text-3xl font-black text-stone-900 mb-4">Lo que nos separa<br />del mercado del humo.</h2>
-              <p className="text-stone-500 text-sm leading-relaxed">En este sector hay muchas promesas. Nosotros operamos distinto: contrato legal previo, descripción honesta de cada servicio, y cero garantías de resultado que no podemos controlar.</p>
-            </div>
-            <div className="space-y-3">
-              {DIFERENCIALES.map(({ t, d }) => (
-                <div key={t} className="bg-white rounded-xl border border-stone-200 p-4">
-                  <p className="text-sm font-semibold text-stone-900 mb-1">{t}</p>
-                  <p className="text-xs text-stone-500 leading-relaxed">{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section className="py-16 px-4 bg-white">
+      {/* ══════════════════════════════════════════
+          FAQ
+      ══════════════════════════════════════════ */}
+      <section className="py-20 px-4" style={{ background: "var(--bg)" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-black text-stone-900 mb-8 text-center">Preguntas frecuentes</h2>
+          <div className="text-center mb-12">
+            <span className="section-label">FAQ</span>
+            <h2 className="text-4xl font-black text-white mt-4">Preguntas frecuentes</h2>
+          </div>
           <div className="space-y-3">
-            {[
-              { q: "¿Qué es la gestión de reputación digital?", a: "Es el proceso de controlar, mejorar y proteger lo que aparece cuando alguien busca tu nombre en Google, en IA como ChatGPT, o en medios digitales." },
-              { q: "¿Garantizáis resultados?", a: "No prometemos garantías imposibles. Lo que sí garantizamos: contrato previo, proceso legal correcto, máxima diligencia y política de crédito si el servicio no se ejecuta." },
-              { q: "¿Cuánto tiempo tarda?", a: "Depende del servicio. Desindexación: 2-6 semanas. Knowledge Panel: 4-8 semanas. Aparición en medios: 4-12 semanas." },
-              { q: "¿Trabajáis con confidencialidad?", a: "Sí, absoluta. Nunca revelamos clientes, casos ni resultados. Discreción total para directivos, figuras públicas y marcas sensibles." },
-            ].map(({ q, a }) => (
-              <details key={q} className="group bg-stone-50 rounded-xl border border-stone-200">
-                <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-stone-900 text-sm list-none">
-                  {q}<span className="text-stone-400 group-open:rotate-180 transition-transform ml-3">▼</span>
+            {FAQ.map(({ q, a }) => (
+              <details key={q} className="glass group">
+                <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-white text-sm list-none">
+                  {q}
+                  <span className="text-white/30 group-open:rotate-180 transition-transform ml-3 flex-shrink-0">▼</span>
                 </summary>
-                <div className="px-5 pb-4 text-sm text-stone-600 border-t border-stone-200 pt-3 leading-relaxed">{a}</div>
+                <div className="px-5 pb-4 text-sm text-white/50 border-t border-white/5 pt-3 leading-relaxed">{a}</div>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA FINAL ── */}
-      <section className="py-16 px-4" style={{ background: "#0f1729" }}>
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-black text-white mb-3">¿Qué aparece cuando buscan tu nombre?</h2>
-          <p className="text-slate-400 mb-8">Búscate ahora en Google y en ChatGPT. ¿Lo que ves te ayuda o te perjudica? Cuéntanoslo — analizamos tu situación gratis.</p>
-          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/"
-            className="inline-flex items-center gap-2 font-bold px-8 py-4 rounded-xl text-sm transition"
-            style={{ background: "#c9a84c", color: "#0f1729" }}>
+      {/* ══════════════════════════════════════════
+          CTA FINAL — dark with orbs
+      ══════════════════════════════════════════ */}
+      <section className="py-24 px-4 relative overflow-hidden" style={{ background: "var(--bg-mid)" }}>
+        <div className="orb orb-2" style={{ width: 600, height: 600, top: "50%", left: "50%", transform: "translate(-50%,-50%)", opacity: 0.3 }} />
+        <div className="relative z-10 max-w-2xl mx-auto text-center">
+          <span className="section-label mb-6">Empieza hoy</span>
+          <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-4">
+            ¿Qué aparece cuando<br /><span className="gradient-text">buscan tu nombre?</span>
+          </h2>
+          <p className="text-white/40 mb-10 text-lg">Búscate ahora en Google y en ChatGPT. ¿Lo que ves te ayuda o te perjudica?</p>
+          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-gold text-base px-10 py-4">
             Solicitar auditoría gratuita →
           </Link>
-          <p className="text-slate-500 text-xs mt-4">Sin coste · Respuesta en 24h · Confidencial</p>
+          <p className="text-white/25 text-xs mt-4">Sin coste · Respuesta en 24h · Confidencial</p>
         </div>
       </section>
 

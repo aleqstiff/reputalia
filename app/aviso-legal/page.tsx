@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = { title: "Aviso Legal — Prestior", robots: { index: false } };
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
       <div className="max-w-3xl mx-auto px-4 py-16">
         <h1 className="text-2xl font-black text-stone-900 mb-6">Aviso Legal</h1>

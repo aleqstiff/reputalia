@@ -6,12 +6,12 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = { title: "Reputación Digital para Directivos y CEOs — Prestior", description: "Reputación Digital para Directivos y CEOs. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://prestior.es/autoridad-digital/reputacion-para-directivos//" } };
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">
-        <Link href="/" className="hover:text-stone-600">Inicio</Link> › <Link href="/autoridad-digital/" className="hover:text-stone-600">Autoridad digital</Link> › <span className="text-stone-700">Reputación Digital para Directivos y CEOs</span>
+        <Link href="/" className="hover:text-stone-600">Inicio</Link> › <Link href="/autoridad-digital/" className="hover:text-stone-600">Autoridad digital</Link> › <span className="text-white/80">Reputación Digital para Directivos y CEOs</span>
       </nav>
-      <header className="py-14 px-4 text-center" style={{background:"#0f1729"}}>
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-mid)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-4">Reputación Digital para Directivos y CEOs</h1>
           <p className="text-slate-400 mb-6">Gestión profesional por las vías legales correctas. Análisis gratuito previo.</p>

@@ -14,7 +14,7 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://prestior.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Knowledge Panel\", \"item\": \"https://prestior.es/autoridad-digital/knowledge-panel-google/\"}]}"}} />
@@ -23,9 +23,9 @@ export default function Page() {
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">
         <Link href="/" className="hover:text-stone-600">Inicio</Link> ›{" "}
         <Link href="/autoridad-digital/" className="hover:text-stone-600">Autoridad digital</Link> ›{" "}
-        <span className="text-stone-700">Knowledge Panel en Google</span>
+        <span className="text-white/80">Knowledge Panel en Google</span>
       </nav>
-      <header className="py-14 px-4" style={{background:"#0f1729"}}>
+      <header className="py-14 px-4" style={{background:"var(--bg-mid)"}}>
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-black text-white mb-4">Knowledge Panel en Google</h1>
           <p className="text-slate-400 text-lg max-w-2xl mb-5">El Knowledge Panel es el recuadro de información que Google muestra sobre personas y empresas en los resultados de búsqueda. Es la señal de autoridad más potente que existe en Google.</p>
@@ -40,21 +40,21 @@ export default function Page() {
           <h2 className="text-xl font-bold text-stone-900 mb-6">Cómo gestionamos el proceso</h2>
           <div className="space-y-3">
             <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-stone-200">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"#0f1729"}}>1</div>
+              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-mid)"}}>1</div>
               <div><p className="font-semibold text-stone-900 text-sm">Auditoría de elegibilidad</p><p className="text-xs text-stone-500 mt-0.5">Analizamos si cumples los requisitos de notabilidad que Google exige. Te decimos la verdad antes de cobrar.</p></div>
             </div>
             <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-stone-200">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"#0f1729"}}>2</div>
+              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-mid)"}}>2</div>
               <div><p className="font-semibold text-stone-900 text-sm">Construcción de la entidad</p><p className="text-xs text-stone-500 mt-0.5">Creamos o optimizamos las fuentes que Google usa: Wikidata, perfiles verificados, menciones en medios.</p></div>
             </div>
             <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-stone-200">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"#0f1729"}}>3</div>
+              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-mid)"}}>3</div>
               <div><p className="font-semibold text-stone-900 text-sm">Activación y verificación</p><p className="text-xs text-stone-500 mt-0.5">Gestionamos la activación del panel y la verificación de propiedad una vez aparece.</p></div>
             </div>
           </div>
         </div>
       </section>
-      <section className="py-12 px-4" style={{background:"#f5f4f1"}}>
+      <section className="py-12 px-4" style={{background:"var(--bg-mid)"}}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-xl font-bold text-stone-900 mb-6">Preguntas frecuentes</h2>
           <div className="space-y-3">

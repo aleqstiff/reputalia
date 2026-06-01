@@ -14,7 +14,7 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://prestior.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Cuenta falsa\", \"item\": \"https://prestior.es/proteccion-reputacion/eliminar-cuenta-falsa-instagram/\"}]}"}} />
@@ -23,9 +23,9 @@ export default function Page() {
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">
         <Link href="/" className="hover:text-stone-600">Inicio</Link> ›{" "}
         <Link href="/proteccion-reputacion/" className="hover:text-stone-600">Protección de reputación</Link> ›{" "}
-        <span className="text-stone-700">Eliminar cuenta falsa en Instagram</span>
+        <span className="text-white/80">Eliminar cuenta falsa en Instagram</span>
       </nav>
-      <header className="py-14 px-4" style={{background:"#0f1729"}}>
+      <header className="py-14 px-4" style={{background:"var(--bg-mid)"}}>
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-black text-white mb-4">Eliminar cuenta falsa en Instagram</h1>
           <p className="text-slate-400 text-lg max-w-2xl mb-5">Hay una cuenta haciéndose pasar por ti en Instagram, TikTok o YouTube. Gestionamos la denuncia formal y el seguimiento hasta la baja del perfil falso.</p>
@@ -40,21 +40,21 @@ export default function Page() {
           <h2 className="text-xl font-bold text-stone-900 mb-6">Cómo gestionamos el proceso</h2>
           <div className="space-y-3">
             <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-stone-200">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"#0f1729"}}>1</div>
+              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-mid)"}}>1</div>
               <div><p className="font-semibold text-stone-900 text-sm">Análisis y evidencia</p><p className="text-xs text-stone-500 mt-0.5">Documentamos la cuenta falsa: screenshots, análisis de actividad, similitudes con el perfil original.</p></div>
             </div>
             <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-stone-200">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"#0f1729"}}>2</div>
+              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-mid)"}}>2</div>
               <div><p className="font-semibold text-stone-900 text-sm">Denuncia oficial</p><p className="text-xs text-stone-500 mt-0.5">Presentamos la denuncia por suplantación a través de los canales oficiales de la plataforma.</p></div>
             </div>
             <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-stone-200">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"#0f1729"}}>3</div>
+              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-mid)"}}>3</div>
               <div><p className="font-semibold text-stone-900 text-sm">Seguimiento hasta resolución</p><p className="text-xs text-stone-500 mt-0.5">Hacemos seguimiento activo hasta la baja. Si no responde la plataforma, escalamos.</p></div>
             </div>
           </div>
         </div>
       </section>
-      <section className="py-12 px-4" style={{background:"#f5f4f1"}}>
+      <section className="py-12 px-4" style={{background:"var(--bg-mid)"}}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-xl font-bold text-stone-900 mb-6">Preguntas frecuentes</h2>
           <div className="space-y-3">

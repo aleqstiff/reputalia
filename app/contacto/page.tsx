@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function ContactoPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" style={{background:"#0f1729"}}>
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-mid)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-3">Contacto</h1>
           <p className="text-slate-400">Cuéntanos tu situación. Respuesta en menos de 24 horas.</p>

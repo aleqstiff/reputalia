@@ -24,7 +24,7 @@ const SERVICIOS = [
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad digital\", \"item\": \"https://prestior.es/autoridad-digital/\"}]}"}} />
       
@@ -32,9 +32,9 @@ export default function Page() {
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">
-        <Link href="/" className="hover:text-stone-600">Inicio</Link> › <span className="text-stone-700">Autoridad digital</span>
+        <Link href="/" className="hover:text-stone-600">Inicio</Link> › <span className="text-white/80">Autoridad digital</span>
       </nav>
-      <header className="py-16 px-4 text-center" style={{background:"#0f1729"}}>
+      <header className="py-16 px-4 text-center" style={{background:"var(--bg-mid)"}}>
         <div className="max-w-3xl mx-auto">
           <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{background:"#c9a84c22"}}>
             <TrendingUp className="w-6 h-6" style={{color:"#c9a84c"}} />

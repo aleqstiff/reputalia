@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 
 export default function GeoPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">
         <Link href="/" className="hover:text-stone-600">Inicio</Link> ›{" "}
         <Link href="/autoridad-digital/" className="hover:text-stone-600">Autoridad digital</Link> ›{" "}
-        <span className="text-stone-700">Reputación en IA</span>
+        <span className="text-white/80">Reputación en IA</span>
       </nav>
-      <header className="py-14 px-4" style={{background:"#0f1729"}}>
+      <header className="py-14 px-4" style={{background:"var(--bg-mid)"}}>
         <div className="max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 border border-amber-300 bg-amber-500/10 rounded-full px-3 py-1 text-xs font-semibold text-amber-400 mb-5">
             Nuevo servicio 2026
