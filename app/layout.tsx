@@ -35,7 +35,10 @@ const orgSchema = {
   description: "Agencia especializada en gestión integral de reputación digital. Protección, construcción, blindaje y optimización para IA.",
   address: { "@type": "PostalAddress", addressCountry: "ES" },
   contactPoint: [{ "@type": "ContactPoint", contactType: "customer service", availableLanguage: ["Spanish", "English"], url: `${BASE}/contacto/` }],
-  sameAs: [],
+  sameAs: [
+    "https://www.instagram.com/prestiorcom",
+    "https://www.tiktok.com/@prestiorcom",
+  ],
 };
 
 const localBizSchema = {
