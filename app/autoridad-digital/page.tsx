@@ -8,7 +8,7 @@ import { TrendingUp, ArrowRight, Check } from "lucide-react";
 export const metadata: Metadata = {
   title: "Autoridad Digital — Knowledge Panel, Prensa y Medios Internacionales",
   description: "Construimos tu autoridad digital: Knowledge Panel en Google, Forbes Argentina, medios internacionales, perfiles wiki y verificación de perfiles. Empresa registrada.",
-  alternates: { canonical: "https://reputalia.es/autoridad-digital/" },
+  alternates: { canonical: "https://prestior.es/autoridad-digital/" },
 };
 
 const SERVICIOS = [
@@ -26,7 +26,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad digital\", \"item\": \"https://reputalia.es/autoridad-digital/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad digital\", \"item\": \"https://prestior.es/autoridad-digital/\"}]}"}} />
       
       
       

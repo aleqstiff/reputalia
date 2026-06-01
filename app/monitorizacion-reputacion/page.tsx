@@ -7,14 +7,14 @@ import { Eye, ArrowRight, Check } from "lucide-react";
 export const metadata: Metadata = {
   title: "Monitorización de Reputación Online — Blindaje Continuo",
   description: "Monitorizamos tu nombre y marca de forma continua. Alertas tempranas, mantenimiento de presencia, reacción rápida ante ataques.",
-  alternates: { canonical: "https://reputalia.es/monitorizacion-reputacion/" },
+  alternates: { canonical: "https://prestior.es/monitorizacion-reputacion/" },
 };
 
 export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Monitorizaci\u00f3n\", \"item\": \"https://reputalia.es/monitorizacion-reputacion/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Monitorizaci\u00f3n\", \"item\": \"https://prestior.es/monitorizacion-reputacion/\"}]}"}} />
       
       
       

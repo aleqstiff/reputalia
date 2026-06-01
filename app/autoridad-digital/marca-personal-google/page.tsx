@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Marca Personal en Google — Dominar tu Nombre en Buscadores",
   description: "Dominamos los primeros resultados de Google cuando buscan tu nombre. Para coaches, directivos y CEOs. Desde 1.490€.",
-  alternates: { canonical: "https://reputalia.es/autoridad-digital/marca-personal-google/" },
+  alternates: { canonical: "https://prestior.es/autoridad-digital/marca-personal-google/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto tarda en verse en Google?","acceptedAnswer":{"@type":"Answer","text":"Los primeros cambios, en 4-8 semanas. Los resultados consolidados, en 3-6 meses."}},{"@type":"Question","name":"¿Para quién es este servicio?","acceptedAnswer":{"@type":"Answer","text":"Para coaches, formadores, CEOs, directivos, consultores y cualquier profesional cuyo nombre sea su marca principal."}},{"@type":"Question","name":"¿Qué pasa si alguien publica algo negativo?","acceptedAnswer":{"@type":"Answer","text":"Con el blindaje incluido, monitorizamos y actuamos antes de que el daño se consolide."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://reputalia.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Marca personal\", \"item\": \"https://reputalia.es/autoridad-digital/marca-personal-google/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://prestior.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Marca personal\", \"item\": \"https://prestior.es/autoridad-digital/marca-personal-google/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

@@ -4,9 +4,9 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Contacto — Reputalia",
-  description: "Contacta con Reputalia para gestionar tu reputación digital. WhatsApp, email y formulario. Respuesta en menos de 24 horas.",
-  alternates: { canonical: "https://reputalia.es/contacto/" },
+  title: "Contacto — Prestior",
+  description: "Contacta con Prestior para gestionar tu reputación digital. WhatsApp, email y formulario. Respuesta en menos de 24 horas.",
+  alternates: { canonical: "https://prestior.es/contacto/" },
 };
 
 export default function ContactoPage() {
@@ -33,12 +33,12 @@ export default function ContactoPage() {
                   <p className="text-sm text-stone-500">Respuesta inmediata en horario laboral</p>
                 </div>
               </a>
-              <a href="mailto:hola@reputalia.es"
+              <a href="mailto:hola@prestior.es"
                 className="flex items-center gap-4 p-5 bg-stone-50 border border-stone-200 rounded-2xl hover:border-stone-400 transition">
                 <span className="text-2xl">📧</span>
                 <div>
                   <p className="font-semibold text-stone-900">Email</p>
-                  <p className="text-sm text-stone-500">hola@reputalia.es</p>
+                  <p className="text-sm text-stone-500">hola@prestior.es</p>
                 </div>
               </a>
             </div>
@@ -57,7 +57,7 @@ export default function ContactoPage() {
                 <option>No lo sé, necesito orientación</option>
               </select>
               <textarea rows={4} placeholder="Cuéntanos tu situación..." className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-500 resize-none" />
-              <a href="mailto:hola@reputalia.es?subject=Consulta desde la web"
+              <a href="mailto:hola@prestior.es?subject=Consulta desde la web"
                 className="block text-center py-3.5 rounded-xl font-bold text-sm"
                 style={{background:"#0f1729", color:"white"}}>
                 Enviar consulta →

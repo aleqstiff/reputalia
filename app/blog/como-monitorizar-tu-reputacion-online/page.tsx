@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Cómo monitorizar tu reputación online en 2026: herramientas y estrategia",
   description: "La monitorización de reputación online permite detectar amenazas antes de que escalen. Esta guía explica las herramientas gratuitas y profesionales, y cuándo necesitas cada una.",
   keywords: ["monitorizar reputación online", "alertas reputación", "gestión reputación digital", "cómo vigilar tu nombre en internet", "herramientas reputación online"],
-  alternates: { canonical: "https://reputalia.es/blog/como-monitorizar-tu-reputacion-online/" },
+  alternates: { canonical: "https://prestior.es/blog/como-monitorizar-tu-reputacion-online/" },
   openGraph: {
     type: "article",
     title: "Cómo monitorizar tu reputación online en 2026: herramientas y estrategia",
@@ -22,8 +22,8 @@ const articleSchema = {
   headline: "Cómo monitorizar tu reputación online en 2026",
   description: "La monitorización de reputación online permite detectar amenazas antes de que escalen. Esta guía explica las herramientas gratuitas y profesionales, y cuándo necesitas cada una.",
   datePublished: "2026-06-01",
-  publisher: { "@type": "Organization", "@id": "https://reputalia.es/#organization", name: "Reputalia" },
-  mainEntityOfPage: { "@type": "WebPage", "@id": "https://reputalia.es/blog/como-monitorizar-tu-reputacion-online/" },
+  publisher: { "@type": "Organization", "@id": "https://prestior.es/#organization", name: "Prestior" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://prestior.es/blog/como-monitorizar-tu-reputacion-online/" },
 };
 
 export default function Page() {

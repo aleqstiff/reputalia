@@ -8,10 +8,10 @@ import { Shield, ArrowRight, Check } from "lucide-react";
 export const metadata: Metadata = {
   title: "Protección de Reputación Digital — Eliminar Contenido Dañino",
   description: "Eliminamos difamación, desindexamos noticias negativas, gestionamos el derecho al olvido y retiramos contenido ilícito. Proceso legal, resultados reales.",
-  alternates: { canonical: "https://reputalia.es/proteccion-reputacion/" },
+  alternates: { canonical: "https://prestior.es/proteccion-reputacion/" },
 };
 
-const schema = {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://reputalia.es","name":"Reputalia","description":"Agencia de protección de reputación digital","areaServed":{"@type":"Country","name":"ES"},"address":{"@type":"PostalAddress","addressCountry":"ES"}};
+const schema = {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://prestior.es","name":"Prestior","description":"Agencia de protección de reputación digital","areaServed":{"@type":"Country","name":"ES"},"address":{"@type":"PostalAddress","addressCountry":"ES"}};
 
 const SERVICIOS = [
   { titulo:"Difamación y calumnias online", desc:"Eliminamos contenido difamatorio de webs, foros y redes sociales mediante vías legales.", href:"/proteccion-reputacion/difamacion-online/", precio:"Desde 690€" },
@@ -31,7 +31,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(schema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n de reputaci\u00f3n\", \"item\": \"https://reputalia.es/proteccion-reputacion/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n de reputaci\u00f3n\", \"item\": \"https://prestior.es/proteccion-reputacion/\"}]}"}} />
       
       
       

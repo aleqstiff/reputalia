@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Knowledge Panel Google — Crear Panel de Conocimiento",
   description: "Creamos tu Knowledge Panel en Google. Panel personal para profesionales (790€) y panel de empresa (390€). Plazo 4-8 semanas.",
-  alternates: { canonical: "https://reputalia.es/autoridad-digital/knowledge-panel-google/" },
+  alternates: { canonical: "https://prestior.es/autoridad-digital/knowledge-panel-google/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cualquiera puede tener Knowledge Panel?","acceptedAnswer":{"@type":"Answer","text":"No. Google exige un nivel mínimo de notabilidad documentada. Si no cumples los requisitos, te lo decimos antes de empezar."}},{"@type":"Question","name":"¿Cuánto dura el panel?","acceptedAnswer":{"@type":"Answer","text":"Se mantiene mientras existan las fuentes que lo alimentan. Por eso recomendamos retainer de mantenimiento."}},{"@type":"Question","name":"¿Qué diferencia hay entre panel personal y de empresa?","acceptedAnswer":{"@type":"Answer","text":"El personal requiere más trabajo de construcción de entidad. El de empresa es más directo si ya hay presencia web y medios."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://reputalia.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Knowledge Panel\", \"item\": \"https://reputalia.es/autoridad-digital/knowledge-panel-google/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://prestior.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Knowledge Panel\", \"item\": \"https://prestior.es/autoridad-digital/knowledge-panel-google/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

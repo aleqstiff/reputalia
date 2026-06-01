@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Salir en Prensa — Apariciones en Medios Nacionales e Internacionales",
   description: "Gestionamos apariciones editoriales en medios nacionales e internacionales. NYPost, BBC, Wired, medios españoles. Desde 2.900€.",
-  alternates: { canonical: "https://reputalia.es/autoridad-digital/salir-en-prensa/" },
+  alternates: { canonical: "https://prestior.es/autoridad-digital/salir-en-prensa/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué medios cubrís?","acceptedAnswer":{"@type":"Answer","text":"Medios españoles, Forbes Argentina, y pack medios top: NYPost, BBC, Wired, PageSix, People. Cada uno con su precio real."}},{"@type":"Question","name":"¿Es editorial o publicitario?","acceptedAnswer":{"@type":"Answer","text":"Siempre editorial cuando lo describimos como editorial. Nunca confundimos artículo de pago con cobertura orgánica."}},{"@type":"Question","name":"¿Cuánto impacta en Google?","acceptedAnswer":{"@type":"Answer","text":"Un artículo en medio de alta autoridad genera backlink de calidad y puede aparecer al buscar tu nombre. Combinado con Knowledge Panel, el efecto es muy significativo."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://reputalia.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Prensa\", \"item\": \"https://reputalia.es/autoridad-digital/salir-en-prensa/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://prestior.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Prensa\", \"item\": \"https://prestior.es/autoridad-digital/salir-en-prensa/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

@@ -26,6 +26,7 @@ const MENU = [
       { label: "Aparecer en Forbes", href: "/autoridad-digital/aparecer-en-forbes/" },
       { label: "Knowledge Panel Google", href: "/autoridad-digital/knowledge-panel-google/" },
       { label: "Marca personal en Google", href: "/autoridad-digital/marca-personal-google/" },
+      { label: "Reputación en IA (GEO)", href: "/autoridad-digital/reputacion-ia-geo/" },
       { label: "Verificación de perfiles", href: "/autoridad-digital/verificacion-perfiles/" },
     ],
   },
@@ -48,15 +49,13 @@ export default function Nav() {
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-stone-200 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
           <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "#0f1729" }}>
-            <span className="text-xs font-black" style={{ color: "#c9a84c" }}>R</span>
+            <span className="text-xs font-black" style={{ color: "#c9a84c" }}>P</span>
           </div>
-          <span className="font-black text-lg" style={{ color: "#0f1729" }}>Reputalia</span>
+          <span className="font-black text-lg" style={{ color: "#0f1729" }}>Prestior</span>
         </Link>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-1">
           {MENU.map(item => (
             <div key={item.label} className="relative"
@@ -82,7 +81,7 @@ export default function Nav() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Link href="/contacto/" className="text-sm text-stone-600 hover:text-stone-900 transition font-medium">Contacto</Link>
+          <Link href="/contacto/" className="text-sm text-stone-600 hover:text-stone-900 font-medium transition">Contacto</Link>
           <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/"
             className="text-sm font-semibold px-4 py-2 rounded-lg text-white transition"
             style={{ background: "#0f1729" }}>
@@ -95,7 +94,6 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Mobile */}
       {open && (
         <div className="md:hidden border-t border-stone-100 bg-white px-4 py-4 space-y-1">
           {MENU.map(item => (
@@ -108,8 +106,7 @@ export default function Nav() {
               ))}
             </div>
           ))}
-          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/"
-            onClick={() => setOpen(false)}
+          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" onClick={() => setOpen(false)}
             className="block mt-3 text-center py-2.5 text-sm font-semibold text-white rounded-lg"
             style={{ background: "#0f1729" }}>
             Auditoría gratuita

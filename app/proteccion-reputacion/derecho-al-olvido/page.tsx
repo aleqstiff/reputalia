@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Derecho al Olvido en Google — Desindexar Resultados",
   description: "Ejercemos el derecho al olvido ante Google para desindexar resultados obsoletos o perjudiciales. RGPD. Empresa registrada en España.",
-  alternates: { canonical: "https://reputalia.es/proteccion-reputacion/derecho-al-olvido/" },
+  alternates: { canonical: "https://prestior.es/proteccion-reputacion/derecho-al-olvido/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué contenido se puede desindexar?","acceptedAnswer":{"@type":"Answer","text":"Información obsoleta, datos personales excesivos, noticias antiguas irrelevantes. No se puede desindexar contenido de interés público legítimo."}},{"@type":"Question","name":"¿Cuánto tarda Google en responder?","acceptedAnswer":{"@type":"Answer","text":"Suele responder en 2-6 semanas. Si desestima, se puede recurrir ante la AEPD."}},{"@type":"Question","name":"¿Se borra el contenido de internet?","acceptedAnswer":{"@type":"Answer","text":"No. Solo se desindexan los resultados en Google España y UE. El contenido puede seguir en la web origen."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://reputalia.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Derecho al olvido\", \"item\": \"https://reputalia.es/proteccion-reputacion/derecho-al-olvido/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://prestior.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Derecho al olvido\", \"item\": \"https://prestior.es/proteccion-reputacion/derecho-al-olvido/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

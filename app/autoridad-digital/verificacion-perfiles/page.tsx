@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Verificación de Perfiles — Insignia en Instagram y TikTok",
   description: "Gestionamos el proceso de verificación en Instagram y TikTok. Proceso oficial. Sin garantía de resultado. Empresa registrada.",
-  alternates: { canonical: "https://reputalia.es/autoridad-digital/verificacion-perfiles/" },
+  alternates: { canonical: "https://prestior.es/autoridad-digital/verificacion-perfiles/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Garantizáis la verificación?","acceptedAnswer":{"@type":"Answer","text":"No. La decisión final la toma la plataforma. Garantizamos la mejor solicitud posible, no el resultado."}},{"@type":"Question","name":"¿Cuánto tarda?","acceptedAnswer":{"@type":"Answer","text":"Instagram y TikTok suelen responder en 2-4 semanas. En caso de rechazo, se puede reenviar tras 30 días."}},{"@type":"Question","name":"¿Qué necesito para solicitarla?","acceptedAnswer":{"@type":"Answer","text":"Presencia en medios verificable, seguidores activos y un perfil completo y coherente."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://reputalia.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Verificaci\u00f3n\", \"item\": \"https://reputalia.es/autoridad-digital/verificacion-perfiles/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://prestior.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Verificaci\u00f3n\", \"item\": \"https://prestior.es/autoridad-digital/verificacion-perfiles/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

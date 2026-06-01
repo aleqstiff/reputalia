@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Blog — Reputación Digital",
   description: "Artículos sobre gestión de reputación digital, derecho al olvido, autoridad digital y protección online.",
-  alternates: { canonical: "https://reputalia.es/blog/" },
+  alternates: { canonical: "https://prestior.es/blog/" },
 };
 
 const POSTS = [

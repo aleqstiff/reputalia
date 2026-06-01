@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Protección Continua de Marca — Monitorización Mensual",
   description: "Monitorizamos tu nombre y marca de forma continua. Alertas tempranas, mantenimiento de presencia. Desde 197€/mes.",
-  alternates: { canonical: "https://reputalia.es/monitorizacion-reputacion/proteccion-continua-marca/" },
+  alternates: { canonical: "https://prestior.es/monitorizacion-reputacion/proteccion-continua-marca/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Por qué es necesario el retainer?","acceptedAnswer":{"@type":"Answer","text":"El Knowledge Panel y los perfiles de autoridad se degradan sin mantenimiento activo. Google actualiza sus fuentes."}},{"@type":"Question","name":"¿Cuándo se contrata?","acceptedAnswer":{"@type":"Answer","text":"Siempre después de entregar el trabajo de construcción. Nunca al principio."}},{"@type":"Question","name":"¿Se puede cancelar?","acceptedAnswer":{"@type":"Answer","text":"Sí, con 30 días de preaviso. Sin penalización."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Monitorizaci\u00f3n\", \"item\": \"https://reputalia.es/monitorizacion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Protecci\u00f3n continua\", \"item\": \"https://reputalia.es/monitorizacion-reputacion/proteccion-continua-marca/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Monitorizaci\u00f3n\", \"item\": \"https://prestior.es/monitorizacion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Protecci\u00f3n continua\", \"item\": \"https://prestior.es/monitorizacion-reputacion/proteccion-continua-marca/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

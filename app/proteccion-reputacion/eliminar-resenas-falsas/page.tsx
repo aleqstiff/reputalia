@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Eliminar Reseñas Falsas en Google — Disputa Oficial",
   description: "Gestionamos la retirada de reseñas falsas o de no-clientes en Google. Análisis previo gratuito. Desde 99€ por reseña.",
-  alternates: { canonical: "https://reputalia.es/proteccion-reputacion/eliminar-resenas-falsas/" },
+  alternates: { canonical: "https://prestior.es/proteccion-reputacion/eliminar-resenas-falsas/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué reseñas pueden eliminarse?","acceptedAnswer":{"@type":"Answer","text":"Las que violan políticas de Google: falsas, de no-clientes, difamatorias, de bots coordinados o parte de un ataque organizado."}},{"@type":"Question","name":"¿Se pueden eliminar reseñas negativas reales?","acceptedAnswer":{"@type":"Answer","text":"No. Las reseñas de clientes reales no se pueden eliminar solo por ser desfavorables."}},{"@type":"Question","name":"¿Cuánto tarda?","acceptedAnswer":{"@type":"Answer","text":"Entre 7 y 30 días por reseña. El proceso urgente tiene mayor prioridad."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://reputalia.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Rese\u00f1as falsas\", \"item\": \"https://reputalia.es/proteccion-reputacion/eliminar-resenas-falsas/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://prestior.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Rese\u00f1as falsas\", \"item\": \"https://prestior.es/proteccion-reputacion/eliminar-resenas-falsas/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

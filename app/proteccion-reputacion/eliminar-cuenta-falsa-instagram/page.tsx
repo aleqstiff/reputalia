@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Eliminar Cuenta Falsa en Instagram — Suplantación",
   description: "Bajamos perfiles falsos en Instagram, TikTok y YouTube que usan tu imagen o nombre. Proceso oficial. Sin contraseñas.",
-  alternates: { canonical: "https://reputalia.es/proteccion-reputacion/eliminar-cuenta-falsa-instagram/" },
+  alternates: { canonical: "https://prestior.es/proteccion-reputacion/eliminar-cuenta-falsa-instagram/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto tarda en bajarse una cuenta falsa?","acceptedAnswer":{"@type":"Answer","text":"Entre 48 horas y 2 semanas. Instagram y TikTok son más ágiles con suplantaciones documentadas."}},{"@type":"Question","name":"¿Necesitáis mi contraseña?","acceptedAnswer":{"@type":"Answer","text":"No. El proceso es completamente a través de los canales oficiales de denuncia de la plataforma."}},{"@type":"Question","name":"¿Qué pasa si la cuenta reaparece?","acceptedAnswer":{"@type":"Answer","text":"Incluimos seguimiento de 30 días tras la baja. Si reaparece, lo gestionamos sin coste adicional."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://reputalia.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Cuenta falsa\", \"item\": \"https://reputalia.es/proteccion-reputacion/eliminar-cuenta-falsa-instagram/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://prestior.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Cuenta falsa\", \"item\": \"https://prestior.es/proteccion-reputacion/eliminar-cuenta-falsa-instagram/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

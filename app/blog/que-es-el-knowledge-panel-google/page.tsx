@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Qué es el Knowledge Panel de Google y cómo conseguirlo en 2026",
   description: "El Knowledge Panel de Google es el recuadro de información que aparece al buscar una persona o empresa. Esta guía explica exactamente qué es, para qué sirve y cómo conseguirlo.",
   keywords: ["knowledge panel google", "panel conocimiento google", "cómo conseguir knowledge panel", "knowledge panel empresa", "knowledge panel persona"],
-  alternates: { canonical: "https://reputalia.es/blog/que-es-el-knowledge-panel-google/" },
+  alternates: { canonical: "https://prestior.es/blog/que-es-el-knowledge-panel-google/" },
   openGraph: {
     type: "article",
     title: "Qué es el Knowledge Panel de Google y cómo conseguirlo en 2026",
@@ -22,8 +22,8 @@ const articleSchema = {
   headline: "Qué es el Knowledge Panel de Google y cómo conseguirlo",
   description: "El Knowledge Panel de Google es el recuadro de información que aparece al buscar una persona o empresa. Esta guía explica exactamente qué es, para qué sirve y cómo conseguirlo.",
   datePublished: "2026-06-01",
-  publisher: { "@type": "Organization", "@id": "https://reputalia.es/#organization", name: "Reputalia" },
-  mainEntityOfPage: { "@type": "WebPage", "@id": "https://reputalia.es/blog/que-es-el-knowledge-panel-google/" },
+  publisher: { "@type": "Organization", "@id": "https://prestior.es/#organization", name: "Prestior" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://prestior.es/blog/que-es-el-knowledge-panel-google/" },
 };
 
 export default function Page() {

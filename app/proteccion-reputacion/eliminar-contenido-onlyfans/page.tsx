@@ -3,7 +3,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
-export const metadata: Metadata = { title: "Eliminar Contenido OnlyFans — DMCA — Reputalia", description: "Eliminar Contenido OnlyFans — DMCA. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://reputalia.es/proteccion-reputacion/eliminar-contenido-onlyfans//" } };
+export const metadata: Metadata = { title: "Eliminar Contenido OnlyFans — DMCA — Prestior", description: "Eliminar Contenido OnlyFans — DMCA. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://prestior.es/proteccion-reputacion/eliminar-contenido-onlyfans//" } };
 export default function Page() {
   return (
     <div className="min-h-screen bg-white">

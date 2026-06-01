@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Cómo salir en prensa siendo un desconocido: guía honesta 2026",
   description: "Salir en prensa es posible sin ser famoso. Esta guía explica exactamente cómo funciona el proceso real (no la versión vendehúmos) para aparecer en medios de forma editorial.",
   keywords: ["como salir en prensa", "aparecer en prensa sin ser famoso", "salir en medios", "relaciones con prensa", "aparecer en forbes"],
-  alternates: { canonical: "https://reputalia.es/blog/como-salir-en-prensa-sin-ser-famoso/" },
+  alternates: { canonical: "https://prestior.es/blog/como-salir-en-prensa-sin-ser-famoso/" },
   openGraph: {
     type: "article",
     title: "Cómo salir en prensa siendo un desconocido: guía honesta 2026",
@@ -22,8 +22,8 @@ const articleSchema = {
   headline: "Cómo salir en prensa siendo un desconocido (guía honesta)",
   description: "Salir en prensa es posible sin ser famoso. Esta guía explica exactamente cómo funciona el proceso real (no la versión vendehúmos) para aparecer en medios de forma editorial.",
   datePublished: "2026-06-01",
-  publisher: { "@type": "Organization", "@id": "https://reputalia.es/#organization", name: "Reputalia" },
-  mainEntityOfPage: { "@type": "WebPage", "@id": "https://reputalia.es/blog/como-salir-en-prensa-sin-ser-famoso/" },
+  publisher: { "@type": "Organization", "@id": "https://prestior.es/#organization", name: "Prestior" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://prestior.es/blog/como-salir-en-prensa-sin-ser-famoso/" },
 };
 
 export default function Page() {

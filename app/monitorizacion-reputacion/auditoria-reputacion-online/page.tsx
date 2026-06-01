@@ -7,7 +7,7 @@ import { Check, Search } from "lucide-react";
 export const metadata: Metadata = {
   title: "Auditoría de Reputación Online Gratuita — Análisis en 24 horas",
   description: "Solicita tu auditoría de reputación online gratuita. Analizamos qué aparece cuando buscan tu nombre y te decimos exactamente qué mejorar. Sin coste. Sin compromiso.",
-  alternates: { canonical: "https://reputalia.es/monitorizacion-reputacion/auditoria-reputacion-online/" },
+  alternates: { canonical: "https://prestior.es/monitorizacion-reputacion/auditoria-reputacion-online/" },
 };
 
 export default function Page() {
@@ -48,7 +48,7 @@ export default function Page() {
                 <input type="text" placeholder="URL de tu web o perfil principal" className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-500" />
                 <input type="email" placeholder="Tu correo electrónico" className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-500" />
                 <textarea rows={3} placeholder="¿Qué te preocupa de tu presencia online? (opcional)" className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-500 resize-none" />
-                <a href="mailto:hola@reputalia.es?subject=Solicitud de auditoría gratuita"
+                <a href="mailto:hola@prestior.es?subject=Solicitud de auditoría gratuita"
                   className="block w-full text-center py-3.5 rounded-xl font-bold text-sm transition"
                   style={{background:"#0f1729", color:"white"}}>
                   Solicitar auditoría gratuita →

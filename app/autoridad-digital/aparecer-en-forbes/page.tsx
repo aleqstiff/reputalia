@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Aparecer en Forbes — Artículo Editorial en Forbes Argentina",
   description: "Publicamos artículos editoriales en Forbes Argentina. Honesto: Forbes Argentina, no la edición global. Desde 2.900€.",
-  alternates: { canonical: "https://reputalia.es/autoridad-digital/aparecer-en-forbes/" },
+  alternates: { canonical: "https://prestior.es/autoridad-digital/aparecer-en-forbes/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Es Forbes de verdad?","acceptedAnswer":{"@type":"Answer","text":"Forbes Argentina es una edición con licencia de la marca Forbes, con redacción independiente. Es un medio real. No es Forbes global (EEUU). Siempre lo explicamos con exactitud."}},{"@type":"Question","name":"¿Es patrocinado o editorial?","acceptedAnswer":{"@type":"Answer","text":"Es artículo editorial, no publicitario. No aparece como BrandVoice ni contenido patrocinado."}},{"@type":"Question","name":"¿Para qué sirve concretamente?","acceptedAnswer":{"@type":"Answer","text":"Para tener un enlace verificable a Forbes que aparece en Google cuando buscan tu nombre. Facilita la creación del Knowledge Panel."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://reputalia.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Forbes\", \"item\": \"https://reputalia.es/autoridad-digital/aparecer-en-forbes/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://prestior.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Forbes\", \"item\": \"https://prestior.es/autoridad-digital/aparecer-en-forbes/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

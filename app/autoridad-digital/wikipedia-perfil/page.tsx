@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Perfiles Wiki de Autoridad — FoundersWiki, WikiAlpha, Crunchbase",
   description: "Creamos perfiles en wikis de autoridad: FoundersWiki, WikiAlpha, Crunchbase, IMDb. Honesto: no es Wikipedia. Pack desde 1.490€.",
-  alternates: { canonical: "https://reputalia.es/autoridad-digital/wikipedia-perfil/" },
+  alternates: { canonical: "https://prestior.es/autoridad-digital/wikipedia-perfil/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Por qué no Wikipedia?","acceptedAnswer":{"@type":"Answer","text":"Wikipedia tiene criterios de notabilidad muy estrictos y su contenido es editable por cualquiera. Los wikis de autoridad son más accesibles y reconocidos por Google."}},{"@type":"Question","name":"¿Qué incluye el pack?","acceptedAnswer":{"@type":"Answer","text":"FoundersWiki + WikiAlpha + Crunchbase + hasta 2 wikis adicionales según perfil."}},{"@type":"Question","name":"¿Para qué sirven?","acceptedAnswer":{"@type":"Answer","text":"Son las fuentes que Google usa para construir el Knowledge Panel. Sin ellas, activar el panel es muy difícil."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://reputalia.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Wikis\", \"item\": \"https://reputalia.es/autoridad-digital/wikipedia-perfil/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad\", \"item\": \"https://prestior.es/autoridad-digital/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Wikis\", \"item\": \"https://prestior.es/autoridad-digital/wikipedia-perfil/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

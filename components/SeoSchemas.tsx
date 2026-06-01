@@ -1,6 +1,6 @@
 // Centralized schema components — imported by every page
 
-const BASE = "https://reputalia.es";
+const BASE = "https://prestior.es";
 
 interface BreadcrumbItem { name: string; href: string }
 
@@ -29,7 +29,7 @@ export function ServiceSchema({
     name,
     description,
     url: `${BASE}${url}`,
-    provider: { "@type": "Organization", "@id": `${BASE}/#organization`, name: "Reputalia" },
+    provider: { "@type": "Organization", "@id": `${BASE}/#organization`, name: "Prestior" },
     areaServed: { "@type": "Country", name: areaServed === "ES" ? "Spain" : areaServed },
     ...(price ? { offers: { "@type": "Offer", price, priceCurrency: "EUR" } } : {}),
   };

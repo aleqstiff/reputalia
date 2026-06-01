@@ -3,7 +3,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
-export const metadata: Metadata = { title: "Eliminar Noticias Negativas en Google — Reputalia", description: "Eliminar Noticias Negativas en Google. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://reputalia.es/proteccion-reputacion/eliminar-noticias-google//" } };
+export const metadata: Metadata = { title: "Eliminar Noticias Negativas en Google — Prestior", description: "Eliminar Noticias Negativas en Google. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://prestior.es/proteccion-reputacion/eliminar-noticias-google//" } };
 export default function Page() {
   return (
     <div className="min-h-screen bg-white">

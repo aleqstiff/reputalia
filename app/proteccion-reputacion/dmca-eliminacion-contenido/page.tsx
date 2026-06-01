@@ -3,7 +3,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
-export const metadata: Metadata = { title: "DMCA — Eliminación de Contenido por Copyright — Reputalia", description: "DMCA — Eliminación de Contenido por Copyright. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://reputalia.es/proteccion-reputacion/dmca-eliminacion-contenido//" } };
+export const metadata: Metadata = { title: "DMCA — Eliminación de Contenido por Copyright — Prestior", description: "DMCA — Eliminación de Contenido por Copyright. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://prestior.es/proteccion-reputacion/dmca-eliminacion-contenido//" } };
 export default function Page() {
   return (
     <div className="min-h-screen bg-white">

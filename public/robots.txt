@@ -10,4 +10,4 @@ Allow: /
 User-agent: Anthropic-AI
 Allow: /
 
-Sitemap: https://reputalia.es/sitemap.xml
+Sitemap: https://prestior.es/sitemap.xml

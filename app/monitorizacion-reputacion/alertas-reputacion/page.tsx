@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Alertas de Reputación Online — Monitorización de Marca",
   description: "Sistema de alertas en tiempo real para tu nombre y marca. Detecta nuevas menciones y contenido negativo antes de que escale.",
-  alternates: { canonical: "https://reputalia.es/monitorizacion-reputacion/alertas-reputacion/" },
+  alternates: { canonical: "https://prestior.es/monitorizacion-reputacion/alertas-reputacion/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué plataformas monitoriza?","acceptedAnswer":{"@type":"Answer","text":"Google, Bing, noticias, foros, redes sociales principales, webs de reseñas y blogs."}},{"@type":"Question","name":"¿Puedo configurarlo yo mismo?","acceptedAnswer":{"@type":"Answer","text":"Sí, con Google Alerts gratuito puedes tener monitorización básica. El servicio profesional añade cobertura más amplia y protocolo de acción."}},{"@type":"Question","name":"¿Incluye gestión de las amenazas?","acceptedAnswer":{"@type":"Answer","text":"La gestión de amenazas detectadas está incluida en el plan de Protección Continua."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Monitorizaci\u00f3n\", \"item\": \"https://reputalia.es/monitorizacion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Alertas\", \"item\": \"https://reputalia.es/monitorizacion-reputacion/alertas-reputacion/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Monitorizaci\u00f3n\", \"item\": \"https://prestior.es/monitorizacion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Alertas\", \"item\": \"https://prestior.es/monitorizacion-reputacion/alertas-reputacion/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

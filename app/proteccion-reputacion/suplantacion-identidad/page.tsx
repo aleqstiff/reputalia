@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Suplantación de Identidad Online — Retirada Profesional",
   description: "Gestionamos la retirada de cuentas, webs y perfiles que se hacen pasar por ti o tu marca. Meta, TikTok, YouTube. Empresa registrada.",
-  alternates: { canonical: "https://reputalia.es/proteccion-reputacion/suplantacion-identidad/" },
+  alternates: { canonical: "https://prestior.es/proteccion-reputacion/suplantacion-identidad/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué plataformas cubrís?","acceptedAnswer":{"@type":"Answer","text":"Instagram, Facebook, TikTok, YouTube, X/Twitter, LinkedIn, webs y blogs."}},{"@type":"Question","name":"¿Cuánto tarda?","acceptedAnswer":{"@type":"Answer","text":"Entre 48 horas y 3 semanas. Las plataformas grandes son más ágiles con suplantaciones documentadas."}},{"@type":"Question","name":"¿Cómo prevenir que ocurra de nuevo?","acceptedAnswer":{"@type":"Answer","text":"Con la verificación del perfil oficial se reduce el riesgo significativamente."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://reputalia.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Suplantaci\u00f3n\", \"item\": \"https://reputalia.es/proteccion-reputacion/suplantacion-identidad/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://prestior.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Suplantaci\u00f3n\", \"item\": \"https://prestior.es/proteccion-reputacion/suplantacion-identidad/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

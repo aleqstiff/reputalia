@@ -6,9 +6,9 @@ import CtaBanner from "@/components/CtaBanner";
 import { Star } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Casos de Éxito — Reputalia",
+  title: "Casos de Éxito — Prestior",
   description: "Casos reales de gestión de reputación digital. Difamaciones retiradas, Knowledge Panels creados, apariciones en Forbes. Sin humo.",
-  alternates: { canonical: "https://reputalia.es/casos-de-exito/" },
+  alternates: { canonical: "https://prestior.es/casos-de-exito/" },
 };
 
 const CASOS = [

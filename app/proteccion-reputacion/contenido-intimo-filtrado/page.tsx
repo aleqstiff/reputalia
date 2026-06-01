@@ -7,7 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Eliminar Contenido Íntimo Filtrado — Gestión Urgente",
   description: "Gestión urgente de retirada de fotos y vídeos íntimos publicados sin consentimiento. DMCA, denuncias legales. Confidencialidad absoluta.",
-  alternates: { canonical: "https://reputalia.es/proteccion-reputacion/contenido-intimo-filtrado/" },
+  alternates: { canonical: "https://prestior.es/proteccion-reputacion/contenido-intimo-filtrado/" },
 };
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Es confidencial el proceso?","acceptedAnswer":{"@type":"Answer","text":"Sí, completamente. Toda la gestión se realiza con máxima discreción. No compartimos información con terceros."}},{"@type":"Question","name":"¿Hay urgencia real?","acceptedAnswer":{"@type":"Answer","text":"Sí. Cuanto antes se actúe, menos se propaga el contenido. Priorizamos para inicio el mismo día."}},{"@type":"Question","name":"¿Se elimina de todos lados?","acceptedAnswer":{"@type":"Answer","text":"De la mayoría de plataformas sí. Algunos sitios en jurisdicciones sin cooperación son más difíciles. Lo informamos antes de empezar."}}]};
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://reputalia.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://reputalia.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Contenido \u00edntimo\", \"item\": \"https://reputalia.es/proteccion-reputacion/contenido-intimo-filtrado/\"}]}"}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Protecci\u00f3n\", \"item\": \"https://prestior.es/proteccion-reputacion/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Contenido \u00edntimo\", \"item\": \"https://prestior.es/proteccion-reputacion/contenido-intimo-filtrado/\"}]}"}} />
       
       
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Cómo funciona el derecho al olvido en Google: guía completa 2026",
   description: "El derecho al olvido permite solicitar a Google que desindexe resultados. Esta guía explica exactamente cómo funciona, qué contenido se puede desindexar y el proceso paso a paso.",
   keywords: ["derecho al olvido google", "cómo funciona derecho olvido", "solicitar derecho olvido", "desindexar google", "RGPD derecho supresión"],
-  alternates: { canonical: "https://reputalia.es/blog/como-funciona-derecho-al-olvido-google/" },
+  alternates: { canonical: "https://prestior.es/blog/como-funciona-derecho-al-olvido-google/" },
   openGraph: {
     type: "article",
     title: "Cómo funciona el derecho al olvido en Google: guía completa 2026",
@@ -22,8 +22,8 @@ const articleSchema = {
   headline: "Cómo funciona el derecho al olvido en Google",
   description: "El derecho al olvido permite solicitar a Google que desindexe resultados. Esta guía explica exactamente cómo funciona, qué contenido se puede desindexar y el proceso paso a paso.",
   datePublished: "2026-06-01",
-  publisher: { "@type": "Organization", "@id": "https://reputalia.es/#organization", name: "Reputalia" },
-  mainEntityOfPage: { "@type": "WebPage", "@id": "https://reputalia.es/blog/como-funciona-derecho-al-olvido-google/" },
+  publisher: { "@type": "Organization", "@id": "https://prestior.es/#organization", name: "Prestior" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://prestior.es/blog/como-funciona-derecho-al-olvido-google/" },
 };
 
 export default function Page() {

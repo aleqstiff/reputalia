@@ -3,7 +3,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
-export const metadata: Metadata = { title: "Eliminar Web Falsa Difamatoria — Reputalia", description: "Eliminar Web Falsa Difamatoria. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://reputalia.es/proteccion-reputacion/eliminar-web-falsa//" } };
+export const metadata: Metadata = { title: "Eliminar Web Falsa Difamatoria — Prestior", description: "Eliminar Web Falsa Difamatoria. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://prestior.es/proteccion-reputacion/eliminar-web-falsa//" } };
 export default function Page() {
   return (
     <div className="min-h-screen bg-white">

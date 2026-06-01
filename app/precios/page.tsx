@@ -8,7 +8,7 @@ import { Check } from "lucide-react";
 export const metadata: Metadata = {
   title: "Precios — Gestión de Reputación Digital",
   description: "Precios transparentes para protección, construcción y blindaje de reputación digital. Paquetes desde 1.490€. Auditoría gratuita sin compromiso.",
-  alternates: { canonical: "https://reputalia.es/precios/" },
+  alternates: { canonical: "https://prestior.es/precios/" },
 };
 
 export default function PreciosPage() {

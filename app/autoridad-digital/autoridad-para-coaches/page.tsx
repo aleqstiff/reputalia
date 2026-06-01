@@ -3,7 +3,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
-export const metadata: Metadata = { title: "Autoridad Digital para Coaches e Infoproductores — Reputalia", description: "Autoridad Digital para Coaches e Infoproductores. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://reputalia.es/autoridad-digital/autoridad-para-coaches//" } };
+export const metadata: Metadata = { title: "Autoridad Digital para Coaches e Infoproductores — Prestior", description: "Autoridad Digital para Coaches e Infoproductores. Gestión profesional, contrato legal previo, análisis gratuito.", alternates: { canonical: "https://prestior.es/autoridad-digital/autoridad-para-coaches//" } };
 export default function Page() {
   return (
     <div className="min-h-screen bg-white">

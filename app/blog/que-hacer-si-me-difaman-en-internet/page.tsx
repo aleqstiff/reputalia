@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Qué hacer si te difaman en internet: guía práctica 2026",
   description: "Alguien publicó algo falso sobre ti en internet. Estos son los pasos exactos para actuar, las vías legales disponibles y cómo gestionar la retirada del contenido.",
   keywords: ["difamación internet", "me difaman en internet", "cómo actuar si te difaman", "eliminar difamación online", "calumnias en internet"],
-  alternates: { canonical: "https://reputalia.es/blog/que-hacer-si-me-difaman-en-internet/" },
+  alternates: { canonical: "https://prestior.es/blog/que-hacer-si-me-difaman-en-internet/" },
   openGraph: {
     type: "article",
     title: "Qué hacer si te difaman en internet: guía práctica 2026",
@@ -22,8 +22,8 @@ const articleSchema = {
   headline: "Qué hacer si te difaman en internet",
   description: "Alguien publicó algo falso sobre ti en internet. Estos son los pasos exactos para actuar, las vías legales disponibles y cómo gestionar la retirada del contenido.",
   datePublished: "2026-06-01",
-  publisher: { "@type": "Organization", "@id": "https://reputalia.es/#organization", name: "Reputalia" },
-  mainEntityOfPage: { "@type": "WebPage", "@id": "https://reputalia.es/blog/que-hacer-si-me-difaman-en-internet/" },
+  publisher: { "@type": "Organization", "@id": "https://prestior.es/#organization", name: "Prestior" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://prestior.es/blog/que-hacer-si-me-difaman-en-internet/" },
 };
 
 export default function Page() {
