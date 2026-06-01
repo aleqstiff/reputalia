@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0f1729;
+  --navy-mid: #1a2540;
+  --navy-light: #243152;
+  --gold: #c9a84c;
+  --gold-light: #e2c36e;
+  --stone: #f5f4f1;
+  --text: #1a1a2e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #fff;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
