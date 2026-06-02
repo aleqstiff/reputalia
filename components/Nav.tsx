@@ -1,130 +1,91 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
-const MENU = [
-  { label: "Protección", href: "/proteccion-reputacion/", items: [
-      { label: "Difamación online", href: "/proteccion-reputacion/difamacion-online/" },
-      { label: "Derecho al olvido", href: "/proteccion-reputacion/derecho-al-olvido/" },
-      { label: "Noticias negativas", href: "/proteccion-reputacion/eliminar-noticias-google/" },
-      { label: "Suplantación de identidad", href: "/proteccion-reputacion/suplantacion-identidad/" },
-      { label: "Contenido íntimo filtrado", href: "/proteccion-reputacion/contenido-intimo-filtrado/" },
-      { label: "Reseñas falsas Google", href: "/proteccion-reputacion/eliminar-resenas-falsas/" },
-    ]},
-  { label: "Autoridad", href: "/autoridad-digital/", items: [
-      { label: "Knowledge Panel Google", href: "/autoridad-digital/knowledge-panel-google/" },
-      { label: "Aparecer en Forbes", href: "/autoridad-digital/aparecer-en-forbes/" },
-      { label: "Salir en prensa", href: "/autoridad-digital/salir-en-prensa/" },
-      { label: "Marca personal", href: "/autoridad-digital/marca-personal-google/" },
-      { label: "Reputación en IA (GEO)", href: "/autoridad-digital/reputacion-ia-geo/" },
-    ]},
-  { label: "Blindaje", href: "/monitorizacion-reputacion/", items: [
-      { label: "Monitorización continua", href: "/monitorizacion-reputacion/proteccion-continua-marca/" },
-      { label: "Auditoría gratuita", href: "/monitorizacion-reputacion/auditoria-reputacion-online/" },
-    ]},
-  { label: "Resultados", href: "/casos-de-exito/", items: [] },
-  { label: "Precios", href: "/precios/", items: [] },
+const LINKS = [
+  { label: "Protección", href: "/proteccion-reputacion/" },
+  { label: "Autoridad", href: "/autoridad-digital/" },
+  { label: "Resultados", href: "/casos-de-exito/" },
+  { label: "Precios", href: "/precios/" },
 ];
+
+const C = {
+  bg:  "#04070f",
+  t1:  "#eef0f4",
+  t3:  "rgba(238,240,244,0.35)",
+  bdr: "rgba(255,255,255,0.07)",
+  gold: "#c9a84c",
+};
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 30);
+    const fn = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-500 ${scrolled ? "nav-blur shadow-2xl shadow-black/30" : "bg-transparent"}`}>
-      <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <nav style={{
+      position: "sticky", top: 0, zIndex: 50,
+      background: scrolled ? "rgba(4,7,15,0.95)" : C.bg,
+      backdropFilter: scrolled ? "blur(20px)" : "none",
+      borderBottom: `1px solid ${C.bdr}`,
+      transition: "background 0.3s",
+    }}>
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "0 24px", height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8">
-            <div className="absolute inset-0 rounded-lg opacity-50 group-hover:opacity-80 transition-opacity"
-              style={{ background: "linear-gradient(135deg,rgba(201,168,76,0.5),rgba(100,160,255,0.3))", filter: "blur(6px)" }} />
-            <div className="relative w-8 h-8 rounded-lg flex items-center justify-center"
-              style={{ background: "linear-gradient(135deg,#0c1422,#070d1a)", border: "1px solid rgba(201,168,76,0.3)" }}>
-              <span className="text-sm font-black font-display text-gradient">P</span>
-            </div>
-          </div>
-          <span className="font-display font-bold text-lg text-white tracking-tight">Prestior</span>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+          <span style={{ width: 6, height: 28, background: C.gold, borderRadius: 3, flexShrink: 0 }} />
+          <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 17, color: C.t1, letterSpacing: "-0.01em" }}>Prestior</span>
         </Link>
 
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-0.5">
-          {MENU.map(item => (
-            <div key={item.label} className="relative"
-              onMouseEnter={() => item.items.length ? setActive(item.label) : null}
-              onMouseLeave={() => setActive(null)}>
-              <Link href={item.href}
-                className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium transition-colors rounded-lg"
-                style={{ color: "rgba(238,240,244,0.6)", fontFamily: "DM Sans, sans-serif" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#eef0f4")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(238,240,244,0.6)")}>
-                {item.label}
-                {item.items.length > 0 && <ChevronDown className="w-3 h-3 opacity-50" />}
-              </Link>
-              {item.items.length > 0 && active === item.label && (
-                <div className="absolute top-full left-0 mt-2 py-1.5 z-50 min-w-[220px] rounded-2xl"
-                  style={{ background: "rgba(7,13,26,0.95)", backdropFilter: "blur(20px)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 24px 60px rgba(0,0,0,0.6)" }}>
-                  {item.items.map(sub => (
-                    <Link key={sub.href} href={sub.href}
-                      className="block px-4 py-2.5 text-sm transition-colors"
-                      style={{ color: "rgba(238,240,244,0.5)", fontFamily: "DM Sans, sans-serif" }}
-                      onMouseEnter={e => { e.currentTarget.style.color = "#eef0f4"; e.currentTarget.style.background = "rgba(255,255,255,0.04)"; }}
-                      onMouseLeave={e => { e.currentTarget.style.color = "rgba(238,240,244,0.5)"; e.currentTarget.style.background = "transparent"; }}>
-                      {sub.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+        {/* Desktop links */}
+        <div style={{ display: "flex", alignItems: "center", gap: 32 }} className="hidden-mobile">
+          {LINKS.map(l => (
+            <Link key={l.href} href={l.href} style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: C.t3, textDecoration: "none", letterSpacing: "0.04em", transition: "color 0.2s" }}
+              onMouseEnter={e => (e.currentTarget.style.color = C.t1)}
+              onMouseLeave={e => (e.currentTarget.style.color = C.t3)}>
+              {l.label}
+            </Link>
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
-          <Link href="/contacto/"
-            className="text-sm font-medium transition-colors"
-            style={{ color: "rgba(238,240,244,0.5)", fontFamily: "DM Sans, sans-serif" }}
-            onMouseEnter={e => (e.currentTarget.style.color = "#eef0f4")}
-            onMouseLeave={e => (e.currentTarget.style.color = "rgba(238,240,244,0.5)")}>
+        {/* Desktop CTA */}
+        <div className="hidden-mobile">
+          <Link href="/contacto/" style={{ fontFamily: "'Syne', sans-serif", fontWeight: 600, fontSize: 13, color: C.bg, background: C.t1, padding: "8px 18px", borderRadius: 6, textDecoration: "none", letterSpacing: "0.01em" }}>
             Contacto
-          </Link>
-          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-primary text-sm">
-            Auditoría gratuita
           </Link>
         </div>
 
-        <button className="md:hidden p-1.5 rounded-lg transition-colors"
-          style={{ color: "rgba(238,240,244,0.7)" }}
-          onClick={() => setOpen(!open)}>
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        {/* Mobile hamburger */}
+        <button onClick={() => setOpen(!open)} style={{ background: "none", border: "none", color: C.t3, cursor: "pointer", padding: 4, display: "none" }} className="show-mobile">
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
+      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden px-5 pb-5 pt-2 space-y-1 nav-blur">
-          {MENU.map(item => (
-            <div key={item.label}>
-              <Link href={item.href} onClick={() => setOpen(false)}
-                className="block py-2.5 text-sm font-semibold text-white font-display">{item.label}</Link>
-              {item.items.map(sub => (
-                <Link key={sub.href} href={sub.href} onClick={() => setOpen(false)}
-                  className="block py-2 pl-4 text-sm"
-                  style={{ color: "rgba(238,240,244,0.45)" }}>{sub.label}</Link>
-              ))}
-            </div>
+        <div style={{ background: C.bg, borderTop: `1px solid ${C.bdr}`, padding: "20px 24px 28px" }}>
+          {LINKS.map(l => (
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
+              style={{ display: "block", padding: "14px 0", fontFamily: "'DM Mono', monospace", fontSize: 13, color: C.t3, textDecoration: "none", borderBottom: `1px solid ${C.bdr}`, letterSpacing: "0.04em" }}>
+              {l.label}
+            </Link>
           ))}
-          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/"
-            onClick={() => setOpen(false)} className="btn-primary mt-3 w-full justify-center text-sm">
-            Auditoría gratuita
+          <Link href="/contacto/" onClick={() => setOpen(false)} style={{ display: "block", marginTop: 20, textAlign: "center", padding: "13px", background: C.t1, color: C.bg, borderRadius: 6, textDecoration: "none", fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 14 }}>
+            Contacto
           </Link>
         </div>
       )}
+
+      <style>{`
+        @media (min-width: 640px) { .hidden-mobile { display: flex; } .show-mobile { display: none !important; } }
+        @media (max-width: 639px) { .hidden-mobile { display: none !important; } .show-mobile { display: block !important; } }
+      `}</style>
     </nav>
   );
 }

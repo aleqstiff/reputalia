@@ -2,321 +2,220 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { Shield, TrendingUp, Eye, Check, Lock, ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Prestior — Gestión de Reputación y Autoridad Digital en España",
-  description: "Controlamos lo que el mundo ve cuando busca tu nombre. Protección, autoridad y blindaje digital. Empresa española registrada. Confidencial.",
+  title: "Prestior — Cuando tu reputación no admite errores",
+  description: "Firma especializada en protección, construcción y blindaje de reputación digital. Directivos, marcas personales y empresas. Confidencial.",
   alternates: { canonical: "https://prestior.es/" },
 };
 
-const G = {
-  bg:    "#04070f",
-  bg2:   "#070d1a",
-  gold:  "#c9a84c",
-  gold2: "#e8ca6e",
-  card:  "rgba(255,255,255,0.04)",
-  cardB: "rgba(255,255,255,0.07)",
-  bdr:   "rgba(255,255,255,0.07)",
-  bdrH:  "rgba(255,255,255,0.14)",
-  t1:    "#eef0f4",
-  t2:    "rgba(238,240,244,0.55)",
-  t3:    "rgba(238,240,244,0.35)",
-  t4:    "rgba(238,240,244,0.22)",
+const C = {
+  bg:   "#04070f",
+  bg2:  "#070d1a",
+  gold: "#c9a84c",
+  t1:   "#eef0f4",
+  t2:   "rgba(238,240,244,0.55)",
+  t3:   "rgba(238,240,244,0.3)",
+  t4:   "rgba(238,240,244,0.15)",
+  bdr:  "rgba(255,255,255,0.07)",
 };
+
+const s = (x: object) => x as React.CSSProperties;
 
 export default function Home() {
   return (
-    <div style={{ background: G.bg, minHeight: "100vh", color: G.t1, fontFamily: "'DM Sans', system-ui, sans-serif" }}>
+    <div style={s({ background: C.bg, color: C.t1, fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: "100vh" })}>
       <Nav />
 
-      {/* ══ HERO ══════════════════════════════════ */}
-      <section style={{ background: G.bg, padding: "48px 20px 56px" }}>
-        <div style={{ maxWidth: 640, margin: "0 auto" }}>
+      {/* ════════════════════════════════════════════
+          HERO — editorial, sin decoración
+      ════════════════════════════════════════════ */}
+      <section style={s({ borderBottom: `1px solid ${C.bdr}` })}>
+        <div style={s({ maxWidth: 860, margin: "0 auto", padding: "64px 24px 72px" })}>
 
-          {/* Badge */}
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 6,
-            background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.25)",
-            borderRadius: 999, padding: "5px 14px", marginBottom: 24,
-            fontSize: 11, fontFamily: "'DM Mono', monospace", letterSpacing: "0.08em",
-            textTransform: "uppercase", color: G.gold2
-          }}>
-            Empresa registrada · Contrato previo · Confidencial
-          </div>
+          {/* Línea dorada — firma de autoridad */}
+          <div style={s({ width: 48, height: 3, background: C.gold, marginBottom: 40 })} />
 
-          {/* H1 */}
-          <h1 style={{
-            fontFamily: "'Syne', sans-serif", fontWeight: 800,
-            fontSize: "clamp(2rem, 8vw, 3.8rem)",
-            lineHeight: 1.08, marginBottom: 20, color: G.t1
-          }}>
-            Gestión de reputación digital.{" "}
-            <span style={{
-              background: `linear-gradient(135deg, ${G.gold}, ${G.gold2})`,
-              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-              backgroundClip: "text"
-            }}>Sin humo.</span>
+          <h1 style={s({
+            fontFamily: "'Syne', sans-serif",
+            fontWeight: 800,
+            fontSize: "clamp(2.6rem, 7vw, 5.2rem)",
+            lineHeight: 1.04,
+            letterSpacing: "-0.02em",
+            color: C.t1,
+            marginBottom: 32,
+            maxWidth: 780,
+          })}>
+            Cuando tu reputación<br />
+            no admite errores.
           </h1>
 
-          <p style={{ fontSize: 17, lineHeight: 1.75, color: G.t2, marginBottom: 32, fontWeight: 300 }}>
-            Eliminamos lo que te daña, construimos tu autoridad en Google y medios,
-            y te blindamos ante amenazas futuras. Proceso 100% legal. Empresa española.
+          <p style={s({
+            fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
+            lineHeight: 1.75,
+            color: C.t2,
+            maxWidth: 580,
+            marginBottom: 48,
+            fontWeight: 300,
+          })}>
+            Protegemos lo que has construido. Cuando la presión es alta y los riesgos
+            mayores, directivos, marcas personales y empresas confían en nosotros.
           </p>
 
-          {/* CTAs */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 32 }}>
-            <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" style={{
-              display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-              background: `linear-gradient(135deg, ${G.gold}, ${G.gold2})`,
-              color: G.bg, fontFamily: "'Syne', sans-serif", fontWeight: 700,
-              fontSize: 15, padding: "14px 28px", borderRadius: 10, textDecoration: "none"
-            }}>
-              Auditoría gratuita <ArrowRight size={16} />
+          <div style={s({ display: "flex", flexWrap: "wrap", gap: 12 })}>
+            <Link href="/contacto/" style={s({
+              display: "inline-flex", alignItems: "center", gap: 8,
+              background: C.t1, color: C.bg,
+              fontFamily: "'Syne', sans-serif", fontWeight: 700,
+              fontSize: 15, padding: "14px 28px", borderRadius: 8,
+              textDecoration: "none", letterSpacing: "0.01em",
+            })}>
+              Hablar con nosotros <ArrowRight size={16} />
             </Link>
-            <Link href="/precios/" style={{
-              display: "flex", alignItems: "center", justifyContent: "center",
-              background: "transparent", color: G.t2, fontFamily: "'Syne', sans-serif",
-              fontWeight: 600, fontSize: 15, padding: "14px 28px", borderRadius: 10,
-              border: `1px solid ${G.bdr}`, textDecoration: "none"
-            }}>
-              Ver precios
+            <Link href="/casos-de-exito/" style={s({
+              display: "inline-flex", alignItems: "center",
+              color: C.t3, fontFamily: "'DM Mono', monospace",
+              fontSize: 13, padding: "14px 0", textDecoration: "none",
+              borderBottom: `1px solid ${C.t4}`, letterSpacing: "0.04em",
+            })}>
+              Ver resultados →
             </Link>
           </div>
-
-          {/* Trust pills */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-            {["✓ Proceso legal", "🔒 Confidencial", "📋 Contrato previo", "🇪🇸 Empresa española"].map(t => (
-              <span key={t} style={{
-                fontSize: 12, padding: "6px 12px", borderRadius: 999,
-                background: "rgba(255,255,255,0.04)", border: `1px solid ${G.bdr}`, color: G.t3
-              }}>{t}</span>
-            ))}
-          </div>
-        </div>
-
-        {/* Form card */}
-        <div style={{
-          maxWidth: 480, margin: "40px auto 0",
-          background: "linear-gradient(135deg, rgba(201,168,76,0.08), rgba(100,160,255,0.04))",
-          border: "1px solid rgba(201,168,76,0.2)", borderRadius: 20,
-          padding: "24px 20px"
-        }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-            <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#4ade80", display: "inline-block" }} />
-            <span style={{ fontSize: 12, color: G.t4, fontFamily: "'DM Mono', monospace" }}>Respuesta en 24h</span>
-          </div>
-          <p style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 18, color: G.t1, marginBottom: 4 }}>
-            Auditoría gratuita
-          </p>
-          <p style={{ fontSize: 14, color: G.t3, marginBottom: 20, fontWeight: 300 }}>
-            Analizamos qué aparece en Google, IA y medios. Sin coste.
-          </p>
-          {[
-            { ph: "Nombre completo o marca", t: "text" },
-            { ph: "Correo electrónico", t: "email" },
-            { ph: "URL de tu web o perfil", t: "text" },
-          ].map(({ ph, t }) => (
-            <input key={ph} type={t} placeholder={ph} style={{
-              display: "block", width: "100%", marginBottom: 10,
-              padding: "12px 14px", background: "rgba(255,255,255,0.05)",
-              border: `1px solid ${G.bdr}`, borderRadius: 10,
-              color: G.t1, fontSize: 14, fontFamily: "inherit", outline: "none",
-              boxSizing: "border-box"
-            }} />
-          ))}
-          <a href="mailto:hola@prestior.es?subject=Auditoría gratuita" style={{
-            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-            background: `linear-gradient(135deg, ${G.gold}, ${G.gold2})`,
-            color: G.bg, fontFamily: "'Syne', sans-serif", fontWeight: 700,
-            fontSize: 14, padding: "13px", borderRadius: 10, textDecoration: "none",
-            marginBottom: 12
-          }}>
-            Solicitar análisis gratuito →
-          </a>
-          <p style={{ textAlign: "center", fontSize: 11, color: G.t4, fontFamily: "'DM Mono', monospace" }}>
-            🔒 Confidencial · Sin compromiso
-          </p>
         </div>
       </section>
 
-      {/* ══ STATS ══════════════════════════════════ */}
-      <div style={{ background: G.bg2, borderTop: `1px solid ${G.bdr}`, borderBottom: `1px solid ${G.bdr}` }}>
-        <div style={{ maxWidth: 700, margin: "0 auto", padding: "20px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 4 }}>
-          {[["100+","Casos resueltos"],["48h","Primera respuesta"],["100%","Confidencialidad"],["3","Silos de servicio"]].map(([n,l]) => (
-            <div key={l} style={{ textAlign: "center", padding: "16px 8px" }}>
-              <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 28, color: G.t1 }}>{n}</div>
-              <div style={{ fontSize: 11, color: G.t4, fontFamily: "'DM Mono', monospace", marginTop: 4 }}>{l}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ══ SERVICIOS ══════════════════════════════ */}
-      <section style={{ background: G.bg, padding: "48px 20px" }}>
-        <div style={{ maxWidth: 640, margin: "0 auto" }}>
-          <p style={{ textAlign: "center", fontSize: 11, color: G.gold, fontFamily: "'DM Mono', monospace", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 12 }}>
-            — Servicios —
+      {/* ════════════════════════════════════════════
+          CUÁNDO NOS LLAMAN — el dolor del cliente
+      ════════════════════════════════════════════ */}
+      <section style={s({ borderBottom: `1px solid ${C.bdr}` })}>
+        <div style={s({ maxWidth: 860, margin: "0 auto", padding: "56px 24px" })}>
+          <p style={s({ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.gold, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 40 })}>
+            Cuándo nos llaman
           </p>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "clamp(1.7rem,6vw,2.6rem)", textAlign: "center", marginBottom: 8, color: G.t1 }}>
-            Tres fases.{" "}
-            <span style={{ background: `linear-gradient(135deg,${G.gold},${G.gold2})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Un resultado.
-            </span>
-          </h2>
-          <p style={{ textAlign: "center", color: G.t3, fontSize: 15, marginBottom: 36, fontWeight: 300 }}>
-            Proteger lo que daña, construir lo que impulsa, mantener lo que funciona.
-          </p>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            {/* Protección */}
-            <div style={{ background: G.card, border: `1px solid ${G.bdr}`, borderRadius: 16, padding: "24px 20px" }}>
-              <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(100,160,255,0.08)", border: "1px solid rgba(100,160,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
-                <Shield size={20} color="#60a5fa" />
-              </div>
-              <p style={{ fontSize: 11, color: G.t4, fontFamily: "'DM Mono', monospace", marginBottom: 4 }}>Desde 690€</p>
-              <h3 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 20, color: G.t1, marginBottom: 10 }}>Protección</h3>
-              <p style={{ fontSize: 14, color: G.t2, lineHeight: 1.7, marginBottom: 16, fontWeight: 300 }}>
-                Difamación, derecho al olvido, contenido íntimo filtrado, cuentas falsas, reseñas ilegítimas.
-              </p>
-              <Link href="/proteccion-reputacion/" style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 14, fontWeight: 600, color: G.gold, textDecoration: "none" }}>
-                Ver servicios <ChevronRight size={16} />
-              </Link>
-            </div>
-
-            {/* Autoridad — destacada */}
-            <div style={{ background: "linear-gradient(135deg,rgba(201,168,76,0.1),rgba(100,160,255,0.04))", border: "1px solid rgba(201,168,76,0.25)", borderRadius: 16, padding: "24px 20px", position: "relative" }}>
-              <div style={{ position: "absolute", top: 16, right: 16, background: "rgba(201,168,76,0.12)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: 999, padding: "3px 10px", fontSize: 10, color: G.gold2, fontFamily: "'DM Mono', monospace", letterSpacing: "0.06em" }}>
-                ★ Más vendido
-              </div>
-              <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
-                <TrendingUp size={20} color={G.gold} />
-              </div>
-              <p style={{ fontSize: 11, color: G.t4, fontFamily: "'DM Mono', monospace", marginBottom: 4 }}>Desde 390€</p>
-              <h3 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 20, color: G.t1, marginBottom: 10 }}>Autoridad</h3>
-              <p style={{ fontSize: 14, color: G.t2, lineHeight: 1.7, marginBottom: 16, fontWeight: 300 }}>
-                Knowledge Panel, Forbes editorial, wikis de autoridad, marca personal, reputación en IA.
-              </p>
-              <Link href="/autoridad-digital/" style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 14, fontWeight: 600, color: G.gold, textDecoration: "none" }}>
-                Ver servicios <ChevronRight size={16} />
-              </Link>
-            </div>
-
-            {/* Blindaje */}
-            <div style={{ background: G.card, border: `1px solid ${G.bdr}`, borderRadius: 16, padding: "24px 20px" }}>
-              <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(40,200,180,0.08)", border: "1px solid rgba(40,200,180,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
-                <Eye size={20} color="#34d399" />
-              </div>
-              <p style={{ fontSize: 11, color: G.t4, fontFamily: "'DM Mono', monospace", marginBottom: 4 }}>Desde 197€/mes</p>
-              <h3 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 20, color: G.t1, marginBottom: 10 }}>Blindaje</h3>
-              <p style={{ fontSize: 14, color: G.t2, lineHeight: 1.7, marginBottom: 16, fontWeight: 300 }}>
-                Monitorización continua, alertas tempranas y reacción antes de que el daño escale.
-              </p>
-              <Link href="/monitorizacion-reputacion/" style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 14, fontWeight: 600, color: "#34d399", textDecoration: "none" }}>
-                Ver servicio <ChevronRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══ PAQUETES ══════════════════════════════ */}
-      <section style={{ background: G.bg2, padding: "48px 20px", borderTop: `1px solid ${G.bdr}` }}>
-        <div style={{ maxWidth: 640, margin: "0 auto" }}>
-          <p style={{ textAlign: "center", fontSize: 11, color: G.gold, fontFamily: "'DM Mono', monospace", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 12 }}>— Inversión —</p>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "clamp(1.7rem,6vw,2.6rem)", textAlign: "center", color: G.t1, marginBottom: 8 }}>Tres opciones.</h2>
-          <p style={{ textAlign: "center", fontSize: 15, color: G.t3, marginBottom: 36, fontWeight: 300 }}>El cerebro elige el del medio — donde está el mayor valor.</p>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div style={s({ display: "grid", gridTemplateColumns: "1fr", gap: 0 })}>
             {[
-              { n:"PRESENCIA", p:"1.490€", d:"Para empezar a controlar cómo apareces en Google.", items:["Knowledge Panel personal","1-2 medios de entrada","Optimización nombre en Google"], hot:false },
-              { n:"AUTORIDAD", p:"3.900€", d:"Autoridad documentada, verificable y duradera.", items:["Knowledge Panel personal","Pack wikis de autoridad","Forbes Argentina editorial","Posicionamiento Google + IA","Informe mensual"], hot:true },
-              { n:"DOMINIO", p:"9.900€", d:"Domina tu espacio a nivel internacional.", items:["Todo AUTORIDAD incluido","Pack medios top (NYPost, BBC, Wired)","Gestión continua 3 meses"], hot:false },
-            ].map(({ n, p, d, items, hot }) => (
-              <div key={n} style={{
-                background: hot ? "linear-gradient(135deg,rgba(201,168,76,0.1),rgba(100,160,255,0.04))" : G.card,
-                border: hot ? "1px solid rgba(201,168,76,0.3)" : `1px solid ${G.bdr}`,
-                borderRadius: 16, padding: "24px 20px"
-              }}>
-                {hot && (
-                  <div style={{ textAlign: "center", marginBottom: 16 }}>
-                    <span style={{ background: "rgba(201,168,76,0.12)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: 999, padding: "4px 12px", fontSize: 11, color: G.gold2, fontFamily: "'DM Mono', monospace" }}>★ Más contratado</span>
-                  </div>
-                )}
-                <p style={{ fontSize: 11, color: G.t4, fontFamily: "'DM Mono', monospace", marginBottom: 4 }}>{n}</p>
-                <p style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 32, color: G.t1, marginBottom: 6 }}>{p}</p>
-                <p style={{ fontSize: 14, color: G.t3, marginBottom: 20, fontWeight: 300 }}>{d}</p>
-                <ul style={{ listStyle: "none", padding: 0, marginBottom: 24 }}>
-                  {items.map(i => (
-                    <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 10, fontSize: 14, color: G.t2 }}>
-                      <Check size={15} color="#4ade80" style={{ flexShrink: 0, marginTop: 2 }} />{i}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/contacto/" style={{
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  background: hot ? `linear-gradient(135deg,${G.gold},${G.gold2})` : "transparent",
-                  color: hot ? G.bg : G.t2,
-                  border: hot ? "none" : `1px solid ${G.bdr}`,
-                  fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 14,
-                  padding: "13px", borderRadius: 10, textDecoration: "none"
-                }}>
-                  Solicitar información →
-                </Link>
+              ["Un artículo falso aparece primero cuando buscan tu nombre en Google.", "Desindexación"],
+              ["Alguien ha creado una cuenta haciéndose pasar por ti.", "Suplantación"],
+              ["Necesitas que Google muestre quién eres realmente antes de un lanzamiento.", "Autoridad"],
+              ["Reseñas coordinadas están hundiendo la valoración de tu negocio.", "Protección"],
+              ["Un competidor está difamándote con contenido que no puedes dejar ahí.", "Difamación"],
+              ["ChatGPT describe tu empresa de forma incorrecta o dañina.", "IA / GEO"],
+            ].map(([text, tag], i) => (
+              <div key={i} style={s({
+                display: "flex", alignItems: "flex-start", justifyContent: "space-between",
+                padding: "22px 0", gap: 20,
+                borderBottom: i < 5 ? `1px solid ${C.bdr}` : "none",
+              })}>
+                <p style={s({ fontSize: "clamp(0.95rem, 2vw, 1.05rem)", color: C.t2, lineHeight: 1.6, fontWeight: 300, flex: 1 })}>
+                  {text}
+                </p>
+                <span style={s({
+                  fontFamily: "'DM Mono', monospace", fontSize: 10,
+                  color: C.gold, letterSpacing: "0.08em", textTransform: "uppercase",
+                  flexShrink: 0, paddingTop: 4, textAlign: "right",
+                  minWidth: 90,
+                })}>
+                  {tag}
+                </span>
               </div>
             ))}
           </div>
-          <p style={{ textAlign: "center", fontSize: 12, color: G.t4, marginTop: 20, fontFamily: "'DM Mono', monospace" }}>
-            Presupuesto personalizado · IVA no incluido ·{" "}
-            <Link href="/precios/" style={{ color: G.t3, textDecoration: "underline" }}>Ver todos los precios →</Link>
-          </p>
         </div>
       </section>
 
-      {/* ══ CASOS ══════════════════════════════════ */}
-      <section style={{ background: G.bg, padding: "48px 20px", borderTop: `1px solid ${G.bdr}` }}>
-        <div style={{ maxWidth: 640, margin: "0 auto" }}>
-          <p style={{ fontSize: 11, color: G.gold, fontFamily: "'DM Mono', monospace", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 12 }}>— Resultados —</p>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "clamp(1.7rem,6vw,2.4rem)", color: G.t1, marginBottom: 32 }}>Sin humo.</h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {/* ════════════════════════════════════════════
+          RESULTADOS — hechos, no promesas
+      ════════════════════════════════════════════ */}
+      <section style={s({ background: C.bg2, borderBottom: `1px solid ${C.bdr}` })}>
+        <div style={s({ maxWidth: 860, margin: "0 auto", padding: "56px 24px" })}>
+          <p style={s({ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.gold, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 40 })}>
+            Resultados recientes
+          </p>
+          <div style={s({ display: "grid", gridTemplateColumns: "1fr", gap: 0 })}>
             {[
-              { cat:"Protección", t:"Artículo difamatorio en top 1 de Google 3 años", r:"Desindexado en 4 semanas" },
-              { cat:"Autoridad", t:"Coach sin presencia — lanzamiento de infoproducto", r:"€80K en ventas" },
-              { cat:"Protección", t:"Influencer con cuenta falsa 2 meses", r:"Cuenta eliminada en 48h" },
-              { cat:"Protección", t:"7 reseñas falsas de ex-empleado", r:"Las 7 eliminadas en 3 semanas" },
-            ].map((c, i) => (
-              <div key={i} style={{ background: G.card, border: `1px solid ${G.bdr}`, borderRadius: 16, padding: "20px" }}>
-                <span style={{ fontSize: 10, color: G.gold2, background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)", borderRadius: 999, padding: "3px 10px", fontFamily: "'DM Mono', monospace", letterSpacing: "0.06em", display: "inline-block", marginBottom: 10 }}>{c.cat}</span>
-                <p style={{ fontSize: 14, fontWeight: 600, color: G.t1, marginBottom: 10 }}>{c.t}</p>
-                <span style={{ fontSize: 12, color: "#4ade80", background: "rgba(74,222,128,0.08)", border: "1px solid rgba(74,222,128,0.2)", borderRadius: 999, padding: "4px 10px" }}>{c.r}</span>
+              { stat: "4 semanas", desc: "Artículo difamatorio desindexado de Google. CEO de empresa tech, Madrid." },
+              { stat: "48 horas", desc: "Cuenta de suplantación eliminada en Instagram. Influencer, 180K seguidores." },
+              { stat: "€80K", desc: "Generados en lanzamiento tras construir Knowledge Panel + Forbes editorial." },
+              { stat: "7 de 7", desc: "Reseñas falsas coordinadas eliminadas de Google. Clínica dental, Valencia." },
+            ].map(({ stat, desc }, i) => (
+              <div key={i} style={s({
+                display: "grid", gridTemplateColumns: "100px 1fr", gap: 24,
+                alignItems: "flex-start", padding: "26px 0",
+                borderBottom: i < 3 ? `1px solid ${C.bdr}` : "none",
+              })}>
+                <span style={s({
+                  fontFamily: "'Syne', sans-serif", fontWeight: 800,
+                  fontSize: "clamp(1.5rem, 4vw, 2rem)", color: C.t1, lineHeight: 1,
+                })}>
+                  {stat}
+                </span>
+                <p style={s({ fontSize: 15, color: C.t2, lineHeight: 1.65, fontWeight: 300, paddingTop: 4 })}>
+                  {desc}
+                </p>
               </div>
             ))}
           </div>
-          <div style={{ textAlign: "center", marginTop: 24 }}>
-            <Link href="/casos-de-exito/" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 14, fontWeight: 600, color: G.t3, textDecoration: "none", border: `1px solid ${G.bdr}`, borderRadius: 10, padding: "10px 20px" }}>
+          <div style={s({ marginTop: 36 })}>
+            <Link href="/casos-de-exito/" style={s({
+              fontFamily: "'DM Mono', monospace", fontSize: 12, color: C.t3,
+              textDecoration: "none", letterSpacing: "0.06em",
+              borderBottom: `1px solid ${C.bdr}`, paddingBottom: 2,
+            })}>
               Ver todos los casos →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ══ DIFERENCIADORES ════════════════════════ */}
-      <section style={{ background: G.bg2, padding: "48px 20px", borderTop: `1px solid ${G.bdr}` }}>
-        <div style={{ maxWidth: 640, margin: "0 auto" }}>
-          <p style={{ fontSize: 11, color: G.gold, fontFamily: "'DM Mono', monospace", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 12 }}>— Por qué elegirnos —</p>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "clamp(1.5rem,5vw,2.2rem)", color: G.t1, marginBottom: 28 }}>Lo que nos separa del mercado del humo.</h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+      {/* ════════════════════════════════════════════
+          SERVICIOS — editorial, sin cards
+      ════════════════════════════════════════════ */}
+      <section style={s({ borderBottom: `1px solid ${C.bdr}` })}>
+        <div style={s({ maxWidth: 860, margin: "0 auto", padding: "56px 24px" })}>
+          <p style={s({ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.gold, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 40 })}>
+            Cómo trabajamos
+          </p>
+          <div style={s({ display: "grid", gridTemplateColumns: "1fr", gap: 0 })}>
             {[
-              { e:"📋", t:"Contrato antes de empezar", d:"Firmamos antes de que pagues. Servicio, plazos y garantías por escrito." },
-              { e:"🔒", t:"Confidencialidad absoluta", d:"Nunca revelamos clientes ni casos. Discreción total." },
-              { e:"✅", t:"Honestidad sobre cada servicio", d:"Forbes Argentina no es Forbes global. Un wiki de autoridad no es Wikipedia. Siempre." },
-              { e:"🏛️", t:"Empresa registrada en España", d:"CIF disponible bajo solicitud. Actividad 100% legal." },
-            ].map(({ e, t, d }) => (
-              <div key={t} style={{ background: G.card, border: `1px solid ${G.bdr}`, borderRadius: 14, padding: "16px 18px", display: "flex", gap: 14, alignItems: "flex-start" }}>
-                <span style={{ fontSize: 22, flexShrink: 0 }}>{e}</span>
+              {
+                num: "01",
+                title: "Protección",
+                desc: "Eliminamos contenido dañino por las vías legales correctas. Difamación, derecho al olvido, suplantaciones, contenido íntimo filtrado, reseñas ilegítimas.",
+                href: "/proteccion-reputacion/",
+                desde: "Desde 690€",
+              },
+              {
+                num: "02",
+                title: "Autoridad",
+                desc: "Construimos tu presencia online verificable. Knowledge Panel en Google, apariciones editoriales en medios, wikis de autoridad, marca personal, reputación en IA.",
+                href: "/autoridad-digital/",
+                desde: "Desde 390€",
+              },
+              {
+                num: "03",
+                title: "Blindaje",
+                desc: "Monitorizamos tu nombre y marca de forma continua. Alertas tempranas, mantenimiento de presencia, reacción antes de que el daño sea irreversible.",
+                href: "/monitorizacion-reputacion/",
+                desde: "Desde 197€/mes",
+              },
+            ].map(({ num, title, desc, href, desde }, i) => (
+              <div key={i} style={s({
+                display: "grid", gridTemplateColumns: "44px 1fr", gap: 24,
+                padding: "32px 0",
+                borderBottom: i < 2 ? `1px solid ${C.bdr}` : "none",
+                alignItems: "flex-start",
+              })}>
+                <span style={s({ fontFamily: "'DM Mono', monospace", fontSize: 12, color: C.t4, paddingTop: 4 })}>{num}</span>
                 <div>
-                  <p style={{ fontFamily: "'Syne', sans-serif", fontWeight: 600, fontSize: 15, color: G.t1, marginBottom: 4 }}>{t}</p>
-                  <p style={{ fontSize: 13, color: G.t3, lineHeight: 1.65, fontWeight: 300 }}>{d}</p>
+                  <div style={s({ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 16, marginBottom: 12, flexWrap: "wrap" })}>
+                    <h3 style={s({ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "clamp(1.2rem, 3vw, 1.5rem)", color: C.t1 })}>{title}</h3>
+                    <span style={s({ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.t3 })}>{desde}</span>
+                  </div>
+                  <p style={s({ fontSize: 15, color: C.t2, lineHeight: 1.75, marginBottom: 16, fontWeight: 300 })}>{desc}</p>
+                  <Link href={href} style={s({ fontFamily: "'DM Mono', monospace", fontSize: 12, color: C.t3, textDecoration: "none", letterSpacing: "0.06em", borderBottom: `1px solid ${C.bdr}`, paddingBottom: 2 })}>
+                    Ver servicios →
+                  </Link>
                 </div>
               </div>
             ))}
@@ -324,53 +223,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ FAQ ════════════════════════════════════ */}
-      <section style={{ background: G.bg, padding: "48px 20px", borderTop: `1px solid ${G.bdr}` }}>
-        <div style={{ maxWidth: 640, margin: "0 auto" }}>
-          <p style={{ textAlign: "center", fontSize: 11, color: G.gold, fontFamily: "'DM Mono', monospace", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 12 }}>— FAQ —</p>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "clamp(1.5rem,5vw,2.2rem)", textAlign: "center", color: G.t1, marginBottom: 28 }}>Preguntas frecuentes</h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      {/* ════════════════════════════════════════════
+          PAQUETES — sin cards, editorial
+      ════════════════════════════════════════════ */}
+      <section style={s({ background: C.bg2, borderBottom: `1px solid ${C.bdr}` })}>
+        <div style={s({ maxWidth: 860, margin: "0 auto", padding: "56px 24px" })}>
+          <p style={s({ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.gold, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 40 })}>
+            Inversión
+          </p>
+          <div style={s({ display: "grid", gridTemplateColumns: "1fr", gap: 0 })}>
             {[
-              { q:"¿Garantizáis resultados?", a:"No prometemos garantías imposibles. Garantizamos gestión profesional, proceso legal correcto y política de crédito si el servicio no se ejecuta." },
-              { q:"¿Cuánto tarda la gestión?", a:"Desindexación: 2-6 semanas. Knowledge Panel: 4-8 semanas. Aparición editorial en medios: 4-12 semanas." },
-              { q:"¿Confidencialidad absoluta?", a:"Sí. Nunca revelamos clientes, casos ni resultados. Especialmente para directivos y figuras públicas." },
-              { q:"¿Qué diferencia Prestior de otras agencias?", a:"Contrato legal antes de pagar, honestidad sobre cada servicio, dos proveedores mínimo y empresa registrada en España." },
-            ].map(({ q, a }) => (
-              <details key={q} style={{ background: G.card, border: `1px solid ${G.bdr}`, borderRadius: 14, overflow: "hidden" }}>
-                <summary style={{ padding: "16px 18px", cursor: "pointer", fontFamily: "'Syne', sans-serif", fontWeight: 600, fontSize: 14, color: G.t1, listStyle: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  {q} <span style={{ color: G.t4, fontSize: 12, flexShrink: 0, marginLeft: 12 }}>▼</span>
-                </summary>
-                <div style={{ padding: "0 18px 16px", fontSize: 14, color: G.t3, lineHeight: 1.7, fontWeight: 300, borderTop: `1px solid ${G.bdr}`, paddingTop: 12 }}>{a}</div>
-              </details>
+              { name: "Presencia", price: "1.490€", desc: "Knowledge Panel personal, medios de entrada y optimización de nombre en Google. Para quien quiere empezar a controlar su narrativa digital." },
+              { name: "Autoridad", price: "3.900€", desc: "El más contratado. Knowledge Panel, pack wikis de autoridad, Forbes Argentina editorial y posicionamiento en Google e IA. Autoridad documentada y duradera.", hot: true },
+              { name: "Dominio", price: "9.900€", desc: "Todo lo anterior más pack de medios top internacionales — NYPost, BBC, Wired. Para quien necesita dominar su espacio a nivel global." },
+            ].map(({ name, price, desc, hot }, i) => (
+              <div key={i} style={s({
+                display: "grid", gridTemplateColumns: "1fr auto", gap: 20,
+                padding: "28px 0",
+                borderBottom: i < 2 ? `1px solid ${C.bdr}` : "none",
+                alignItems: "flex-start",
+              })}>
+                <div>
+                  <div style={s({ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 })}>
+                    <h3 style={s({ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 18, color: hot ? C.gold : C.t1 })}>{name}</h3>
+                    {hot && <span style={s({ fontFamily: "'DM Mono', monospace", fontSize: 9, color: C.gold, background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)", borderRadius: 999, padding: "2px 8px", letterSpacing: "0.08em", textTransform: "uppercase" })}>Recomendado</span>}
+                  </div>
+                  <p style={s({ fontSize: 14, color: C.t2, lineHeight: 1.7, fontWeight: 300 })}>{desc}</p>
+                </div>
+                <div style={s({ textAlign: "right", flexShrink: 0 })}>
+                  <p style={s({ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 22, color: C.t1 })}>{price}</p>
+                  <Link href="/contacto/" style={s({ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.t4, textDecoration: "none", letterSpacing: "0.04em" })}>
+                    Solicitar →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p style={s({ marginTop: 28, fontSize: 12, color: C.t4, fontFamily: "'DM Mono', monospace" })}>
+            Presupuesto personalizado tras análisis confidencial · IVA no incluido
+          </p>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════
+          POR QUÉ NOSOTROS — conciso, factual
+      ════════════════════════════════════════════ */}
+      <section style={s({ borderBottom: `1px solid ${C.bdr}` })}>
+        <div style={s({ maxWidth: 860, margin: "0 auto", padding: "56px 24px" })}>
+          <p style={s({ fontFamily: "'DM Mono', monospace", fontSize: 11, color: C.gold, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 40 })}>
+            Cómo operamos
+          </p>
+          <div style={s({ display: "grid", gridTemplateColumns: "1fr", gap: 0 })}>
+            {[
+              ["Contrato legal antes de empezar", "Firmamos antes de que pagues. Servicio exacto, plazos y garantías por escrito. Sin excepciones."],
+              ["Confidencialidad absoluta", "Nunca revelamos clientes, casos ni resultados. Es una condición no negociable de nuestro servicio."],
+              ["Sin garantías imposibles", "Te decimos exactamente qué es viable antes de cobrar. Forbes Argentina no es Forbes global. Un wiki de autoridad no es Wikipedia."],
+              ["Empresa registrada en España", "CIF disponible bajo solicitud. Actividad 100% legal. Dos proveedores mínimo por servicio para garantizar continuidad."],
+            ].map(([title, desc], i) => (
+              <div key={i} style={s({ padding: "24px 0", borderBottom: i < 3 ? `1px solid ${C.bdr}` : "none" })}>
+                <h4 style={s({ fontFamily: "'Syne', sans-serif", fontWeight: 600, fontSize: 16, color: C.t1, marginBottom: 8 })}>{title}</h4>
+                <p style={s({ fontSize: 14, color: C.t2, lineHeight: 1.7, fontWeight: 300 })}>{desc}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ══ CTA ════════════════════════════════════ */}
-      <section style={{ background: G.bg2, padding: "56px 20px", borderTop: `1px solid ${G.bdr}`, textAlign: "center" }}>
-        <div style={{ maxWidth: 520, margin: "0 auto" }}>
-          <p style={{ fontSize: 11, color: G.gold, fontFamily: "'DM Mono', monospace", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 16 }}>— Empieza hoy —</p>
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "clamp(1.7rem,6vw,2.8rem)", color: G.t1, marginBottom: 16, lineHeight: 1.1 }}>
-            ¿Qué aparece cuando{" "}
-            <span style={{ background: `linear-gradient(135deg,${G.gold},${G.gold2})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              buscan tu nombre?
-            </span>
+      {/* ════════════════════════════════════════════
+          CTA — una llamada confidencial
+      ════════════════════════════════════════════ */}
+      <section style={s({ borderBottom: `1px solid ${C.bdr}` })}>
+        <div style={s({ maxWidth: 860, margin: "0 auto", padding: "72px 24px 80px" })}>
+          <div style={s({ width: 48, height: 3, background: C.gold, marginBottom: 40 })} />
+          <h2 style={s({
+            fontFamily: "'Syne', sans-serif", fontWeight: 800,
+            fontSize: "clamp(2rem, 6vw, 3.8rem)",
+            lineHeight: 1.06, letterSpacing: "-0.02em",
+            color: C.t1, marginBottom: 28, maxWidth: 640,
+          })}>
+            ¿Lo que aparece cuando buscan tu nombre te ayuda o te perjudica?
           </h2>
-          <p style={{ fontSize: 16, color: G.t3, marginBottom: 32, fontWeight: 300, lineHeight: 1.7 }}>
-            Búscate en Google y en ChatGPT. ¿Lo que ves te ayuda o te perjudica?
+          <p style={s({ fontSize: 17, color: C.t2, marginBottom: 40, maxWidth: 500, lineHeight: 1.75, fontWeight: 300 })}>
+            Cuéntanoslo. Analizamos tu situación sin coste y te decimos exactamente
+            qué mejorar. Sin compromiso.
           </p>
-          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" style={{
-            display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
-            background: `linear-gradient(135deg,${G.gold},${G.gold2})`,
-            color: G.bg, fontFamily: "'Syne', sans-serif", fontWeight: 700,
-            fontSize: 16, padding: "16px 36px", borderRadius: 12, textDecoration: "none"
-          }}>
-            Solicitar auditoría gratuita <ArrowRight size={18} />
-          </Link>
-          <p style={{ marginTop: 16, fontSize: 12, color: G.t4, fontFamily: "'DM Mono', monospace" }}>
-            Sin coste · Respuesta en 24h · Confidencial
-          </p>
+          <div style={s({ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" })}>
+            <Link href="/contacto/" style={s({
+              display: "inline-flex", alignItems: "center", gap: 8,
+              background: C.t1, color: C.bg,
+              fontFamily: "'Syne', sans-serif", fontWeight: 700,
+              fontSize: 15, padding: "14px 28px", borderRadius: 8,
+              textDecoration: "none",
+            })}>
+              Una conversación confidencial <ArrowRight size={16} />
+            </Link>
+            <p style={s({ fontSize: 12, color: C.t4, fontFamily: "'DM Mono', monospace" })}>
+              Sin coste · Respuesta en 24h
+            </p>
+          </div>
         </div>
       </section>
 
