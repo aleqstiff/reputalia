@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prestior — TEST VISUAL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:#0a0a0a;color:#f0f0f0;font-family:'DM Sans',sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-bar{width:3px;height:22px;background:#c9a84c;border-radius:2px}
+.logo-text{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:#f0f0f0;letter-spacing:-.01em}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-link{font-family:'DM Mono',monospace;font-size:12px;color:rgba(240,240,240,.35);letter-spacing:.04em}
+.nav-link:hover{color:#f0f0f0}
+.nav-cta{background:#c9a84c;color:#0a0a0a;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;padding:9px 20px;border-radius:8px}
+.nav-cta:hover{background:#e2c36e}
+@media(max-width:640px){.nav-links,.nav-cta{display:none}}
+
+/* HERO */
+.hero{padding:64px 24px 72px;max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px;border-bottom:1px solid rgba(255,255,255,.08)}
+@media(min-width:700px){.hero{grid-template-columns:1fr 1fr;align-items:start}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:999px;padding:5px 14px;margin-bottom:24px;font-family:'DM Mono',monospace;font-size:11px;color:#e2c36e;letter-spacing:.06em}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:#c9a84c}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.06;letter-spacing:-.025em;color:#f0f0f0;margin-bottom:20px}
+.gold{background:linear-gradient(135deg,#c9a84c,#e2c36e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(1rem,2vw,1.1rem);line-height:1.78;color:rgba(240,240,240,.6);font-weight:300;max-width:500px;margin-bottom:32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#c9a84c,#e2c36e);color:#0a0a0a;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:10px}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:rgba(240,240,240,.7);font-family:'Syne',sans-serif;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:12px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:rgba(240,240,240,.35)}
+
+/* FORM */
+.form-card{background:#111;border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:28px 24px}
+.live{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.live-text{font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,240,240,.2)}
+.form-title{font-family:'Syne',sans-serif;font-weight:700;font-size:19px;color:#f0f0f0;margin-bottom:4px}
+.form-sub{font-size:13px;color:rgba(240,240,240,.35);margin-bottom:20px;font-weight:300}
+.form-label{font-family:'DM Mono',monospace;font-size:10px;color:#c9a84c;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:10px}
+.form-opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.form-opt{padding:9px 14px;border:1px solid rgba(255,255,255,.08);border-radius:8px;font-size:13px;color:rgba(240,240,240,.35);cursor:pointer;background:transparent;font-family:'DM Sans',sans-serif}
+.form-opt:hover{border-color:rgba(201,168,76,.3);color:#f0f0f0;background:rgba(201,168,76,.06)}
+input,textarea{width:100%;padding:12px 14px;margin-bottom:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;color:#f0f0f0;font-size:14px;font-family:'DM Sans',sans-serif;outline:none}
+input::placeholder,textarea::placeholder{color:rgba(240,240,240,.2)}
+input:focus{border-color:rgba(201,168,76,.4)}
+.form-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;background:linear-gradient(135deg,#c9a84c,#e2c36e);color:#0a0a0a;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;border:none;border-radius:10px;cursor:pointer;margin-top:2px}
+.form-fine{font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,240,240,.2);text-align:center;margin-top:10px}
+
+/* TRUST BAR */
+.trust-bar{background:#111;border-bottom:1px solid rgba(255,255,255,.08);padding:20px 24px}
+.trust-bar-inner{max-width:1000px;margin:0 auto}
+.trust-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,240,240,.2);letter-spacing:.14em;text-transform:uppercase;text-align:center;margin-bottom:14px}
+.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px}
+.trust-logo{font-family:'Syne',sans-serif;font-weight:600;font-size:13px;color:rgba(240,240,240,.2)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.08);background:#111}
+@media(min-width:600px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{padding:28px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,4vw,2.4rem);color:#f0f0f0;line-height:1;margin-bottom:6px}
+.stat-l{font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,240,240,.25);letter-spacing:.06em}
+
+/* SECTIONS */
+.sec{border-bottom:1px solid rgba(255,255,255,.08);padding:56px 24px}
+.sec-alt{background:#111}
+.sec-inner{max-width:1000px;margin:0 auto}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;color:#c9a84c;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:1px;background:#c9a84c;opacity:.5}
+h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.1;letter-spacing:-.02em;color:#f0f0f0;margin-bottom:14px}
+.lead{font-size:16px;color:rgba(240,240,240,.6);line-height:1.75;font-weight:300;margin-bottom:28px}
+
+/* PROBLEM ROWS */
+.prob-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.prob-row:last-child{border-bottom:none}
+.prob-num{font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,240,240,.2);flex-shrink:0;min-width:24px}
+.prob-text{font-size:15px;color:rgba(240,240,240,.6);line-height:1.65;font-weight:300;flex:1}
+.prob-tag{font-family:'DM Mono',monospace;font-size:10px;color:#c9a84c;letter-spacing:.08em;text-transform:uppercase;flex-shrink:0;text-align:right;min-width:80px}
+
+/* SERVICE CARDS */
+.svc-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+@media(min-width:600px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc-card{background:#1a1a1a;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px 22px}
+.svc-card:hover{border-color:rgba(255,255,255,.14)}
+.svc-card.hot{border-color:rgba(201,168,76,.3);background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(201,168,76,.02))}
+.svc-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px}
+.svc-desde{font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,240,240,.2);margin-bottom:4px}
+.svc-title{font-family:'Syne',sans-serif;font-weight:700;font-size:19px;color:#f0f0f0;margin-bottom:10px}
+.svc-desc{font-size:14px;color:rgba(240,240,240,.55);line-height:1.72;font-weight:300;margin-bottom:16px}
+.svc-link{font-family:'DM Mono',monospace;font-size:12px;color:#c9a84c;letter-spacing:.04em}
+.badge{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;color:#c9a84c;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:999px;padding:3px 9px;letter-spacing:.08em;text-transform:uppercase;margin-left:8px;vertical-align:middle}
+
+/* PROCESS */
+.proc-row{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.06);align-items:start}
+.proc-row:last-child{border-bottom:none}
+.proc-num{width:36px;height:36px;border-radius:50%;border:1px solid rgba(201,168,76,.3);background:rgba(201,168,76,.06);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:12px;color:#c9a84c;flex-shrink:0}
+.proc-title{font-family:'Syne',sans-serif;font-weight:600;font-size:16px;color:#f0f0f0;margin-bottom:4px}
+.proc-desc{font-size:14px;color:rgba(240,240,240,.55);line-height:1.7;font-weight:300}
+
+/* RESULTS */
+.res-row{display:grid;grid-template-columns:80px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.06);align-items:start}
+.res-row:last-child{border-bottom:none}
+.res-stat{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,4vw,2rem);color:#f0f0f0;line-height:1}
+.res-desc{font-size:15px;color:rgba(240,240,240,.6);line-height:1.65;font-weight:300;padding-top:4px}
+.res-tag{display:inline-block;margin-top:6px;font-family:'DM Mono',monospace;font-size:10px;color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:999px;padding:2px 8px}
+
+/* PRICING */
+.pkg-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px}
+@media(min-width:600px){.pkg-grid{grid-template-columns:repeat(3,1fr)}}
+.pkg{background:#1a1a1a;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column}
+.pkg.hot{border-color:rgba(201,168,76,.3);background:linear-gradient(160deg,rgba(201,168,76,.07),rgba(201,168,76,.02))}
+.pkg-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px}
+.pkg-name{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:#f0f0f0}
+.pkg-name.gold{color:#c9a84c}
+.pkg-price{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;color:#f0f0f0;white-space:nowrap;text-align:right}
+.pkg-desc{font-size:14px;color:rgba(240,240,240,.55);line-height:1.7;font-weight:300;margin-bottom:20px}
+.pkg-features{list-style:none;margin-bottom:22px;flex:1}
+.pkg-feature{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:13px;color:rgba(240,240,240,.6);border-bottom:1px solid rgba(255,255,255,.04)}
+.pkg-feature:last-child{border-bottom:none}
+.check{color:#c9a84c;flex-shrink:0}
+.pkg-cta{display:flex;align-items:center;justify-content:center;padding:13px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-top:auto}
+.pkg-cta-gold{background:linear-gradient(135deg,#c9a84c,#e2c36e);color:#0a0a0a}
+.pkg-cta-outline{background:transparent;border:1px solid rgba(255,255,255,.14);color:rgba(240,240,240,.6)}
+
+/* WHO */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+@media(min-width:600px){.who-grid{grid-template-columns:repeat(4,1fr)}}
+.who{background:#1a1a1a;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px 18px}
+.who-emoji{font-size:26px;display:block;margin-bottom:12px}
+.who-title{font-family:'Syne',sans-serif;font-weight:600;font-size:15px;color:#f0f0f0;margin-bottom:6px}
+.who-desc{font-size:12px;color:rgba(240,240,240,.35);line-height:1.6;font-weight:300}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+@media(min-width:600px){.testi-grid{grid-template-columns:repeat(2,1fr)}}
+.testi{background:#1a1a1a;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px 22px}
+.stars{color:#c9a84c;font-size:14px;margin-bottom:14px}
+.testi-q{font-size:14px;color:rgba(240,240,240,.6);line-height:1.7;font-style:italic;font-weight:300;margin-bottom:18px}
+.testi-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06)}
+.testi-author{font-size:12px;color:rgba(240,240,240,.3)}
+.testi-tag{font-family:'DM Mono',monospace;font-size:10px;color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:999px;padding:3px 10px;white-space:nowrap}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:28px}
+details{background:#1a1a1a;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden}
+details[open]{border-color:rgba(255,255,255,.14)}
+summary{padding:18px 20px;cursor:pointer;list-style:none;font-family:'Syne',sans-serif;font-weight:600;font-size:14px;color:#f0f0f0;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
+summary::after{content:'＋';font-size:18px;color:#c9a84c;flex-shrink:0;font-family:'DM Mono',monospace;font-weight:400}
+details[open] summary::after{content:'−'}
+.faq-body{padding:0 20px 18px;font-size:14px;color:rgba(240,240,240,.55);line-height:1.75;font-weight:300;border-top:1px solid rgba(255,255,255,.06);padding-top:14px}
+
+/* CTA FINAL */
+.final-cta{padding:72px 24px 80px;text-align:center;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,.08)}
+.final-cta-inner{max-width:600px;margin:0 auto}
+.cta-bar{width:40px;height:3px;background:#c9a84c;border-radius:2px;margin:0 auto 32px}
+.cta-sub{font-size:17px;color:rgba(240,240,240,.55);font-weight:300;line-height:1.75;max-width:480px;margin:0 auto 36px}
+
+/* FOOTER */
+footer{background:#050505;border-top:1px solid rgba(255,255,255,.06);padding:40px 24px 44px}
+.footer-inner{max-width:1000px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:28px}
+@media(min-width:600px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.footer-logo-row{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.footer-stripe{width:3px;height:20px;background:#c9a84c;border-radius:2px}
+.footer-name{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:#f0f0f0}
+.footer-tag{font-size:13px;color:rgba(240,240,240,.2);line-height:1.6;font-weight:300}
+.footer-col-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(240,240,240,.2);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:14px}
+.footer-link{display:block;font-size:13px;color:rgba(240,240,240,.3);margin-bottom:9px}
+.footer-link:hover{color:#f0f0f0}
+.footer-divider{height:1px;background:rgba(255,255,255,.06);margin-bottom:20px}
+.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.footer-copy{font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,240,240,.2)}
+.footer-legal{display:flex;gap:18px;flex-wrap:wrap}
+.footer-legal a{font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,240,240,.2)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <span class="logo-bar"></span>
+    <span class="logo-text">Prestior</span>
+  </div>
+  <div class="nav-links">
+    <a href="/proteccion-reputacion/" class="nav-link">Protección</a>
+    <a href="/autoridad-digital/" class="nav-link">Autoridad</a>
+    <a href="/casos-de-exito/" class="nav-link">Resultados</a>
+    <a href="/precios/" class="nav-link">Precios</a>
+  </div>
+  <a href="/monitorizacion-reputacion/auditoria-reputacion-online/" class="nav-cta">Análisis gratuito</a>
+</nav>
+
+<!-- HERO -->
+<div style="background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,.08)">
+<div class="hero">
+  <div>
+    <div class="hero-badge"><span class="hero-dot"></span>Empresa registrada · Confidencial · Sin garantías falsas</div>
+    <h1>Tu reputación online<br>es tu <span class="gold">activo más valioso.</span></h1>
+    <p class="hero-sub">Eliminamos contenido dañino de Google, construimos tu autoridad en medios y blindamos tu presencia ante amenazas futuras. Proceso 100% legal.</p>
+    <div class="btns">
+      <a href="/monitorizacion-reputacion/auditoria-reputacion-online/" class="btn-gold">Análisis gratuito →</a>
+      <a href="https://wa.me/34684115988" target="_blank" class="btn-wa">💬 WhatsApp</a>
+    </div>
+    <div class="pills">
+      <span class="pill">✓ Contrato previo</span>
+      <span class="pill">🔒 100% confidencial</span>
+      <span class="pill">🇪🇸 Empresa española</span>
+      <span class="pill">✓ Sin promesas falsas</span>
+    </div>
+  </div>
+  <div class="form-card">
+    <div class="live"><span class="live-dot"></span><span class="live-text">Respondemos en menos de 24 horas</span></div>
+    <p class="form-title">Análisis de reputación gratuito</p>
+    <p class="form-sub">Dinos tu situación y te enviamos un informe. Sin coste ni compromiso.</p>
+    <span class="form-label">¿Qué necesitas?</span>
+    <div class="form-opts">
+      <span class="form-opt">Eliminar contenido</span>
+      <span class="form-opt">Construir autoridad</span>
+      <span class="form-opt">Monitorización</span>
+      <span class="form-opt">No sé, necesito orientación</span>
+    </div>
+    <input type="text" placeholder="Nombre completo o marca a analizar">
+    <input type="email" placeholder="Correo electrónico">
+    <a href="mailto:hola@prestior.es?subject=Análisis gratuito" class="form-btn">Solicitar análisis gratuito →</a>
+    <p class="form-fine">🔒 Confidencial · Sin compromiso · Sin coste</p>
+  </div>
+</div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <p class="trust-label">Gestionamos presencia en</p>
+    <div class="trust-logos">
+      <span class="trust-logo">Google</span><span class="trust-logo">Forbes</span><span class="trust-logo">BBC</span>
+      <span class="trust-logo">NYPost</span><span class="trust-logo">Wired</span><span class="trust-logo">LinkedIn</span>
+      <span class="trust-logo">Trustpilot</span><span class="trust-logo">Wikipedia</span><span class="trust-logo">ChatGPT</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Casos resueltos</div></div>
+  <div class="stat"><div class="stat-n">48h</div><div class="stat-l">Primera respuesta</div></div>
+  <div class="stat"><div class="stat-n">€3.9k</div><div class="stat-l">Ticket medio</div></div>
+  <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Confidencial</div></div>
+</div>
+
+<!-- SITUACIONES -->
+<div class="sec">
+<div class="sec-inner">
+  <div class="eyebrow">Situaciones que gestionamos</div>
+  <h2>¿Te identificas con alguna de estas situaciones?</h2>
+  <p class="lead">Si alguna te suena, tienes que hablar con nosotros hoy.</p>
+  <div class="prob-row"><span class="prob-num">01</span><p class="prob-text">Aparece un artículo falso o difamatorio cuando buscan tu nombre en Google.</p><span class="prob-tag">Difamación</span></div>
+  <div class="prob-row"><span class="prob-num">02</span><p class="prob-text">Alguien publicó fotos o vídeos íntimos tuyos sin tu consentimiento.</p><span class="prob-tag">Urgente — 24h</span></div>
+  <div class="prob-row"><span class="prob-num">03</span><p class="prob-text">Hay una cuenta haciéndose pasar por ti en Instagram, TikTok o YouTube.</p><span class="prob-tag">Suplantación</span></div>
+  <div class="prob-row"><span class="prob-num">04</span><p class="prob-text">Reseñas falsas coordinadas están hundiendo la nota de tu negocio.</p><span class="prob-tag">Reseñas falsas</span></div>
+  <div class="prob-row"><span class="prob-num">05</span><p class="prob-text">ChatGPT o Perplexity describe tu empresa de forma incorrecta o dañina.</p><span class="prob-tag">IA / GEO</span></div>
+  <div class="prob-row"><span class="prob-num">06</span><p class="prob-text">Quieres que Google muestre quién eres realmente antes de tu próximo lanzamiento.</p><span class="prob-tag">Autoridad digital</span></div>
+</div>
+</div>
+
+<!-- SERVICIOS -->
+<div class="sec sec-alt">
+<div class="sec-inner">
+  <div class="eyebrow">Servicios</div>
+  <h2>Todo lo que necesitas, <span class="gold">en un solo lugar.</span></h2>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-icon" style="background:rgba(100,160,255,.08)">🛡️</div>
+      <p class="svc-desde">Desde 690€</p>
+      <p class="svc-title">Protección</p>
+      <p class="svc-desc">Difamación, derecho al olvido, suplantación, contenido íntimo filtrado, reseñas ilegítimas. Proceso legal, sin garantías imposibles.</p>
+      <a href="/proteccion-reputacion/" class="svc-link">Ver servicios →</a>
+    </div>
+    <div class="svc-card hot">
+      <div class="svc-icon" style="background:rgba(201,168,76,.12)">📈</div>
+      <p class="svc-desde">Desde 390€</p>
+      <p class="svc-title">Autoridad digital <span class="badge">Más vendido</span></p>
+      <p class="svc-desc">Knowledge Panel en Google, Forbes editorial, wikis de autoridad, marca personal en buscadores, reputación en IA.</p>
+      <a href="/autoridad-digital/" class="svc-link">Ver servicios →</a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon" style="background:rgba(40,200,180,.08)">👁️</div>
+      <p class="svc-desde">Desde 197€/mes</p>
+      <p class="svc-title">Blindaje continuo</p>
+      <p class="svc-desc">Monitorización activa, alertas tempranas y reacción antes de que el daño escale. Incluye gestión en plataformas de IA.</p>
+      <a href="/monitorizacion-reputacion/" class="svc-link">Ver servicio →</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PROCESO -->
+<div class="sec">
+<div class="sec-inner">
+  <div class="eyebrow">Proceso</div>
+  <h2>Cómo lo hacemos</h2>
+  <div class="proc-row"><div class="proc-num">01</div><div><p class="proc-title">Análisis gratuito</p><p class="proc-desc">Revisamos tu situación en Google, redes, medios y plataformas de IA. Te decimos qué es viable. Sin coste, sin compromiso.</p></div></div>
+  <div class="proc-row"><div class="proc-num">02</div><div><p class="proc-title">Estrategia personalizada</p><p class="proc-desc">Diseñamos el plan concreto con servicios, orden y plazos reales. Sin promesas que no podemos cumplir.</p></div></div>
+  <div class="proc-row"><div class="proc-num">03</div><div><p class="proc-title">Contrato legal previo</p><p class="proc-desc">Firmamos antes de que pagues. Servicio exacto, plazos y garantías. Sin letra pequeña.</p></div></div>
+  <div class="proc-row"><div class="proc-num">04</div><div><p class="proc-title">Ejecución profesional</p><p class="proc-desc">Gestionamos todo. Te mantenemos informado en cada fase con informes de progreso.</p></div></div>
+  <div class="proc-row"><div class="proc-num">05</div><div><p class="proc-title">Blindaje posterior</p><p class="proc-desc">Una vez resuelto, configuramos la monitorización continua para que no vuelva a ocurrir.</p></div></div>
+</div>
+</div>
+
+<!-- RESULTADOS -->
+<div class="sec sec-alt">
+<div class="sec-inner">
+  <div class="eyebrow">Resultados</div>
+  <h2>Hechos, no promesas.</h2>
+  <div class="res-row"><span class="res-stat">4 sem.</span><div><p class="res-desc">Artículo difamatorio desindexado de Google. CEO empresa tech, Madrid.</p><span class="res-tag">Desindexación</span></div></div>
+  <div class="res-row"><span class="res-stat">48h</span><div><p class="res-desc">Cuenta de suplantación eliminada en Instagram. Influencer, 180K seguidores.</p><span class="res-tag">Suplantación</span></div></div>
+  <div class="res-row"><span class="res-stat">€80K</span><div><p class="res-desc">Generados en lanzamiento tras construir Knowledge Panel + Forbes editorial.</p><span class="res-tag">Pack Autoridad</span></div></div>
+  <div class="res-row"><span class="res-stat">7/7</span><div><p class="res-desc">Reseñas falsas coordinadas eliminadas de Google. Clínica dental, Valencia.</p><span class="res-tag">Reseñas</span></div></div>
+  <div class="res-row"><span class="res-stat">24h</span><div><p class="res-desc">Contenido íntimo filtrado retirado de plataformas principales. Caso urgente.</p><span class="res-tag">Urgente</span></div></div>
+  <p style="margin-top:24px"><a href="/casos-de-exito/" style="font-family:'DM Mono',monospace;font-size:12px;color:rgba(240,240,240,.4);border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:2px">Ver todos los casos →</a></p>
+</div>
+</div>
+
+<!-- PAQUETES -->
+<div class="sec">
+<div class="sec-inner">
+  <div class="eyebrow">Inversión</div>
+  <h2>Paquetes completos</h2>
+  <p class="lead">El cerebro elige el del medio — donde está el mayor valor.</p>
+  <div class="pkg-grid">
+    <div class="pkg">
+      <div class="pkg-top"><span class="pkg-name">Presencia</span><span class="pkg-price">1.490€</span></div>
+      <p class="pkg-desc">Para empezar a controlar cómo apareces en Google.</p>
+      <ul class="pkg-features">
+        <li class="pkg-feature"><span class="check">✓</span>Knowledge Panel personal</li>
+        <li class="pkg-feature"><span class="check">✓</span>1-2 medios de entrada</li>
+        <li class="pkg-feature"><span class="check">✓</span>Optimización nombre en Google</li>
+        <li class="pkg-feature"><span class="check">✓</span>Informe de estado inicial</li>
+      </ul>
+      <a href="/contacto/" class="pkg-cta pkg-cta-outline">Solicitar información →</a>
+    </div>
+    <div class="pkg hot">
+      <div class="pkg-top"><span class="pkg-name gold">Autoridad <span class="badge">Recomendado</span></span><span class="pkg-price">3.900€</span></div>
+      <p class="pkg-desc">Autoridad documentada, verificable y duradera. El más contratado.</p>
+      <ul class="pkg-features">
+        <li class="pkg-feature"><span class="check">✓</span>Knowledge Panel personal</li>
+        <li class="pkg-feature"><span class="check">✓</span>Pack wikis de autoridad</li>
+        <li class="pkg-feature"><span class="check">✓</span>Forbes Argentina editorial</li>
+        <li class="pkg-feature"><span class="check">✓</span>Posicionamiento Google + IA</li>
+        <li class="pkg-feature"><span class="check">✓</span>Informe mensual de resultados</li>
+      </ul>
+      <a href="/contacto/" class="pkg-cta pkg-cta-gold">Solicitar información →</a>
+    </div>
+    <div class="pkg">
+      <div class="pkg-top"><span class="pkg-name">Dominio</span><span class="pkg-price">9.900€</span></div>
+      <p class="pkg-desc">Domina tu espacio a nivel internacional.</p>
+      <ul class="pkg-features">
+        <li class="pkg-feature"><span class="check">✓</span>Todo AUTORIDAD incluido</li>
+        <li class="pkg-feature"><span class="check">✓</span>Pack medios top (NYPost, BBC, Wired)</li>
+        <li class="pkg-feature"><span class="check">✓</span>Gestión continua 3 meses</li>
+        <li class="pkg-feature"><span class="check">✓</span>Estrategia personalizada</li>
+      </ul>
+      <a href="/contacto/" class="pkg-cta pkg-cta-outline">Solicitar información →</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PARA QUIÉN -->
+<div class="sec sec-alt">
+<div class="sec-inner">
+  <div class="eyebrow">Para quién</div>
+  <h2>Trabajamos con</h2>
+  <div class="who-grid">
+    <div class="who"><span class="who-emoji">👔</span><p class="who-title">Directivos y CEOs</p><p class="who-desc">Protección ejecutiva, Knowledge Panel y presencia en medios.</p></div>
+    <div class="who"><span class="who-emoji">📱</span><p class="who-title">Creadores e influencers</p><p class="who-desc">Cuentas falsas, contenido filtrado, crisis en redes sociales.</p></div>
+    <div class="who"><span class="who-emoji">🏢</span><p class="who-title">Empresas</p><p class="who-desc">Reseñas falsas, difamación corporativa, crisis online.</p></div>
+    <div class="who"><span class="who-emoji">⭐</span><p class="who-title">Coaches y expertos</p><p class="who-desc">Autoridad digital, medios, marca personal en Google.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- TESTIMONIOS -->
+<div class="sec">
+<div class="sec-inner">
+  <div class="eyebrow">Testimonios</div>
+  <h2>Lo que dicen <span class="gold">nuestros clientes.</span></h2>
+  <div class="testi-grid">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p class="testi-q">"Tenía un artículo difamatorio en el primer resultado de Google desde hace 3 años. Desindexado en 4 semanas."</p>
+      <div class="testi-footer"><span class="testi-author">CEO empresa tech, Madrid</span><span class="testi-tag">Desindexación</span></div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p class="testi-q">"Knowledge Panel activo y Forbes editorial antes del lanzamiento. El curso generó €80K en ventas."</p>
+      <div class="testi-footer"><span class="testi-author">Coach y formadora online</span><span class="testi-tag">Pack Autoridad</span></div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p class="testi-q">"7 reseñas falsas de un ex-empleado. Todas eliminadas antes de un mes. Servicio impecable."</p>
+      <div class="testi-footer"><span class="testi-author">Dr. C.V. · Clínica dental, Valencia</span><span class="testi-tag">Reseñas eliminadas</span></div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p class="testi-q">"Cuenta falsa con mis fotos enviando DMs fraudulentos. Eliminada en 48 horas. Muy discretos."</p>
+      <div class="testi-footer"><span class="testi-author">Influencer, 180K seguidores</span><span class="testi-tag">Suplantación resuelta</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="sec sec-alt">
+<div class="sec-inner">
+  <div class="eyebrow">FAQ</div>
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq-list">
+    <details><summary>¿Cuánto cuesta la gestión de reputación digital?</summary><div class="faq-body">Desde 690€ para casos de difamación o derecho al olvido, hasta 3.900€ para el pack Autoridad. El precio exacto depende del caso. Análisis gratuito sin compromiso.</div></details>
+    <details><summary>¿Cuánto tarda en verse resultados?</summary><div class="faq-body">Desindexación: 2-6 semanas. Knowledge Panel: 4-8 semanas. Aparición en medios: 4-12 semanas. Contenido íntimo urgente: 24-48h.</div></details>
+    <details><summary>¿Garantizáis la eliminación?</summary><div class="faq-body">No prometemos garantías imposibles. La decisión final depende de Google o la plataforma. Garantizamos contrato legal previo, proceso correcto y política de crédito.</div></details>
+    <details><summary>¿Trabajáis con confidencialidad?</summary><div class="faq-body">Absoluta. Nunca revelamos clientes, casos ni resultados. Condición no negociable del servicio.</div></details>
+    <details><summary>¿Sois una empresa registrada en España?</summary><div class="faq-body">Sí. CIF disponible bajo solicitud. Actividad 100% legal. Verificable en el Registro Mercantil.</div></details>
+  </div>
+</div>
+</div>
+
+<!-- CTA FINAL -->
+<div class="final-cta">
+<div class="final-cta-inner">
+  <div class="cta-bar"></div>
+  <h2>¿Qué aparece cuando buscan tu nombre?</h2>
+  <p class="cta-sub">Búscate ahora. Si lo que ves te perjudica, cuéntanoslo. El análisis es gratuito y la respuesta llega en 24 horas.</p>
+  <div class="btns" style="justify-content:center;margin-bottom:16px">
+    <a href="/monitorizacion-reputacion/auditoria-reputacion-online/" class="btn-gold" style="font-size:16px;padding:15px 36px">Análisis gratuito →</a>
+    <a href="https://wa.me/34684115988" target="_blank" class="btn-wa">💬 WhatsApp</a>
+  </div>
+  <p style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,240,240,.2)">Sin coste · Respuesta en 24h · Confidencial</p>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-row"><span class="footer-stripe"></span><span class="footer-name">Prestior</span></div>
+      <p class="footer-tag">Agencia de reputación y autoridad digital.<br>Empresa registrada en España.</p>
+    </div>
+    <div>
+      <span class="footer-col-label">Servicios</span>
+      <a href="/proteccion-reputacion/" class="footer-link">Protección</a>
+      <a href="/autoridad-digital/" class="footer-link">Autoridad</a>
+      <a href="/monitorizacion-reputacion/" class="footer-link">Blindaje</a>
+      <a href="/precios/" class="footer-link">Precios</a>
+    </div>
+    <div>
+      <span class="footer-col-label">Empresa</span>
+      <a href="/casos-de-exito/" class="footer-link">Casos de éxito</a>
+      <a href="/blog/" class="footer-link">Blog</a>
+      <a href="/sobre-nosotros/" class="footer-link">Sobre nosotros</a>
+      <a href="/contacto/" class="footer-link">Contacto</a>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Prestior · Empresa registrada en España · CIF disponible</p>
+    <div class="footer-legal">
+      <a href="/aviso-legal/">Aviso legal</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>
