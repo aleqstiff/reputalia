@@ -34,13 +34,13 @@ export default function Page() {
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>
         <Link href="/" className="hover:text-white/70 transition-colors">Inicio</Link> › <span className="text-white/80">Autoridad digital</span>
       </nav>
-      <header className="py-16 px-4 text-center" style={{background:"var(--bg-2)"}}>
+      <header className="py-16 px-4 text-center" >
         <div className="max-w-3xl mx-auto">
           <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{background:"#c9a84c22"}}>
             <TrendingUp className="w-6 h-6" style={{color:"#c9a84c"}} />
           </div>
           <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Autoridad digital</h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8">Construimos presencia que genera confianza: Knowledge Panel, medios de referencia, perfiles de autoridad. Resultados documentados, sin humo.</p>
+          <p className="text-white/40 text-lg max-w-2xl mx-auto mb-8">Construimos presencia que genera confianza: Knowledge Panel, medios de referencia, perfiles de autoridad. Resultados documentados, sin humo.</p>
           <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/"
             className="inline-flex font-bold px-7 py-3.5 rounded-xl text-sm"
             style={{background:"#c9a84c", color:"#0f1729"}}>
@@ -48,22 +48,22 @@ export default function Page() {
           </Link>
         </div>
       </header>
-      <section className="py-16 px-4">
+      <section className="py-8 md:py-16 px-5">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8">
-            <p className="text-amber-800 text-sm font-semibold mb-1">Sobre la honestidad en este sector</p>
-            <p className="text-amber-700 text-sm">Forbes Argentina es una edición real de Forbes. Un wiki de autoridad no es Wikipedia. Lo decimos siempre. Es lo que nos separa del "humo" y de los reembolsos.</p>
+          <div className="bg-yellow-500/10 border border-yellow-500/25 rounded-2xl p-5 mb-8">
+            <p className="text-yellow-300 text-sm font-semibold mb-1">Sobre la honestidad en este sector</p>
+            <p className="text-yellow-400 text-sm">Forbes Argentina es una edición real de Forbes. Un wiki de autoridad no es Wikipedia. Lo decimos siempre. Es lo que nos separa del "humo" y de los reembolsos.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-5">
             {SERVICIOS.map(s => (
-              <Link key={s.titulo} href={s.href} className="flex gap-4 p-5 card hover:border-stone-400 hover:shadow-sm transition group">
-                <ArrowRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-stone-400 group-hover:text-stone-700 transition" />
+              <Link key={s.titulo} href={s.href} className="flex gap-4 p-5 card hover:border-white/30  transition group">
+                <ArrowRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-white/30 group-hover:text-white/80 transition" />
                 <div className="flex-1">
                   <div className="flex items-start justify-between mb-1 gap-2">
-                    <h3 className="font-semibold text-stone-900 text-sm">{s.titulo}</h3>
-                    <span className="text-xs text-stone-500 flex-shrink-0">{s.precio}</span>
+                    <h3 className="font-semibold text-white text-sm">{s.titulo}</h3>
+                    <span className="text-xs text-white/40 flex-shrink-0">{s.precio}</span>
                   </div>
-                  <p className="text-xs text-stone-500 leading-relaxed mb-1">{s.desc}</p>
+                  <p className="text-xs text-white/40 leading-relaxed mb-1">{s.desc}</p>
                   <span className="text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>⏱ {s.plazo}</span>
                 </div>
               </Link>

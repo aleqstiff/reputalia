@@ -17,16 +17,16 @@ export default function Page() {
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>
         <Link href="/" className="hover:text-white/70 transition-colors">Inicio</Link> › <Link href="/monitorizacion-reputacion/" className="hover:text-white/70 transition-colors">Monitorización</Link> › <span className="text-white/80">Auditoría gratuita</span>
       </nav>
-      <header className="py-16 px-4 text-center" style={{background:"var(--bg-2)"}}>
+      <header className="py-16 px-4 text-center" >
         <div className="max-w-2xl mx-auto">
           <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{background:"#c9a84c22"}}>
             <Search className="w-6 h-6" style={{color:"#c9a84c"}} />
           </div>
           <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Auditoría de reputación gratuita</h1>
-          <p className="text-slate-400 text-lg mb-6">Analizamos qué aparece cuando buscan tu nombre o marca en Google y te enviamos un informe con exactamente qué mejorar. Sin coste. Sin compromiso.</p>
+          <p className="text-white/40 text-lg mb-6">Analizamos qué aparece cuando buscan tu nombre o marca en Google y te enviamos un informe con exactamente qué mejorar. Sin coste. Sin compromiso.</p>
         </div>
       </header>
-      <section className="py-16 px-4">
+      <section className="py-8 md:py-16 px-5">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -35,7 +35,7 @@ export default function Page() {
                 {["Primeros 10 resultados de Google cuando buscan tu nombre","Presencia o ausencia de Knowledge Panel","Contenido negativo visible (artículos, reseñas, menciones)","Perfiles en redes: coherencia y fuerza","Presencia en medios","Principales amenazas y oportunidades"].map(i => (
                   <li key={i} className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-stone-700">{i}</span>
+                    <span className="text-sm text-white/80">{i}</span>
                   </li>
                 ))}
               </ul>

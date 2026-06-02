@@ -20,9 +20,9 @@ export default function GeoPage() {
         <Link href="/autoridad-digital/" className="hover:text-white/70 transition-colors">Autoridad digital</Link> ›{" "}
         <span className="text-white/80">Reputación en IA</span>
       </nav>
-      <header className="py-14 px-5 relative overflow-hidden" style={{background:"var(--bg-2)"}}>
+      <header className="py-14 px-5 relative overflow-hidden" >
         <div className="max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 border border-amber-300 bg-amber-500/10 rounded-full px-3 py-1 text-xs font-semibold text-amber-400 mb-5">
+          <div className="inline-flex items-center gap-2 border border-amber-300 bg-yellow-500/100/10 rounded-full px-3 py-1 text-xs font-semibold text-amber-400 mb-5">
             Nuevo servicio 2026
           </div>
           <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Reputación en IA — GEO</h1>
@@ -31,9 +31,9 @@ export default function GeoPage() {
           </p>
         </div>
       </header>
-      <section className="py-12 px-4">
+      <section className="py-8 md:py-12 px-5">
         <div className="max-w-3xl mx-auto space-y-6">
-          <p className="text-stone-600 leading-relaxed">Millones de personas usan ChatGPT, Perplexity y Gemini para investigar personas y empresas. Las IAs responden basándose en datos que pueden ser incorrectos, desactualizados o dañinos. GEO (Generative Engine Optimization) es la disciplina de controlar esa narrativa.</p>
+          <p className="text-white/60 leading-relaxed">Millones de personas usan ChatGPT, Perplexity y Gemini para investigar personas y empresas. Las IAs responden basándose en datos que pueden ser incorrectos, desactualizados o dañinos. GEO (Generative Engine Optimization) es la disciplina de controlar esa narrativa.</p>
           <div className="space-y-3">
             {[
               ["Auditoría de presencia actual en IA","Analizamos qué dicen ChatGPT, Perplexity y Gemini sobre ti ahora mismo."],
@@ -41,21 +41,21 @@ export default function GeoPage() {
               ["Contenido GEO-optimizado","Generamos contenido en fuentes de alta autoridad que los modelos priorizan."],
               ["Monitorización continua","Los modelos se actualizan — monitorizamos para detectar cambios."],
             ].map(([t,d]) => (
-              <div key={t} className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
+              <div key={t} className="flex gap-4 p-4 card">
                 <div className="w-4 h-4 rounded-full bg-stone-900 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-2.5 h-2.5 text-white" />
                 </div>
                 <div>
-                  <p className="font-semibold text-stone-900 text-sm">{t}</p>
-                  <p className="text-xs text-stone-500 mt-0.5">{d}</p>
+                  <p className="font-semibold text-white text-sm">{t}</p>
+                  <p className="text-xs text-white/40 mt-0.5">{d}</p>
                 </div>
               </div>
             ))}
           </div>
           <div className="flex flex-wrap gap-3 pt-4 border-t border-white/[0.07]">
-            <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider w-full mb-1">Servicios relacionados</p>
+            <p className="text-xs font-semibold text-white/30 uppercase tracking-wider w-full mb-1">Servicios relacionados</p>
             {[["Knowledge Panel","/autoridad-digital/knowledge-panel-google/"],["Salir en prensa","/autoridad-digital/salir-en-prensa/"],["Marca personal","/autoridad-digital/marca-personal-google/"]].map(([l,h]) => (
-              <Link key={h} href={h} className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">{l} →</Link>
+              <Link key={h} href={h} className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-white/30 transition text-white/60">{l} →</Link>
             ))}
           </div>
         </div>

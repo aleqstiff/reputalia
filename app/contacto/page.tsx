@@ -13,20 +13,20 @@ export default function ContactoPage() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
+      <header className="py-14 px-4 text-center" >
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-3">Contacto</h1>
-          <p className="text-slate-400">Cuéntanos tu situación. Respuesta en menos de 24 horas.</p>
+          <p className="text-white/40">Cuéntanos tu situación. Respuesta en menos de 24 horas.</p>
         </div>
       </header>
-      <section className="py-16 px-4">
+      <section className="py-8 md:py-16 px-5">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
           <div>
-            <h2 className="text-xl font-bold text-white mb-6">Háblanos directamente</h2>
+            <h2 className="font-display font-bold text-white text-xl mb-6">Háblanos directamente</h2>
             <div className="space-y-4">
               <a href="https://wa.me/34684115988?text=Hola, me interesa la gestión de reputación digital"
                 target="_blank" rel="noopener"
-                className="flex items-center gap-4 p-5 bg-green-50 border border-green-200 rounded-2xl hover:border-green-400 transition">
+                className="flex items-center gap-4 p-5 bg-green-500/5 border border-green-200 rounded-2xl hover:border-green-400 transition">
                 <span className="text-2xl">💬</span>
                 <div>
                   <p className="font-semibold text-white">WhatsApp</p>
@@ -34,7 +34,7 @@ export default function ContactoPage() {
                 </div>
               </a>
               <a href="mailto:hola@prestior.es"
-                className="flex items-center gap-4 p-5 bg-stone-50 border border-white/[0.07] rounded-2xl hover:border-stone-400 transition">
+                className="flex items-center gap-4 p-5 bg-white/5 border border-white/[0.07] rounded-2xl hover:border-white/30 transition">
                 <span className="text-2xl">📧</span>
                 <div>
                   <p className="font-semibold text-white">Email</p>
@@ -44,7 +44,7 @@ export default function ContactoPage() {
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-bold text-white mb-6">O cuéntanos por escrito</h2>
+            <h2 className="font-display font-bold text-white text-xl mb-6">O cuéntanos por escrito</h2>
             <div className="space-y-3">
               <input type="text" placeholder="Nombre" className="input-dark" />
               <input type="email" placeholder="Email" className="input-dark" />

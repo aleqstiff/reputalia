@@ -25,66 +25,66 @@ export default function Page() {
         <Link href="/monitorizacion-reputacion/" className="hover:text-white/70 transition-colors">Monitorización</Link> ›{" "}
         <span className="text-white/80">Alertas de reputación online</span>
       </nav>
-      <header className="py-14 px-5 relative overflow-hidden" style={{background:"var(--bg-2)"}}>
+      <header className="py-14 px-5 relative overflow-hidden" >
         <div className="max-w-3xl mx-auto">
           <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Alertas de reputación online</h1>
           <p className="text-lg max-w-2xl mb-5" style={{color:"rgba(238,240,244,0.45)",fontWeight:300}}>Las mejores decisiones en reputación son las que se toman antes de que el daño sea irreversible. El sistema de alertas detecta cualquier nueva mención.</p>
-          <div className="flex flex-wrap gap-4 text-xs text-slate-400">
+          <div className="flex flex-wrap gap-4 text-xs text-white/40">
             <span>⏱ Configurable desde el día 1</span>
             <span>💶 Incluido en plan de monitorización (197€/mes)</span>
           </div>
         </div>
       </header>
-      <section className="py-12 px-4">
+      <section className="py-8 md:py-12 px-5">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-bold text-stone-900 mb-6">Cómo gestionamos el proceso</h2>
+          <h2 className="font-display font-bold text-white text-xl mb-6">Cómo gestionamos el proceso</h2>
           <div className="space-y-3">
-            <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-2)"}}>1</div>
-              <div><p className="font-semibold text-stone-900 text-sm">Configuración de palabras clave</p><p className="text-xs text-stone-500 mt-0.5">Definimos qué buscar: nombre, variaciones, marca, dominio, términos asociados.</p></div>
+            <div className="flex gap-4 p-4 card">
+              <div className="step-num" >1</div>
+              <div><p className="font-semibold text-white text-sm">Configuración de palabras clave</p><p className="text-xs text-white/40 mt-0.5">Definimos qué buscar: nombre, variaciones, marca, dominio, términos asociados.</p></div>
             </div>
-            <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-2)"}}>2</div>
-              <div><p className="font-semibold text-stone-900 text-sm">Alertas en tiempo real o diarias</p><p className="text-xs text-stone-500 mt-0.5">Notificación inmediata cuando aparece algo nuevo, o resumen diario según preferencia.</p></div>
+            <div className="flex gap-4 p-4 card">
+              <div className="step-num" >2</div>
+              <div><p className="font-semibold text-white text-sm">Alertas en tiempo real o diarias</p><p className="text-xs text-white/40 mt-0.5">Notificación inmediata cuando aparece algo nuevo, o resumen diario según preferencia.</p></div>
             </div>
-            <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-2)"}}>3</div>
-              <div><p className="font-semibold text-stone-900 text-sm">Panel de seguimiento</p><p className="text-xs text-stone-500 mt-0.5">Acceso al historial de menciones y evolución de tu presencia.</p></div>
+            <div className="flex gap-4 p-4 card">
+              <div className="step-num" >3</div>
+              <div><p className="font-semibold text-white text-sm">Panel de seguimiento</p><p className="text-xs text-white/40 mt-0.5">Acceso al historial de menciones y evolución de tu presencia.</p></div>
             </div>
           </div>
         </div>
       </section>
-      <section className="py-12 px-4" style={{background:"var(--bg-2)"}}>
+      <section className="py-8 md:py-12 px-5" >
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-bold text-stone-900 mb-6">Preguntas frecuentes</h2>
+          <h2 className="font-display font-bold text-white text-xl mb-6">Preguntas frecuentes</h2>
           <div className="space-y-3">
             <details className="card group">
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-stone-900 text-sm list-none">
-                ¿Qué plataformas monitoriza?<span className="text-stone-400 group-open:rotate-180 transition-transform ml-3">▼</span>
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-white text-sm list-none">
+                ¿Qué plataformas monitoriza?<span className="text-white/30 group-open:rotate-180 transition-transform ml-3">▼</span>
               </summary>
-              <div className="px-5 pb-4 text-sm text-stone-600 border-t border-white/[0.07] pt-3 leading-relaxed">Google, Bing, noticias, foros, redes sociales principales, webs de reseñas y blogs.</div>
+              <div className="px-5 pb-4 text-sm text-white/60 border-t border-white/[0.07] pt-3 leading-relaxed">Google, Bing, noticias, foros, redes sociales principales, webs de reseñas y blogs.</div>
             </details>
             <details className="card group">
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-stone-900 text-sm list-none">
-                ¿Puedo configurarlo yo mismo?<span className="text-stone-400 group-open:rotate-180 transition-transform ml-3">▼</span>
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-white text-sm list-none">
+                ¿Puedo configurarlo yo mismo?<span className="text-white/30 group-open:rotate-180 transition-transform ml-3">▼</span>
               </summary>
-              <div className="px-5 pb-4 text-sm text-stone-600 border-t border-white/[0.07] pt-3 leading-relaxed">Sí, con Google Alerts gratuito puedes tener monitorización básica. El servicio profesional añade cobertura más amplia y protocolo de acción.</div>
+              <div className="px-5 pb-4 text-sm text-white/60 border-t border-white/[0.07] pt-3 leading-relaxed">Sí, con Google Alerts gratuito puedes tener monitorización básica. El servicio profesional añade cobertura más amplia y protocolo de acción.</div>
             </details>
             <details className="card group">
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-stone-900 text-sm list-none">
-                ¿Incluye gestión de las amenazas?<span className="text-stone-400 group-open:rotate-180 transition-transform ml-3">▼</span>
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-white text-sm list-none">
+                ¿Incluye gestión de las amenazas?<span className="text-white/30 group-open:rotate-180 transition-transform ml-3">▼</span>
               </summary>
-              <div className="px-5 pb-4 text-sm text-stone-600 border-t border-white/[0.07] pt-3 leading-relaxed">La gestión de amenazas detectadas está incluida en el plan de Protección Continua.</div>
+              <div className="px-5 pb-4 text-sm text-white/60 border-t border-white/[0.07] pt-3 leading-relaxed">La gestión de amenazas detectadas está incluida en el plan de Protección Continua.</div>
             </details>
           </div>
         </div>
       </section>
       <section className="py-10 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-4">Servicios relacionados</p>
+          <p className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-4">Servicios relacionados</p>
           <div className="flex flex-wrap gap-3">
-            <a href="/monitorizacion-reputacion/proteccion-continua-marca/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">Protección continua →</a>
-            <a href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">Auditoría gratuita →</a>
+            <a href="/monitorizacion-reputacion/proteccion-continua-marca/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-white/30 transition text-white/60">Protección continua →</a>
+            <a href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-white/30 transition text-white/60">Auditoría gratuita →</a>
           </div>
         </div>
       </section>

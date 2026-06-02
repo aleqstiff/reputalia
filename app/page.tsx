@@ -52,7 +52,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           HERO — Aurora + dot grid + grain
       ════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center pb-20 px-5 overflow-hidden grain">
+      <section className="relative flex items-center py-16 md:py-24 px-5 overflow-hidden grain">
         {/* Aurora background */}
         <div className="aurora-bg" />
         {/* Dot grid */}
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
 
           {/* RIGHT — glass form card con grain */}
-          <div className="relative card-featured p-7 grain">
+          <div className="relative card-featured p-5 md:p-7 grain mt-4 md:mt-0">
             {/* Glow behind card */}
             <div className="absolute inset-0 rounded-[20px] opacity-20 blur-2xl"
               style={{ background: "linear-gradient(135deg,rgba(201,168,76,0.4),rgba(100,160,255,0.2))" }} />
@@ -160,7 +160,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           STATS STRIP
       ════════════════════════════════════════ */}
-      <section className="py-14 px-5" style={{ background: "var(--bg-2)" }}>
+      <section className="py-8 md:py-14 px-5" style={{ background: "var(--bg-2)" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5">
           {STATS.map(({ n, label }) => (
             <div key={label} className="card p-6 text-center hover:-translate-y-1 transition-transform">
@@ -174,7 +174,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           BENTO GRID — servicios (asimétrico)
       ════════════════════════════════════════ */}
-      <section className="py-24 px-5 relative overflow-hidden" style={{ background: "var(--bg)" }}>
+      <section className="py-12 md:py-24 px-5 relative overflow-hidden" style={{ background: "var(--bg)" }}>
         <div className="aurora-bg" style={{ opacity: 0.3 }} />
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -263,7 +263,7 @@ export default function Home() {
               </div>
 
               {/* Blindaje + GEO */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 <div className="card p-5">
                   <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3"
                     style={{ background: "rgba(40,200,180,0.08)", border: "1px solid rgba(40,200,180,0.15)" }}>
@@ -325,7 +325,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           GEO / IA SECTION — terminal visual
       ════════════════════════════════════════ */}
-      <section className="py-24 px-5 relative overflow-hidden" style={{ background: "var(--bg)" }}>
+      <section className="py-12 md:py-24 px-5 relative overflow-hidden" style={{ background: "var(--bg)" }}>
         <div className="absolute inset-0 opacity-20" style={{
           background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(40,200,180,0.12) 0%, transparent 70%)"
         }} />
@@ -390,7 +390,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           PAQUETES — 3 cols, cinético
       ════════════════════════════════════════ */}
-      <section className="py-24 px-5 relative overflow-hidden" style={{ background: "var(--bg-2)" }}>
+      <section className="py-12 md:py-24 px-5 relative overflow-hidden" style={{ background: "var(--bg-2)" }}>
         <div className="aurora-bg" style={{ opacity: 0.15 }} />
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -409,8 +409,7 @@ export default function Home() {
               { n:"AUTORIDAD", p:"3.900€", d:"Autoridad documentada, verificable y duradera.", items:["Knowledge Panel personal","Pack wikis de autoridad","Forbes Argentina editorial","Posicionamiento Google + IA","Informe mensual"], hot:true },
               { n:"DOMINIO",    p:"9.900€", d:"Domina tu espacio a nivel internacional.", items:["Todo AUTORIDAD","Pack medios top (NYPost, BBC, Wired)","Gestión continua 3 meses","Estrategia personalizada"], hot:false },
             ].map(({ n, p, d, items, hot }) => (
-              <div key={n} className={`relative ${hot ? "card-featured" : "card"} p-6 transition-all hover:-translate-y-1`}
-                style={hot ? { transform: "scale(1.03)", boxShadow: "0 0 80px rgba(201,168,76,0.12), 0 30px 60px rgba(0,0,0,0.4)" } : {}}>
+              <div key={n} className={`relative ${hot ? "card-featured md:scale-105" : "card"} p-6 transition-all hover:-translate-y-1`}>
                 {hot && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                     <span className="badge text-xs px-4 py-1">★ Más contratado</span>
@@ -443,7 +442,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           PROCESO — horizontal timeline
       ════════════════════════════════════════ */}
-      <section className="py-20 px-5" style={{ background: "var(--bg)" }}>
+      <section className="py-10 md:py-20 px-5" style={{ background: "var(--bg)" }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <div className="section-eyebrow justify-center">Proceso</div>
@@ -474,7 +473,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           TESTIMONIOS — quote cards
       ════════════════════════════════════════ */}
-      <section className="py-24 px-5 border-y" style={{ background: "var(--bg-2)", borderColor: "rgba(255,255,255,0.05)" }}>
+      <section className="py-12 md:py-24 px-5 border-y" style={{ background: "var(--bg-2)", borderColor: "rgba(255,255,255,0.05)" }}>
         <div className="max-w-5xl mx-auto">
           <div className="flex items-end justify-between mb-14">
             <div>
@@ -488,7 +487,7 @@ export default function Home() {
               Ver todos →
             </Link>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-3">
             {TESTIMONIOS.map((t, i) => (
               <div key={i} className="card p-6 hover:-translate-y-1 transition-all">
                 <span className="quote-mark">"</span>
@@ -508,7 +507,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           DIFERENCIADORES — 2 col
       ════════════════════════════════════════ */}
-      <section className="py-24 px-5 relative overflow-hidden" style={{ background: "var(--bg)" }}>
+      <section className="py-12 md:py-24 px-5 relative overflow-hidden" style={{ background: "var(--bg)" }}>
         <div className="relative z-10 max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-start">
           <div>
             <div className="section-eyebrow">Diferenciación</div>
@@ -545,7 +544,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           FAQ
       ════════════════════════════════════════ */}
-      <section className="py-20 px-5" style={{ background: "var(--bg-2)" }}>
+      <section className="py-10 md:py-20 px-5" style={{ background: "var(--bg-2)" }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <div className="section-eyebrow justify-center">FAQ</div>
@@ -573,7 +572,7 @@ export default function Home() {
       {/* ════════════════════════════════════════
           CTA FINAL — aurora
       ════════════════════════════════════════ */}
-      <section className="py-28 px-5 relative overflow-hidden grain" style={{ background: "var(--bg)" }}>
+      <section className="py-14 md:py-28 px-5 relative overflow-hidden grain" style={{ background: "var(--bg)" }}>
         <div className="aurora-bg" style={{ opacity: 0.5 }} />
         <div className="dot-grid absolute inset-0 opacity-30" />
         <div className="relative z-10 max-w-2xl mx-auto text-center">

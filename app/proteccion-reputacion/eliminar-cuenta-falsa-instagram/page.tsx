@@ -25,67 +25,67 @@ export default function Page() {
         <Link href="/proteccion-reputacion/" className="hover:text-white/70 transition-colors">Protección de reputación</Link> ›{" "}
         <span className="text-white/80">Eliminar cuenta falsa en Instagram</span>
       </nav>
-      <header className="py-14 px-5 relative overflow-hidden" style={{background:"var(--bg-2)"}}>
+      <header className="py-14 px-5 relative overflow-hidden" >
         <div className="max-w-3xl mx-auto">
           <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Eliminar cuenta falsa en Instagram</h1>
           <p className="text-lg max-w-2xl mb-5" style={{color:"rgba(238,240,244,0.45)",fontWeight:300}}>Hay una cuenta haciéndose pasar por ti en Instagram, TikTok o YouTube. Gestionamos la denuncia formal y el seguimiento hasta la baja del perfil falso.</p>
-          <div className="flex flex-wrap gap-4 text-xs text-slate-400">
+          <div className="flex flex-wrap gap-4 text-xs text-white/40">
             <span>⏱ 48h – 2 semanas</span>
             <span>💶 Desde 490€</span>
           </div>
         </div>
       </header>
-      <section className="py-12 px-4">
+      <section className="py-8 md:py-12 px-5">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-bold text-stone-900 mb-6">Cómo gestionamos el proceso</h2>
+          <h2 className="font-display font-bold text-white text-xl mb-6">Cómo gestionamos el proceso</h2>
           <div className="space-y-3">
-            <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-2)"}}>1</div>
-              <div><p className="font-semibold text-stone-900 text-sm">Análisis y evidencia</p><p className="text-xs text-stone-500 mt-0.5">Documentamos la cuenta falsa: screenshots, análisis de actividad, similitudes con el perfil original.</p></div>
+            <div className="flex gap-4 p-4 card">
+              <div className="step-num" >1</div>
+              <div><p className="font-semibold text-white text-sm">Análisis y evidencia</p><p className="text-xs text-white/40 mt-0.5">Documentamos la cuenta falsa: screenshots, análisis de actividad, similitudes con el perfil original.</p></div>
             </div>
-            <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-2)"}}>2</div>
-              <div><p className="font-semibold text-stone-900 text-sm">Denuncia oficial</p><p className="text-xs text-stone-500 mt-0.5">Presentamos la denuncia por suplantación a través de los canales oficiales de la plataforma.</p></div>
+            <div className="flex gap-4 p-4 card">
+              <div className="step-num" >2</div>
+              <div><p className="font-semibold text-white text-sm">Denuncia oficial</p><p className="text-xs text-white/40 mt-0.5">Presentamos la denuncia por suplantación a través de los canales oficiales de la plataforma.</p></div>
             </div>
-            <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-2)"}}>3</div>
-              <div><p className="font-semibold text-stone-900 text-sm">Seguimiento hasta resolución</p><p className="text-xs text-stone-500 mt-0.5">Hacemos seguimiento activo hasta la baja. Si no responde la plataforma, escalamos.</p></div>
+            <div className="flex gap-4 p-4 card">
+              <div className="step-num" >3</div>
+              <div><p className="font-semibold text-white text-sm">Seguimiento hasta resolución</p><p className="text-xs text-white/40 mt-0.5">Hacemos seguimiento activo hasta la baja. Si no responde la plataforma, escalamos.</p></div>
             </div>
           </div>
         </div>
       </section>
-      <section className="py-12 px-4" style={{background:"var(--bg-2)"}}>
+      <section className="py-8 md:py-12 px-5" >
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-bold text-stone-900 mb-6">Preguntas frecuentes</h2>
+          <h2 className="font-display font-bold text-white text-xl mb-6">Preguntas frecuentes</h2>
           <div className="space-y-3">
             <details className="card group">
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-stone-900 text-sm list-none">
-                ¿Cuánto tarda en bajarse una cuenta falsa?<span className="text-stone-400 group-open:rotate-180 transition-transform ml-3">▼</span>
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-white text-sm list-none">
+                ¿Cuánto tarda en bajarse una cuenta falsa?<span className="text-white/30 group-open:rotate-180 transition-transform ml-3">▼</span>
               </summary>
-              <div className="px-5 pb-4 text-sm text-stone-600 border-t border-white/[0.07] pt-3 leading-relaxed">Entre 48 horas y 2 semanas. Instagram y TikTok son más ágiles con suplantaciones documentadas.</div>
+              <div className="px-5 pb-4 text-sm text-white/60 border-t border-white/[0.07] pt-3 leading-relaxed">Entre 48 horas y 2 semanas. Instagram y TikTok son más ágiles con suplantaciones documentadas.</div>
             </details>
             <details className="card group">
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-stone-900 text-sm list-none">
-                ¿Necesitáis mi contraseña?<span className="text-stone-400 group-open:rotate-180 transition-transform ml-3">▼</span>
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-white text-sm list-none">
+                ¿Necesitáis mi contraseña?<span className="text-white/30 group-open:rotate-180 transition-transform ml-3">▼</span>
               </summary>
-              <div className="px-5 pb-4 text-sm text-stone-600 border-t border-white/[0.07] pt-3 leading-relaxed">No. El proceso es completamente a través de los canales oficiales de denuncia de la plataforma.</div>
+              <div className="px-5 pb-4 text-sm text-white/60 border-t border-white/[0.07] pt-3 leading-relaxed">No. El proceso es completamente a través de los canales oficiales de denuncia de la plataforma.</div>
             </details>
             <details className="card group">
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-stone-900 text-sm list-none">
-                ¿Qué pasa si la cuenta reaparece?<span className="text-stone-400 group-open:rotate-180 transition-transform ml-3">▼</span>
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-white text-sm list-none">
+                ¿Qué pasa si la cuenta reaparece?<span className="text-white/30 group-open:rotate-180 transition-transform ml-3">▼</span>
               </summary>
-              <div className="px-5 pb-4 text-sm text-stone-600 border-t border-white/[0.07] pt-3 leading-relaxed">Incluimos seguimiento de 30 días tras la baja. Si reaparece, lo gestionamos sin coste adicional.</div>
+              <div className="px-5 pb-4 text-sm text-white/60 border-t border-white/[0.07] pt-3 leading-relaxed">Incluimos seguimiento de 30 días tras la baja. Si reaparece, lo gestionamos sin coste adicional.</div>
             </details>
           </div>
         </div>
       </section>
       <section className="py-10 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-4">Servicios relacionados</p>
+          <p className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-4">Servicios relacionados</p>
           <div className="flex flex-wrap gap-3">
-            <a href="/proteccion-reputacion/suplantacion-identidad/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">Suplantación de identidad →</a>
-            <a href="/autoridad-digital/verificacion-perfiles/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">Verificación →</a>
-            <a href="/proteccion-reputacion/difamacion-online/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">Difamación →</a>
+            <a href="/proteccion-reputacion/suplantacion-identidad/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-white/30 transition text-white/60">Suplantación de identidad →</a>
+            <a href="/autoridad-digital/verificacion-perfiles/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-white/30 transition text-white/60">Verificación →</a>
+            <a href="/proteccion-reputacion/difamacion-online/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-white/30 transition text-white/60">Difamación →</a>
           </div>
         </div>
       </section>

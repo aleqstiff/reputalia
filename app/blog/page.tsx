@@ -21,25 +21,25 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
+      <header className="py-14 px-4 text-center" >
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-3">Blog</h1>
-          <p className="text-slate-400">Guías honestas sobre reputación digital, autoridad y protección online.</p>
+          <p className="text-white/40">Guías honestas sobre reputación digital, autoridad y protección online.</p>
         </div>
       </header>
-      <section className="py-16 px-4">
+      <section className="py-8 md:py-16 px-5">
         <div className="max-w-3xl mx-auto space-y-4">
           {POSTS.map(p => (
             <Link key={p.slug} href={`/blog/${p.slug}/`}
-              className="flex items-start gap-4 p-5 card hover:border-stone-400 transition">
+              className="flex items-start gap-4 p-5 card hover:border-white/30 transition">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={{background:"#0f172911", color:"#0f1729"}}>{p.cat}</span>
                   <span className="text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>{p.fecha}</span>
                 </div>
-                <h2 className="font-semibold text-stone-900 text-sm leading-snug">{p.titulo}</h2>
+                <h2 className="font-semibold text-white text-sm leading-snug">{p.titulo}</h2>
               </div>
-              <span className="text-stone-400 flex-shrink-0">→</span>
+              <span className="text-white/30 flex-shrink-0">→</span>
             </Link>
           ))}
         </div>

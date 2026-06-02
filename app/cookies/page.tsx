@@ -7,11 +7,11 @@ export default function Page() {
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
       <div className="max-w-3xl mx-auto px-4 py-16">
-        <h1 className="text-2xl font-black text-stone-900 mb-6">Política de Cookies</h1>
-        <div className="prose prose-stone prose-sm">
+        <h1 className="text-2xl font-black text-white mb-6">Política de Cookies</h1>
+        <div className="prose prose-invert prose-sm">
           <p>Información sobre las cookies utilizadas en este sitio web conforme a la normativa española y europea.</p>
           <p>Para cualquier consulta sobre esta política, contacta con nosotros en <a href="mailto:legal@prestior.es">legal@prestior.es</a>.</p>
-          <p className="text-stone-400 text-xs mt-8">Última actualización: junio 2026</p>
+          <p className="text-white/30 text-xs mt-8">Última actualización: junio 2026</p>
         </div>
       </div>
       <Footer />

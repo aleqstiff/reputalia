@@ -22,13 +22,13 @@ export default function Page() {
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>
         <Link href="/" className="hover:text-white/70 transition-colors">Inicio</Link> › <span className="text-white/80">Monitorización</span>
       </nav>
-      <header className="py-16 px-4 text-center" style={{background:"var(--bg-2)"}}>
+      <header className="py-16 px-4 text-center" >
         <div className="max-w-3xl mx-auto">
           <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{background:"#c9a84c22"}}>
             <Eye className="w-6 h-6" style={{color:"#c9a84c"}} />
           </div>
           <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Blindaje y monitorización</h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8">Para que lo que construimos no se caiga en tres meses. Vigilamos tu nombre, mantenemos tu presencia y reaccionamos antes de que el daño sea irreversible.</p>
+          <p className="text-white/40 text-lg max-w-2xl mx-auto mb-8">Para que lo que construimos no se caiga en tres meses. Vigilamos tu nombre, mantenemos tu presencia y reaccionamos antes de que el daño sea irreversible.</p>
           <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/"
             className="inline-flex font-bold px-7 py-3.5 rounded-xl text-sm"
             style={{background:"#c9a84c", color:"#0f1729"}}>
@@ -36,12 +36,12 @@ export default function Page() {
           </Link>
         </div>
       </header>
-      <section className="py-16 px-4">
+      <section className="py-8 md:py-16 px-5">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-stone-50 border border-white/[0.07] rounded-2xl p-6 mb-6 text-center">
-            <p className="text-stone-500 text-sm mb-2">Precio mensual</p>
-            <div className="text-4xl font-black text-stone-900 mb-1">197€ – 490€/mes</div>
-            <p className="text-stone-500 text-sm">Según nivel de cobertura. Se vende siempre después de entregar el trabajo de construcción.</p>
+          <div className="bg-white/5 border border-white/[0.07] rounded-2xl p-6 mb-6 text-center">
+            <p className="text-white/40 text-sm mb-2">Precio mensual</p>
+            <div className="text-4xl font-black text-white mb-1">197€ – 490€/mes</div>
+            <p className="text-white/40 text-sm">Según nivel de cobertura. Se vende siempre después de entregar el trabajo de construcción.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
             {[
@@ -49,9 +49,9 @@ export default function Page() {
               { href:"/monitorizacion-reputacion/proteccion-continua-marca/", t:"Protección continua", d:"Mantenimiento activo de tu panel, perfiles y presencia. Reacción ante cualquier amenaza." },
               { href:"/monitorizacion-reputacion/auditoria-reputacion-online/", t:"Auditoría gratuita", d:"El punto de partida. Analizamos tu situación actual sin coste y sin compromiso." },
             ].map(({href,t,d}) => (
-              <Link key={href} href={href} className="card p-5 hover:border-stone-400 hover:shadow-sm transition">
-                <h3 className="font-semibold text-stone-900 text-sm mb-2">{t}</h3>
-                <p className="text-xs text-stone-500 leading-relaxed">{d}</p>
+              <Link key={href} href={href} className="card p-5 hover:border-white/30  transition">
+                <h3 className="font-semibold text-white text-sm mb-2">{t}</h3>
+                <p className="text-xs text-white/40 leading-relaxed">{d}</p>
               </Link>
             ))}
           </div>

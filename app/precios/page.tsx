@@ -15,13 +15,13 @@ export default function PreciosPage() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
+      <header className="py-14 px-4 text-center" >
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-black text-white mb-3">Precios</h1>
-          <p className="text-slate-400 text-lg">Transparentes. Sin letras pequeñas. Sin garantías imposibles.</p>
+          <p className="text-white/40 text-lg">Transparentes. Sin letras pequeñas. Sin garantías imposibles.</p>
         </div>
       </header>
-      <section className="py-16 px-4">
+      <section className="py-8 md:py-16 px-5">
         <div className="max-w-5xl mx-auto space-y-16">
 
           {/* SILO 1 */}
@@ -52,7 +52,7 @@ export default function PreciosPage() {
                     ["Reseñas falsas Google", "99€/reseña", "7-30 días", "/proteccion-reputacion/eliminar-resenas-falsas/"],
                   ].map(([s,p,t,h]) => (
                     <tr key={s}>
-                      <td className="py-3.5"><Link href={h} className="text-stone-700 hover:opacity-100 font-medium hover:underline">{s}</Link></td>
+                      <td className="py-3.5"><Link href={h} className="text-white/80 hover:opacity-100 font-medium hover:underline">{s}</Link></td>
                       <td className="py-3.5 text-right font-semibold text-white">{p}</td>
                       <td className="py-3.5 text-right ">{t}</td>
                     </tr>
@@ -88,7 +88,7 @@ export default function PreciosPage() {
                     ["Verificación de perfiles", "Consultar", "Variable", "/autoridad-digital/verificacion-perfiles/"],
                   ].map(([s,p,t,h]) => (
                     <tr key={s}>
-                      <td className="py-3.5"><Link href={h} className="text-stone-700 hover:opacity-100 font-medium hover:underline">{s}</Link></td>
+                      <td className="py-3.5"><Link href={h} className="text-white/80 hover:opacity-100 font-medium hover:underline">{s}</Link></td>
                       <td className="py-3.5 text-right font-semibold text-white">{p}</td>
                       <td className="py-3.5 text-right ">{t}</td>
                     </tr>
@@ -112,11 +112,11 @@ export default function PreciosPage() {
               ].map(({n,p,d,i,top}) => (
                 <div key={n} className={`rounded-2xl border p-6 ${top ? "border-stone-900 shadow-md" : "border-white/[0.07]"}`}>
                   {top && <div className="text-xs font-bold text-center py-1 mb-4 rounded-full" style={{background:"#0f1729", color:"#c9a84c"}}>★ Más contratado</div>}
-                  <p className="text-xs font-mono text-stone-400 mb-1">{n}</p>
+                  <p className="text-xs font-mono text-white/30 mb-1">{n}</p>
                   <div className="text-2xl font-black text-white mb-2">{p}</div>
                   <p className="text-sm  mb-4">{d}</p>
                   <ul className="space-y-2">
-                    {i.map(item => <li key={item} className="flex items-start gap-2 text-xs text-stone-700"><Check className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />{item}</li>)}
+                    {i.map(item => <li key={item} className="flex items-start gap-2 text-xs text-white/80"><Check className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />{item}</li>)}
                   </ul>
                 </div>
               ))}

@@ -25,67 +25,67 @@ export default function Page() {
         <Link href="/autoridad-digital/" className="hover:text-white/70 transition-colors">Autoridad digital</Link> ›{" "}
         <span className="text-white/80">Marca personal en Google</span>
       </nav>
-      <header className="py-14 px-5 relative overflow-hidden" style={{background:"var(--bg-2)"}}>
+      <header className="py-14 px-5 relative overflow-hidden" >
         <div className="max-w-3xl mx-auto">
           <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Marca personal en Google</h1>
           <p className="text-lg max-w-2xl mb-5" style={{color:"rgba(238,240,244,0.45)",fontWeight:300}}>Cuando alguien busca tu nombre en Google, los primeros 10 resultados son tu tarjeta de presentación más importante. Trabajamos para que cuenten la historia que tú quieres contar.</p>
-          <div className="flex flex-wrap gap-4 text-xs text-slate-400">
+          <div className="flex flex-wrap gap-4 text-xs text-white/40">
             <span>⏱ 3-6 meses</span>
             <span>💶 Desde 1.490€</span>
           </div>
         </div>
       </header>
-      <section className="py-12 px-4">
+      <section className="py-8 md:py-12 px-5">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-bold text-stone-900 mb-6">Cómo gestionamos el proceso</h2>
+          <h2 className="font-display font-bold text-white text-xl mb-6">Cómo gestionamos el proceso</h2>
           <div className="space-y-3">
-            <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-2)"}}>1</div>
-              <div><p className="font-semibold text-stone-900 text-sm">Auditoría de situación actual</p><p className="text-xs text-stone-500 mt-0.5">Analizamos qué aparece ahora, qué hay que corregir y qué hay que construir.</p></div>
+            <div className="flex gap-4 p-4 card">
+              <div className="step-num" >1</div>
+              <div><p className="font-semibold text-white text-sm">Auditoría de situación actual</p><p className="text-xs text-white/40 mt-0.5">Analizamos qué aparece ahora, qué hay que corregir y qué hay que construir.</p></div>
             </div>
-            <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-2)"}}>2</div>
-              <div><p className="font-semibold text-stone-900 text-sm">Estrategia de contenidos y presencia</p><p className="text-xs text-stone-500 mt-0.5">Creamos y optimizamos perfiles en plataformas de alta autoridad, publicaciones y presencia web.</p></div>
+            <div className="flex gap-4 p-4 card">
+              <div className="step-num" >2</div>
+              <div><p className="font-semibold text-white text-sm">Estrategia de contenidos y presencia</p><p className="text-xs text-white/40 mt-0.5">Creamos y optimizamos perfiles en plataformas de alta autoridad, publicaciones y presencia web.</p></div>
             </div>
-            <div className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm text-white" style={{background:"var(--bg-2)"}}>3</div>
-              <div><p className="font-semibold text-stone-900 text-sm">Posicionamiento sostenido</p><p className="text-xs text-stone-500 mt-0.5">Estrategia a 3-6 meses para consolidar y mantener los resultados.</p></div>
+            <div className="flex gap-4 p-4 card">
+              <div className="step-num" >3</div>
+              <div><p className="font-semibold text-white text-sm">Posicionamiento sostenido</p><p className="text-xs text-white/40 mt-0.5">Estrategia a 3-6 meses para consolidar y mantener los resultados.</p></div>
             </div>
           </div>
         </div>
       </section>
-      <section className="py-12 px-4" style={{background:"var(--bg-2)"}}>
+      <section className="py-8 md:py-12 px-5" >
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-bold text-stone-900 mb-6">Preguntas frecuentes</h2>
+          <h2 className="font-display font-bold text-white text-xl mb-6">Preguntas frecuentes</h2>
           <div className="space-y-3">
             <details className="card group">
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-stone-900 text-sm list-none">
-                ¿Cuánto tarda en verse en Google?<span className="text-stone-400 group-open:rotate-180 transition-transform ml-3">▼</span>
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-white text-sm list-none">
+                ¿Cuánto tarda en verse en Google?<span className="text-white/30 group-open:rotate-180 transition-transform ml-3">▼</span>
               </summary>
-              <div className="px-5 pb-4 text-sm text-stone-600 border-t border-white/[0.07] pt-3 leading-relaxed">Los primeros cambios, en 4-8 semanas. Los resultados consolidados, en 3-6 meses.</div>
+              <div className="px-5 pb-4 text-sm text-white/60 border-t border-white/[0.07] pt-3 leading-relaxed">Los primeros cambios, en 4-8 semanas. Los resultados consolidados, en 3-6 meses.</div>
             </details>
             <details className="card group">
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-stone-900 text-sm list-none">
-                ¿Para quién es este servicio?<span className="text-stone-400 group-open:rotate-180 transition-transform ml-3">▼</span>
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-white text-sm list-none">
+                ¿Para quién es este servicio?<span className="text-white/30 group-open:rotate-180 transition-transform ml-3">▼</span>
               </summary>
-              <div className="px-5 pb-4 text-sm text-stone-600 border-t border-white/[0.07] pt-3 leading-relaxed">Para coaches, formadores, CEOs, directivos, consultores y cualquier profesional cuyo nombre sea su marca principal.</div>
+              <div className="px-5 pb-4 text-sm text-white/60 border-t border-white/[0.07] pt-3 leading-relaxed">Para coaches, formadores, CEOs, directivos, consultores y cualquier profesional cuyo nombre sea su marca principal.</div>
             </details>
             <details className="card group">
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-stone-900 text-sm list-none">
-                ¿Qué pasa si alguien publica algo negativo?<span className="text-stone-400 group-open:rotate-180 transition-transform ml-3">▼</span>
+              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-white text-sm list-none">
+                ¿Qué pasa si alguien publica algo negativo?<span className="text-white/30 group-open:rotate-180 transition-transform ml-3">▼</span>
               </summary>
-              <div className="px-5 pb-4 text-sm text-stone-600 border-t border-white/[0.07] pt-3 leading-relaxed">Con el blindaje incluido, monitorizamos y actuamos antes de que el daño se consolide.</div>
+              <div className="px-5 pb-4 text-sm text-white/60 border-t border-white/[0.07] pt-3 leading-relaxed">Con el blindaje incluido, monitorizamos y actuamos antes de que el daño se consolide.</div>
             </details>
           </div>
         </div>
       </section>
       <section className="py-10 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-4">Servicios relacionados</p>
+          <p className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-4">Servicios relacionados</p>
           <div className="flex flex-wrap gap-3">
-            <a href="/autoridad-digital/knowledge-panel-google/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">Knowledge Panel →</a>
-            <a href="/autoridad-digital/salir-en-prensa/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">Salir en prensa →</a>
-            <a href="/monitorizacion-reputacion/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">Monitorización →</a>
+            <a href="/autoridad-digital/knowledge-panel-google/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-white/30 transition text-white/60">Knowledge Panel →</a>
+            <a href="/autoridad-digital/salir-en-prensa/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-white/30 transition text-white/60">Salir en prensa →</a>
+            <a href="/monitorizacion-reputacion/" className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-white/30 transition text-white/60">Monitorización →</a>
           </div>
         </div>
       </section>

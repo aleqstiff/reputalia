@@ -14,15 +14,15 @@ export default function Page() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
+      <header className="py-14 px-4 text-center" >
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-3">Sobre Prestior</h1>
-          <p className="text-slate-400 text-lg">Lo que nos hace diferentes no es lo que hacemos — es cómo lo decimos.</p>
+          <p className="text-white/40 text-lg">Lo que nos hace diferentes no es lo que hacemos — es cómo lo decimos.</p>
         </div>
       </header>
-      <section className="py-16 px-4">
-        <div className="max-w-3xl mx-auto prose prose-stone prose-sm">
-          <p className="text-lg text-stone-700 leading-relaxed">Prestior es una agencia especializada en la gestión integral de la reputación digital. Trabajamos con profesionales, directivos, marcas personales y empresas que necesitan proteger o construir su presencia online.</p>
+      <section className="py-8 md:py-16 px-5">
+        <div className="max-w-3xl mx-auto prose prose-invert prose-sm">
+          <p className="text-lg text-white/80 leading-relaxed">Prestior es una agencia especializada en la gestión integral de la reputación digital. Trabajamos con profesionales, directivos, marcas personales y empresas que necesitan proteger o construir su presencia online.</p>
           <h2>Nuestra filosofía</h2>
           <p>En un sector lleno de promesas imposibles y garantías que nadie puede cumplir, operamos de forma diferente. Antes de cobrar nada, te decimos exactamente qué es viable, qué no y por qué. Si Forbes Argentina no es Forbes global, lo decimos. Si un wiki de autoridad no es Wikipedia, lo explicamos. Si el derecho al olvido no borra el contenido sino que lo desindexar, lo aclaramos.</p>
           <p>Esta honestidad nos ha costado alguna venta. También nos ha generado la mayoría de nuestros clientes recurrentes.</p>
