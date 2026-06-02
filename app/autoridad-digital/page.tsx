@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
-import { TrendingUp, ArrowRight, Check } from "lucide-react";
+import Footer from "@/components/Footer";
+import { TrendingUp, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Autoridad Digital — Knowledge Panel, Prensa y Medios Internacionales",
-  description: "Construimos tu autoridad digital: Knowledge Panel en Google, Forbes Argentina, medios internacionales, perfiles wiki y verificación de perfiles. Empresa registrada.",
+  title: "Autoridad Digital — Knowledge Panel, Forbes y Medios | Prestior",
+  description: "Construimos tu autoridad en Google: Knowledge Panel, Forbes Argentina, wikis de autoridad, marca personal y reputación en IA. Resultados documentados.",
   alternates: { canonical: "https://prestior.es/autoridad-digital/" },
 };
 
@@ -16,62 +16,73 @@ const SERVICIOS = [
   { titulo:"Knowledge Panel Google — Personal", desc:"Panel personal para profesionales, coaches, CEOs y figuras públicas.", href:"/autoridad-digital/knowledge-panel-google/", precio:"790€–890€", plazo:"4-8 semanas" },
   { titulo:"Salir en prensa — medios nacionales", desc:"Aparición editorial en medios españoles e iberoamericanos de referencia.", href:"/autoridad-digital/salir-en-prensa/", precio:"Consultar", plazo:"4-10 semanas" },
   { titulo:"Aparecer en Forbes (editorial)", desc:"Artículo editorial en Forbes Argentina. Honesto: Forbes Argentina, no la edición global.", href:"/autoridad-digital/aparecer-en-forbes/", precio:"2.900€–3.490€", plazo:"6-12 semanas" },
-  { titulo:"Pack medios internacionales top", desc:"NYPost, BBC, Wired, PageSix, People. Para quienes necesitan autoridad global.", href:"/autoridad-digital/salir-en-prensa/", precio:"6.900€–7.900€", plazo:"8-16 semanas" },
-  { titulo:"Pack wikis de autoridad", desc:"FoundersWiki, WikiAlpha, Crunchbase, IMDb. No es Wikipedia; véndelo como perfiles wiki de autoridad.", href:"/autoridad-digital/wikipedia-perfil/", precio:"1.490€", plazo:"3-6 semanas" },
+  { titulo:"Pack wikis de autoridad", desc:"Perfiles en FoundersWiki, WikiAlpha y otras wikis de referencia que rankean en Google.", href:"/autoridad-digital/wikipedia-perfil/", precio:"1.490€", plazo:"3-6 semanas" },
+  { titulo:"Pack medios top internacionales", desc:"NYPost, BBC, Wired, People y otros. Para quienes necesitan autoridad a nivel global.", href:"/autoridad-digital/aparecer-en-forbes/", precio:"6.900€–7.900€", plazo:"8-16 semanas" },
   { titulo:"Marca personal en Google", desc:"Dominamos los primeros resultados de Google cuando buscan tu nombre.", href:"/autoridad-digital/marca-personal-google/", precio:"Desde 1.490€", plazo:"8-16 semanas" },
-  { titulo:"Verificación de perfiles (IG/TikTok)", desc:"Gestión del proceso de verificación en redes sociales.", href:"/autoridad-digital/verificacion-perfiles/", precio:"Consultar", plazo:"Variable" },
+  { titulo:"Reputación en IA — GEO", desc:"Controlamos qué dice ChatGPT, Perplexity y Gemini sobre ti. Tendencia clave 2026.", href:"/autoridad-digital/reputacion-ia-geo/", precio:"Consultar", plazo:"Variable" },
 ];
 
 export default function Page() {
   return (
-    <div className="min-h-screen" style={{background:"var(--bg)"}}>
+    <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
       <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Inicio\", \"item\": \"https://prestior.es/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Autoridad digital\", \"item\": \"https://prestior.es/autoridad-digital/\"}]}"}} />
       
-      
-      
-      
-      <nav className="max-w-6xl mx-auto px-4 py-3 text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>
-        <Link href="/" className="hover:text-white/70 transition-colors">Inicio</Link> › <span className="text-white/80">Autoridad digital</span>
-      </nav>
-      <header className="py-16 px-4 text-center" style={{background:"var(--bg-2)"}}>
-        <div className="max-w-3xl mx-auto">
-          <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{background:"#c9a84c22"}}>
-            <TrendingUp className="w-6 h-6" style={{color:"#c9a84c"}} />
+      {/* HERO */}
+      <div style={{ background: "var(--bg2)", borderBottom: "1px solid var(--bdr)", padding: "56px 24px 48px" }}>
+        <div style={{ maxWidth: 860, margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12, fontSize: 12, color: "rgba(240,240,240,.3)", fontFamily: "'DM Mono', monospace" }}>
+            <Link href="/" style={{ color: "inherit" }}>Inicio</Link>
+            <span> › </span>
+            <span style={{ color: "rgba(240,240,240,.6)" }}>Autoridad digital</span>
           </div>
-          <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Autoridad digital</h1>
-          <p className="text-white/40 text-lg max-w-2xl mx-auto mb-8">Construimos presencia que genera confianza: Knowledge Panel, medios de referencia, perfiles de autoridad. Resultados documentados, sin humo.</p>
-          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/"
-            className="inline-flex font-bold px-7 py-3.5 rounded-xl text-sm"
-            style={{background:"#c9a84c", color:"#0f1729"}}>
+          <div className="eyebrow">Servicios de autoridad</div>
+          <h1 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "clamp(2.2rem,5vw,3.6rem)", lineHeight: 1.08, letterSpacing: "-0.025em", color: "#f0f0f0", marginBottom: 16 }}>
+            Autoridad digital
+          </h1>
+          <p style={{ fontSize: "clamp(1rem,2vw,1.1rem)", color: "rgba(240,240,240,.55)", lineHeight: 1.75, fontWeight: 300, maxWidth: 560, marginBottom: 28 }}>
+            Construimos presencia que genera confianza: Knowledge Panel, medios de referencia, perfiles de autoridad. Resultados documentados, sin humo.
+          </p>
+          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-gold" style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
             Auditoría gratuita →
           </Link>
         </div>
-      </header>
-      <section className="py-8 md:py-16 px-5" style={{background:"var(--bg)"}}>
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-yellow-500/10 border border-yellow-500/25 rounded-2xl p-5 mb-8">
-            <p className="text-yellow-300 text-sm font-semibold mb-1">Sobre la honestidad en este sector</p>
-            <p className="text-yellow-400 text-sm">Forbes Argentina es una edición real de Forbes. Un wiki de autoridad no es Wikipedia. Lo decimos siempre. Es lo que nos separa del "humo" y de los reembolsos.</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-5">
+      </div>
+
+      {/* AVISO HONESTIDAD */}
+      <div style={{ background: "rgba(201,168,76,.06)", borderBottom: "1px solid rgba(201,168,76,.15)", padding: "16px 24px" }}>
+        <div style={{ maxWidth: 860, margin: "0 auto", display: "flex", gap: 10, alignItems: "flex-start" }}>
+          <span style={{ fontSize: 16, flexShrink: 0 }}>⚠️</span>
+          <p style={{ fontSize: 13, color: "rgba(201,168,76,.9)", lineHeight: 1.6, fontWeight: 300 }}>
+            <strong>Sobre la honestidad en este sector:</strong> Forbes Argentina es una edición real de Forbes. Un wiki de autoridad no es Wikipedia. Lo decimos siempre. Es lo que nos separa del "humo" y de los reembolsos.
+          </p>
+        </div>
+      </div>
+
+      {/* SERVICIOS GRID */}
+      <section className="sec">
+        <div className="sec-inner">
+          <div className="eyebrow">Servicios disponibles</div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 12 }}>
             {SERVICIOS.map(s => (
-              <Link key={s.titulo} href={s.href} className="flex gap-4 p-5 card hover:border-white/30  transition group">
-                <ArrowRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-white/30 group-hover:text-white/80 transition" />
-                <div className="flex-1">
-                  <div className="flex items-start justify-between mb-1 gap-2">
-                    <h3 className="font-semibold text-white text-sm">{s.titulo}</h3>
-                    <span className="text-xs text-white/40 flex-shrink-0">{s.precio}</span>
+              <Link key={s.titulo} href={s.href} style={{ textDecoration: "none" }}>
+                <div className="svc-card" style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 16, cursor: "pointer" }}>
+                  <div style={{ flex: 1 }}>
+                    <p style={{ fontFamily: "'Syne', sans-serif", fontWeight: 600, fontSize: 16, color: "#f0f0f0", marginBottom: 4 }}>{s.titulo}</p>
+                    <p style={{ fontSize: 13, color: "rgba(240,240,240,.45)", lineHeight: 1.6, fontWeight: 300 }}>{s.desc}</p>
+                    <p style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "rgba(240,240,240,.25)", marginTop: 8 }}>⏱ {s.plazo}</p>
                   </div>
-                  <p className="text-xs text-white/40 leading-relaxed mb-1">{s.desc}</p>
-                  <span className="text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>⏱ {s.plazo}</span>
+                  <div style={{ flexShrink: 0, textAlign: "right" }}>
+                    <p style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 15, color: "#c9a84c" }}>{s.precio}</p>
+                    <ArrowRight size={14} style={{ color: "rgba(240,240,240,.2)", marginTop: 4, marginLeft: "auto" }} />
+                  </div>
                 </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
-      <CtaBanner title="¿Cuánta autoridad tienes ahora mismo?" sub="Búscate en Google. Si no te encontramos, te decimos exactamente qué construir primero." />
+
+      <CtaBanner title="¿Necesitas autoridad digital?" sub="Knowledge Panel, medios y reputación en IA. Análisis gratuito sin compromiso." />
       <Footer />
     </div>
   );

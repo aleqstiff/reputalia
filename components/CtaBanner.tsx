@@ -1,21 +1,19 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 export default function CtaBanner({ 
   title = "¿Qué aparece cuando buscan tu nombre?",
   sub = "Análisis gratuito. Respuesta en 24h. Sin compromiso."
 }: { title?: string; sub?: string }) {
   return (
-    <section className="py-12 md:py-16 px-5 relative overflow-hidden" style={{ background: "var(--bg-2)" }}>
-      <div className="aurora-bg" style={{ opacity: 0.2 }} />
-      <div className="relative z-10 max-w-xl mx-auto text-center">
-        <h2 className="font-display font-black text-white mb-3 text-2xl md:text-3xl">{title}</h2>
-        <p className="mb-6 text-sm" style={{ color: "rgba(238,240,244,0.4)", fontWeight: 300 }}>{sub}</p>
-        <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-primary inline-flex">
-          Auditoría gratuita <ArrowRight className="w-4 h-4" />
+    <div style={{ background: "#111", borderTop: "1px solid rgba(255,255,255,.07)", borderBottom: "1px solid rgba(255,255,255,.07)", padding: "48px 24px", textAlign: "center" }}>
+      <div style={{ maxWidth: 540, margin: "0 auto" }}>
+        <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "clamp(1.5rem,4vw,2.2rem)", lineHeight: 1.1, letterSpacing: "-0.02em", color: "#f0f0f0", marginBottom: 12 }}>{title}</h2>
+        <p style={{ fontSize: 15, color: "rgba(240,240,240,.4)", fontWeight: 300, marginBottom: 28 }}>{sub}</p>
+        <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-gold" style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+          Auditoría gratuita →
         </Link>
-        <p className="mt-3 text-xs font-mono-dm" style={{ color: "rgba(238,240,244,0.2)" }}>Sin coste · Sin compromiso · Confidencial</p>
+        <p style={{ marginTop: 12, fontFamily: "'DM Mono', monospace", fontSize: 11, color: "rgba(240,240,240,.2)" }}>Sin coste · Sin compromiso · Confidencial</p>
       </div>
-    </section>
+    </div>
   );
 }
