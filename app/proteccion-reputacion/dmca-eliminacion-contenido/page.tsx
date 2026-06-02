@@ -11,7 +11,7 @@ export default function Page() {
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>
         <Link href="/" className="hover:text-white/70 transition-colors">Inicio</Link> › <Link href="/proteccion-reputacion/" className="hover:text-white/70 transition-colors">Protección de reputación</Link> › <span className="text-white/80">DMCA — Eliminación de Contenido por Copyright</span>
       </nav>
-      <header className="py-14 px-4 text-center" >
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-4">DMCA — Eliminación de Contenido por Copyright</h1>
           <p className="text-white/40 mb-6">Gestión profesional por las vías legales correctas. Análisis gratuito previo.</p>

@@ -25,7 +25,7 @@ export default function Page() {
         <Link href="/autoridad-digital/" className="hover:text-white/70 transition-colors">Autoridad digital</Link> ›{" "}
         <span className="text-white/80">Salir en prensa y medios</span>
       </nav>
-      <header className="py-14 px-5 relative overflow-hidden" >
+      <header className="py-14 px-5 relative overflow-hidden" style={{background:"var(--bg-2)"}}>
         <div className="max-w-3xl mx-auto">
           <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Salir en prensa y medios</h1>
           <p className="text-lg max-w-2xl mb-5" style={{color:"rgba(238,240,244,0.45)",fontWeight:300}}>Apariciones editoriales en medios de referencia nacionales e internacionales. Desde medios españoles hasta NYPost, BBC, Wired o People. Siempre editorial, siempre nombrando el medio correcto.</p>
@@ -35,7 +35,7 @@ export default function Page() {
           </div>
         </div>
       </header>
-      <section className="py-8 md:py-12 px-5">
+      <section className="py-8 md:py-12 px-5" style={{background:"var(--bg)"}}>
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-bold text-white text-xl mb-6">Cómo gestionamos el proceso</h2>
           <div className="space-y-3">
@@ -54,7 +54,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="py-8 md:py-12 px-5" >
+      <section className="py-8 md:py-12 px-5"  style={{background:"var(--bg-2)"}}>
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-bold text-white text-xl mb-6">Preguntas frecuentes</h2>
           <div className="space-y-3">
@@ -79,7 +79,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="py-10 px-4 bg-white">
+      <section className="py-10 px-5" style={{background:"var(--bg)"}}>
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-semibold text-white/30 uppercase tracking-wider mb-4">Servicios relacionados</p>
           <div className="flex flex-wrap gap-3">

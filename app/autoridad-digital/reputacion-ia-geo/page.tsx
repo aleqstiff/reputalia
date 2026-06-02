@@ -20,7 +20,7 @@ export default function GeoPage() {
         <Link href="/autoridad-digital/" className="hover:text-white/70 transition-colors">Autoridad digital</Link> ›{" "}
         <span className="text-white/80">Reputación en IA</span>
       </nav>
-      <header className="py-14 px-5 relative overflow-hidden" >
+      <header className="py-14 px-5 relative overflow-hidden" style={{background:"var(--bg-2)"}}>
         <div className="max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 border border-amber-300 bg-yellow-500/100/10 rounded-full px-3 py-1 text-xs font-semibold text-amber-400 mb-5">
             Nuevo servicio 2026
@@ -31,7 +31,7 @@ export default function GeoPage() {
           </p>
         </div>
       </header>
-      <section className="py-8 md:py-12 px-5">
+      <section className="py-8 md:py-12 px-5" style={{background:"var(--bg)"}}>
         <div className="max-w-3xl mx-auto space-y-6">
           <p className="text-white/60 leading-relaxed">Millones de personas usan ChatGPT, Perplexity y Gemini para investigar personas y empresas. Las IAs responden basándose en datos que pueden ser incorrectos, desactualizados o dañinos. GEO (Generative Engine Optimization) es la disciplina de controlar esa narrativa.</p>
           <div className="space-y-3">

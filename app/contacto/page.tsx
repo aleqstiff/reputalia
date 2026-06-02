@@ -13,13 +13,13 @@ export default function ContactoPage() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" >
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-3">Contacto</h1>
           <p className="text-white/40">Cuéntanos tu situación. Respuesta en menos de 24 horas.</p>
         </div>
       </header>
-      <section className="py-8 md:py-16 px-5">
+      <section className="py-8 md:py-16 px-5" style={{background:"var(--bg)"}}>
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
           <div>
             <h2 className="font-display font-bold text-white text-xl mb-6">Háblanos directamente</h2>

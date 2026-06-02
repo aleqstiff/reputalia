@@ -21,13 +21,13 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" >
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-3">Blog</h1>
           <p className="text-white/40">Guías honestas sobre reputación digital, autoridad y protección online.</p>
         </div>
       </header>
-      <section className="py-8 md:py-16 px-5">
+      <section className="py-8 md:py-16 px-5" style={{background:"var(--bg)"}}>
         <div className="max-w-3xl mx-auto space-y-4">
           {POSTS.map(p => (
             <Link key={p.slug} href={`/blog/${p.slug}/`}

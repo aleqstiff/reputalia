@@ -24,13 +24,13 @@ export default function CasosPage() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" >
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-black text-white mb-3">Casos de éxito</h1>
           <p className="text-white/40 text-lg">Resultados reales. Sin humo, sin promesas imposibles.</p>
         </div>
       </header>
-      <section className="py-8 md:py-16 px-5">
+      <section className="py-8 md:py-16 px-5" style={{background:"var(--bg)"}}>
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-5">
           {CASOS.map((c, i) => (
             <div key={i} className="card p-6">

@@ -14,13 +14,13 @@ export default function Page() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" >
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-3">Sobre Prestior</h1>
           <p className="text-white/40 text-lg">Lo que nos hace diferentes no es lo que hacemos — es cómo lo decimos.</p>
         </div>
       </header>
-      <section className="py-8 md:py-16 px-5">
+      <section className="py-8 md:py-16 px-5" style={{background:"var(--bg)"}}>
         <div className="max-w-3xl mx-auto prose prose-invert prose-sm">
           <p className="text-lg text-white/80 leading-relaxed">Prestior es una agencia especializada en la gestión integral de la reputación digital. Trabajamos con profesionales, directivos, marcas personales y empresas que necesitan proteger o construir su presencia online.</p>
           <h2>Nuestra filosofía</h2>

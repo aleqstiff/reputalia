@@ -39,7 +39,7 @@ export default function Page() {
       <nav className="max-w-6xl mx-auto px-4 py-3 text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>
         <Link href="/" className="hover:text-white/70 transition-colors">Inicio</Link> › <span className="text-white/80">Protección de reputación</span>
       </nav>
-      <header className="py-16 px-4 text-center" >
+      <header className="py-16 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-3xl mx-auto">
           <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{background:"#c9a84c22"}}>
             <Shield className="w-6 h-6" style={{color:"#c9a84c"}} />
@@ -53,7 +53,7 @@ export default function Page() {
           </Link>
         </div>
       </header>
-      <section className="py-8 md:py-16 px-5">
+      <section className="py-8 md:py-16 px-5" style={{background:"var(--bg)"}}>
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-5">
             {SERVICIOS.map(s => (
