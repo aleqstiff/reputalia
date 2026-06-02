@@ -13,7 +13,7 @@ export default function ContactoPage() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" style={{background:"var(--bg-mid)"}}>
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-3">Contacto</h1>
           <p className="text-slate-400">Cuéntanos tu situación. Respuesta en menos de 24 horas.</p>
@@ -22,33 +22,33 @@ export default function ContactoPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
           <div>
-            <h2 className="text-xl font-bold text-stone-900 mb-6">Háblanos directamente</h2>
+            <h2 className="text-xl font-bold text-white mb-6">Háblanos directamente</h2>
             <div className="space-y-4">
               <a href="https://wa.me/34684115988?text=Hola, me interesa la gestión de reputación digital"
                 target="_blank" rel="noopener"
                 className="flex items-center gap-4 p-5 bg-green-50 border border-green-200 rounded-2xl hover:border-green-400 transition">
                 <span className="text-2xl">💬</span>
                 <div>
-                  <p className="font-semibold text-stone-900">WhatsApp</p>
-                  <p className="text-sm text-stone-500">Respuesta inmediata en horario laboral</p>
+                  <p className="font-semibold text-white">WhatsApp</p>
+                  <p className="text-sm ">Respuesta inmediata en horario laboral</p>
                 </div>
               </a>
               <a href="mailto:hola@prestior.es"
-                className="flex items-center gap-4 p-5 bg-stone-50 border border-stone-200 rounded-2xl hover:border-stone-400 transition">
+                className="flex items-center gap-4 p-5 bg-stone-50 border border-white/[0.07] rounded-2xl hover:border-stone-400 transition">
                 <span className="text-2xl">📧</span>
                 <div>
-                  <p className="font-semibold text-stone-900">Email</p>
-                  <p className="text-sm text-stone-500">hola@prestior.es</p>
+                  <p className="font-semibold text-white">Email</p>
+                  <p className="text-sm ">hola@prestior.es</p>
                 </div>
               </a>
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-bold text-stone-900 mb-6">O cuéntanos por escrito</h2>
+            <h2 className="text-xl font-bold text-white mb-6">O cuéntanos por escrito</h2>
             <div className="space-y-3">
-              <input type="text" placeholder="Nombre" className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-500" />
-              <input type="email" placeholder="Email" className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-500" />
-              <select className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-500 bg-white">
+              <input type="text" placeholder="Nombre" className="input-dark" />
+              <input type="email" placeholder="Email" className="input-dark" />
+              <select className="input-dark">
                 <option value="">¿Qué necesitas?</option>
                 <option>Eliminar contenido dañino</option>
                 <option>Construir autoridad y presencia</option>
@@ -56,13 +56,12 @@ export default function ContactoPage() {
                 <option>Paquete completo</option>
                 <option>No lo sé, necesito orientación</option>
               </select>
-              <textarea rows={4} placeholder="Cuéntanos tu situación..." className="w-full px-4 py-3 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-stone-500 resize-none" />
+              <textarea rows={4} placeholder="Cuéntanos tu situación..." className="input-dark" />
               <a href="mailto:hola@prestior.es?subject=Consulta desde la web"
-                className="block text-center py-3.5 rounded-xl font-bold text-sm"
-                style={{background:"#0f1729", color:"white"}}>
+                className="btn-primary w-full justify-center">
                 Enviar consulta →
               </a>
-              <p className="text-xs text-stone-400 text-center">Respuesta en menos de 24h · Sin compromiso</p>
+              <p className="text-xs font-mono-dm text-center" style={{color:"rgba(238,240,244,0.3)"}}>Respuesta en menos de 24h · Sin compromiso</p>
             </div>
           </div>
         </div>

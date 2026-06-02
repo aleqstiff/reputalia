@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" style={{background:"var(--bg-mid)"}}>
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-3">Sobre Prestior</h1>
           <p className="text-slate-400 text-lg">Lo que nos hace diferentes no es lo que hacemos — es cómo lo decimos.</p>

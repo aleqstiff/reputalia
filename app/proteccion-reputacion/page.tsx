@@ -36,15 +36,15 @@ export default function Page() {
       
       
       
-      <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">
-        <Link href="/" className="hover:text-stone-600">Inicio</Link> › <span className="text-white/80">Protección de reputación</span>
+      <nav className="max-w-6xl mx-auto px-4 py-3 text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>
+        <Link href="/" className="hover:text-white/70 transition-colors">Inicio</Link> › <span className="text-white/80">Protección de reputación</span>
       </nav>
-      <header className="py-16 px-4 text-center" style={{background:"var(--bg-mid)"}}>
+      <header className="py-16 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-3xl mx-auto">
           <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{background:"#c9a84c22"}}>
             <Shield className="w-6 h-6" style={{color:"#c9a84c"}} />
           </div>
-          <h1 className="text-3xl md:text-4xl font-black text-white mb-4">Protección de reputación digital</h1>
+          <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Protección de reputación digital</h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8">Eliminamos contenido dañino por las vías legales correctas. Difamación, suplantaciones, derechos al olvido, contenido íntimo filtrado y reseñas falsas.</p>
           <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/"
             className="inline-flex font-bold px-7 py-3.5 rounded-xl text-sm"
@@ -57,7 +57,7 @@ export default function Page() {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-5">
             {SERVICIOS.map(s => (
-              <Link key={s.href} href={s.href} className="flex gap-4 p-5 bg-stone-50 rounded-2xl border border-stone-200 hover:border-stone-400 hover:shadow-sm transition group">
+              <Link key={s.href} href={s.href} className="flex gap-4 p-5 card hover:border-stone-400 hover:shadow-sm transition group">
                 <ArrowRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-stone-400 group-hover:text-stone-700 transition" />
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1">

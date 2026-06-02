@@ -15,18 +15,18 @@ export default function GeoPage() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <nav className="max-w-6xl mx-auto px-4 py-3 text-xs text-stone-400">
-        <Link href="/" className="hover:text-stone-600">Inicio</Link> ›{" "}
-        <Link href="/autoridad-digital/" className="hover:text-stone-600">Autoridad digital</Link> ›{" "}
+      <nav className="max-w-6xl mx-auto px-4 py-3 text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>
+        <Link href="/" className="hover:text-white/70 transition-colors">Inicio</Link> ›{" "}
+        <Link href="/autoridad-digital/" className="hover:text-white/70 transition-colors">Autoridad digital</Link> ›{" "}
         <span className="text-white/80">Reputación en IA</span>
       </nav>
-      <header className="py-14 px-4" style={{background:"var(--bg-mid)"}}>
+      <header className="py-14 px-5 relative overflow-hidden" style={{background:"var(--bg-2)"}}>
         <div className="max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 border border-amber-300 bg-amber-500/10 rounded-full px-3 py-1 text-xs font-semibold text-amber-400 mb-5">
             Nuevo servicio 2026
           </div>
-          <h1 className="text-3xl md:text-4xl font-black text-white mb-4">Reputación en IA — GEO</h1>
-          <p className="text-slate-400 text-lg max-w-2xl">
+          <h1 className="font-display font-black text-white mb-4" style={{fontSize:"clamp(2rem,4vw,3rem)"}}>Reputación en IA — GEO</h1>
+          <p className="text-lg max-w-2xl" style={{color:"rgba(238,240,244,0.45)",fontWeight:300}}>
             ¿Qué dice ChatGPT cuando alguien pregunta por ti? Gestionamos tu narrativa en los modelos de IA para que la respuesta sea la correcta.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function GeoPage() {
               ["Contenido GEO-optimizado","Generamos contenido en fuentes de alta autoridad que los modelos priorizan."],
               ["Monitorización continua","Los modelos se actualizan — monitorizamos para detectar cambios."],
             ].map(([t,d]) => (
-              <div key={t} className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-stone-200">
+              <div key={t} className="flex gap-4 p-4 bg-stone-50 rounded-xl border border-white/[0.07]">
                 <div className="w-4 h-4 rounded-full bg-stone-900 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-2.5 h-2.5 text-white" />
                 </div>
@@ -52,10 +52,10 @@ export default function GeoPage() {
               </div>
             ))}
           </div>
-          <div className="flex flex-wrap gap-3 pt-4 border-t border-stone-200">
+          <div className="flex flex-wrap gap-3 pt-4 border-t border-white/[0.07]">
             <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider w-full mb-1">Servicios relacionados</p>
             {[["Knowledge Panel","/autoridad-digital/knowledge-panel-google/"],["Salir en prensa","/autoridad-digital/salir-en-prensa/"],["Marca personal","/autoridad-digital/marca-personal-google/"]].map(([l,h]) => (
-              <Link key={h} href={h} className="text-sm border border-stone-200 px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">{l} →</Link>
+              <Link key={h} href={h} className="text-sm border border-white/[0.07] px-4 py-2 rounded-xl hover:border-stone-400 transition text-stone-600">{l} →</Link>
             ))}
           </div>
         </div>

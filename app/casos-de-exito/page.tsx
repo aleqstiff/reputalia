@@ -24,7 +24,7 @@ export default function CasosPage() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" style={{background:"var(--bg-mid)"}}>
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-black text-white mb-3">Casos de éxito</h1>
           <p className="text-slate-400 text-lg">Resultados reales. Sin humo, sin promesas imposibles.</p>
@@ -33,18 +33,18 @@ export default function CasosPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-5">
           {CASOS.map((c, i) => (
-            <div key={i} className="bg-stone-50 rounded-2xl border border-stone-200 p-6">
+            <div key={i} className="card p-6">
               <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3" style={{background:"#0f172911", color:"#0f1729"}}>{c.cat}</span>
-              <h3 className="font-bold text-stone-900 mb-2">{c.titulo}</h3>
-              <p className="text-sm text-stone-600 mb-4 leading-relaxed">{c.desc}</p>
-              <div className="border-t border-stone-200 pt-3 flex items-center justify-between">
+              <h3 className="font-bold text-white mb-2">{c.titulo}</h3>
+              <p className="text-sm  mb-4 leading-relaxed">{c.desc}</p>
+              <div className="border-t border-white/[0.07] pt-3 flex items-center justify-between">
                 <span className="text-xs font-semibold text-green-700 bg-green-100 px-2.5 py-1 rounded-full">{c.resultado}</span>
-                <span className="text-xs text-stone-400">⏱ {c.tiempo}</span>
+                <span className="text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>⏱ {c.tiempo}</span>
               </div>
             </div>
           ))}
         </div>
-        <p className="text-center text-xs text-stone-400 mt-8">Los datos de los clientes se muestran de forma anonimizada con su consentimiento.</p>
+        <p className="text-center text-xs font-mono-dm mt-8" style={{color:"rgba(238,240,244,0.3)"}}>Los datos de los clientes se muestran de forma anonimizada con su consentimiento.</p>
       </section>
       <CtaBanner />
       <Footer />

@@ -21,7 +21,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen" style={{background:"var(--bg)"}}>
       <Nav />
-      <header className="py-14 px-4 text-center" style={{background:"var(--bg-mid)"}}>
+      <header className="py-14 px-4 text-center" style={{background:"var(--bg-2)"}}>
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-black text-white mb-3">Blog</h1>
           <p className="text-slate-400">Guías honestas sobre reputación digital, autoridad y protección online.</p>
@@ -31,11 +31,11 @@ export default function BlogPage() {
         <div className="max-w-3xl mx-auto space-y-4">
           {POSTS.map(p => (
             <Link key={p.slug} href={`/blog/${p.slug}/`}
-              className="flex items-start gap-4 p-5 bg-stone-50 rounded-2xl border border-stone-200 hover:border-stone-400 transition">
+              className="flex items-start gap-4 p-5 card hover:border-stone-400 transition">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={{background:"#0f172911", color:"#0f1729"}}>{p.cat}</span>
-                  <span className="text-xs text-stone-400">{p.fecha}</span>
+                  <span className="text-xs font-mono-dm" style={{color:"rgba(238,240,244,0.3)"}}>{p.fecha}</span>
                 </div>
                 <h2 className="font-semibold text-stone-900 text-sm leading-snug">{p.titulo}</h2>
               </div>
