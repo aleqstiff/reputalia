@@ -1,39 +1,53 @@
 import Link from "next/link";
 
-const C = { bg: "#020509", t1: "#eef0f4", t3: "rgba(238,240,244,0.3)", t4: "rgba(238,240,244,0.15)", bdr: "rgba(255,255,255,0.07)", gold: "#c9a84c" };
+const STYLE = `
+  .ft { background: #020509; border-top: 1px solid rgba(255,255,255,0.07); }
+  .ft-inner { max-width: 820px; margin: 0 auto; padding: 40px 24px 44px; }
+  .ft-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 32px; }
+  .ft-logo { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .ft-bar { width: 4px; height: 20px; background: #c9a84c; border-radius: 2px; }
+  .ft-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #eef0f4; }
+  .ft-tagline { font-size: 13px; color: rgba(238,240,244,0.3); line-height: 1.6; font-weight: 300; }
+  .ft-col-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(238,240,244,0.18); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+  .ft-link { display: block; font-size: 13px; color: rgba(238,240,244,0.32); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+  .ft-link:hover { color: rgba(238,240,244,0.7); }
+  .ft-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  .ft-copy { font-size: 12px; color: rgba(238,240,244,0.18); font-family: 'DM Mono', monospace; }
+  .ft-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+  @media (min-width: 600px) { .ft-grid { grid-template-columns: 1.6fr 1fr 1fr; } }
+`;
 
 export default function Footer() {
   return (
-    <footer style={{ background: C.bg, borderTop: `1px solid ${C.bdr}` }}>
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "40px 24px 48px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32, marginBottom: 40 }}>
+    <footer className="ft">
+      <style dangerouslySetInnerHTML={{ __html: STYLE }} />
+      <div className="ft-inner">
+        <div className="ft-grid">
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-              <span style={{ width: 4, height: 20, background: C.gold, borderRadius: 2 }} />
-              <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 15, color: C.t1 }}>Prestior</span>
+            <div className="ft-logo">
+              <span className="ft-bar" />
+              <span className="ft-name">Prestior</span>
             </div>
-            <p style={{ fontSize: 13, color: C.t3, lineHeight: 1.65, fontWeight: 300 }}>
-              Firma de reputación y autoridad digital. Empresa registrada en España.
-            </p>
+            <p className="ft-tagline">Firma de reputación y autoridad digital.<br />Empresa registrada en España.</p>
           </div>
           <div>
-            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: C.t4, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 14 }}>Servicios</p>
-            {[["Protección","/proteccion-reputacion/"],["Autoridad","/autoridad-digital/"],["Blindaje","/monitorizacion-reputacion/"],["Precios","/precios/"]].map(([l,h]) => (
-              <Link key={h} href={h} style={{ display: "block", fontSize: 13, color: C.t3, textDecoration: "none", marginBottom: 8 }}>{l}</Link>
+            <span className="ft-col-label">Servicios</span>
+            {[["Protección","/proteccion-reputacion/"],["Autoridad","/autoridad-digital/"],["Blindaje","/monitorizacion-reputacion/"],["Precios","/precios/"]].map(([l,h])=>(
+              <Link key={h} href={h} className="ft-link">{l}</Link>
             ))}
           </div>
           <div>
-            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: C.t4, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 14 }}>Empresa</p>
-            {[["Casos de éxito","/casos-de-exito/"],["Blog","/blog/"],["Sobre nosotros","/sobre-nosotros/"],["Contacto","/contacto/"]].map(([l,h]) => (
-              <Link key={h} href={h} style={{ display: "block", fontSize: 13, color: C.t3, textDecoration: "none", marginBottom: 8 }}>{l}</Link>
+            <span className="ft-col-label">Empresa</span>
+            {[["Casos de éxito","/casos-de-exito/"],["Blog","/blog/"],["Sobre nosotros","/sobre-nosotros/"],["Contacto","/contacto/"]].map(([l,h])=>(
+              <Link key={h} href={h} className="ft-link">{l}</Link>
             ))}
           </div>
         </div>
-        <div style={{ borderTop: `1px solid ${C.bdr}`, paddingTop: 24, display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: 16 }}>
-          <p style={{ fontSize: 12, color: C.t4, fontFamily: "'DM Mono', monospace" }}>© {new Date().getFullYear()} Prestior · Empresa registrada en España</p>
-          <div style={{ display: "flex", gap: 20 }}>
-            {[["Aviso legal","/aviso-legal/"],["Privacidad","/privacidad/"],["Cookies","/cookies/"]].map(([l,h]) => (
-              <Link key={h} href={h} style={{ fontSize: 12, color: C.t4, textDecoration: "none", fontFamily: "'DM Mono', monospace" }}>{l}</Link>
+        <div className="ft-bottom">
+          <p className="ft-copy">© {new Date().getFullYear()} Prestior · Empresa registrada en España</p>
+          <div className="ft-legal">
+            {[["Aviso legal","/aviso-legal/"],["Privacidad","/privacidad/"],["Cookies","/cookies/"]].map(([l,h])=>(
+              <Link key={h} href={h} className="ft-copy" style={{ textDecoration: "none" }}>{l}</Link>
             ))}
           </div>
         </div>
