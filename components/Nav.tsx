@@ -1,90 +1,60 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 
 const LINKS = [
-  { label: "Protección", href: "/proteccion-reputacion/" },
-  { label: "Autoridad", href: "/autoridad-digital/" },
-  { label: "Resultados", href: "/casos-de-exito/" },
-  { label: "Precios", href: "/precios/" },
+  { l:"Protección", h:"/proteccion-reputacion/" },
+  { l:"Autoridad", h:"/autoridad-digital/" },
+  { l:"Resultados", h:"/casos-de-exito/" },
+  { l:"Precios", h:"/precios/" },
 ];
-
-const C = {
-  bg:  "#04070f",
-  t1:  "#eef0f4",
-  t3:  "rgba(238,240,244,0.35)",
-  bdr: "rgba(255,255,255,0.07)",
-  gold: "#c9a84c",
-};
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
-
   return (
-    <nav style={{
-      position: "sticky", top: 0, zIndex: 50,
-      background: scrolled ? "rgba(4,7,15,0.95)" : C.bg,
-      backdropFilter: scrolled ? "blur(20px)" : "none",
-      borderBottom: `1px solid ${C.bdr}`,
-      transition: "background 0.3s",
-    }}>
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "0 24px", height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <span style={{ width: 6, height: 28, background: C.gold, borderRadius: 3, flexShrink: 0 }} />
-          <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 17, color: C.t1, letterSpacing: "-0.01em" }}>Prestior</span>
+    <nav style={{ position:"sticky", top:0, zIndex:100, background:"rgba(9,9,11,.92)", backdropFilter:"blur(20px)", borderBottom:"1px solid rgba(255,255,255,.07)" }}>
+      <div style={{ maxWidth:900, margin:"0 auto", padding:"0 20px", height:58, display:"flex", alignItems:"center", justifyContent:"space-between", gap:16 }}>
+        <Link href="/" style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none" }}>
+          <span style={{ width:3, height:22, background:"#c9a84c", borderRadius:2, display:"block" }} />
+          <span style={{ fontFamily:"'Syne',sans-serif", fontWeight:700, fontSize:17, color:"#f8f8f8", letterSpacing:"-.01em" }}>Prestior</span>
         </Link>
 
-        {/* Desktop links */}
-        <div style={{ display: "flex", alignItems: "center", gap: 32 }} className="hidden-mobile">
-          {LINKS.map(l => (
-            <Link key={l.href} href={l.href} style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: C.t3, textDecoration: "none", letterSpacing: "0.04em", transition: "color 0.2s" }}
-              onMouseEnter={e => (e.currentTarget.style.color = C.t1)}
-              onMouseLeave={e => (e.currentTarget.style.color = C.t3)}>
-              {l.label}
-            </Link>
+        {/* Desktop */}
+        <div style={{ display:"flex", alignItems:"center", gap:24 }} className="nav-d">
+          {LINKS.map(({l,h})=>(
+            <Link key={h} href={h} style={{ fontFamily:"'DM Mono',monospace", fontSize:12, color:"rgba(240,240,240,.35)", textDecoration:"none", letterSpacing:".04em", transition:"color .2s" }}>{l}</Link>
           ))}
         </div>
+        <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="nav-d" style={{ fontFamily:"'Syne',sans-serif", fontWeight:600, fontSize:13, background:"#c9a84c", color:"#09090b", padding:"8px 18px", borderRadius:8, textDecoration:"none", whiteSpace:"nowrap" }}>
+          Análisis gratuito
+        </Link>
 
-        {/* Desktop CTA */}
-        <div className="hidden-mobile">
-          <Link href="/contacto/" style={{ fontFamily: "'Syne', sans-serif", fontWeight: 600, fontSize: 13, color: C.bg, background: C.t1, padding: "8px 18px", borderRadius: 6, textDecoration: "none", letterSpacing: "0.01em" }}>
-            Contacto
-          </Link>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button onClick={() => setOpen(!open)} style={{ background: "none", border: "none", color: C.t3, cursor: "pointer", padding: 4, display: "none" }} className="show-mobile">
-          {open ? <X size={20} /> : <Menu size={20} />}
+        {/* Mobile */}
+        <button onClick={()=>setOpen(!open)} className="nav-m" style={{ background:"none", border:"none", color:"rgba(240,240,240,.6)", cursor:"pointer", padding:4, fontSize:20 }}>
+          {open ? "✕" : "☰"}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div style={{ background: C.bg, borderTop: `1px solid ${C.bdr}`, padding: "20px 24px 28px" }}>
-          {LINKS.map(l => (
-            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
-              style={{ display: "block", padding: "14px 0", fontFamily: "'DM Mono', monospace", fontSize: 13, color: C.t3, textDecoration: "none", borderBottom: `1px solid ${C.bdr}`, letterSpacing: "0.04em" }}>
-              {l.label}
+        <div style={{ background:"#0f0f12", borderBottom:"1px solid rgba(255,255,255,.07)", padding:"16px 20px 24px" }}>
+          {LINKS.map(({l,h})=>(
+            <Link key={h} href={h} onClick={()=>setOpen(false)} style={{ display:"block", padding:"12px 0", fontFamily:"'DM Mono',monospace", fontSize:13, color:"rgba(240,240,240,.35)", textDecoration:"none", borderBottom:"1px solid rgba(255,255,255,.07)", letterSpacing:".04em" }}>
+              {l}
             </Link>
           ))}
-          <Link href="/contacto/" onClick={() => setOpen(false)} style={{ display: "block", marginTop: 20, textAlign: "center", padding: "13px", background: C.t1, color: C.bg, borderRadius: 6, textDecoration: "none", fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 14 }}>
-            Contacto
+          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" onClick={()=>setOpen(false)} style={{ display:"block", marginTop:16, textAlign:"center", background:"#c9a84c", color:"#09090b", fontFamily:"'Syne',sans-serif", fontWeight:700, fontSize:14, padding:13, borderRadius:8, textDecoration:"none" }}>
+            Análisis gratuito
           </Link>
         </div>
       )}
 
       <style>{`
-        @media (min-width: 640px) { .hidden-mobile { display: flex; } .show-mobile { display: none !important; } }
-        @media (max-width: 639px) { .hidden-mobile { display: none !important; } .show-mobile { display: block !important; } }
+        .nav-d { display:flex!important; }
+        .nav-m { display:none!important; }
+        @media(max-width:560px){
+          .nav-d { display:none!important; }
+          .nav-m { display:flex!important; }
+        }
       `}</style>
     </nav>
   );
