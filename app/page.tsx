@@ -1,406 +1,530 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Prestior — Gestión de Reputación Digital en España | Agencia Especializada",
-  description: "Agencia líder en gestión de reputación digital en España. Eliminamos contenido dañino, construimos autoridad y blindamos tu presencia online. Análisis gratuito.",
-  keywords: ["gestión reputación digital", "eliminar contenido google", "derecho al olvido", "knowledge panel google", "reputación online España"],
+  title: "Prestior — Gestión de Reputación Digital | Agencia Especializada España",
+  description: "Agencia de reputación digital en España. Eliminamos difamación, construimos autoridad en Google y medios, y blindamos tu presencia online. Análisis gratuito.",
   alternates: { canonical: "https://prestior.es/" },
 };
 
-const CSS = `
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{background:#09090b;color:#f0f0f0;font-family:'DM Sans',system-ui,sans-serif;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit}
-
-:root{
-  --bg:#09090b;
-  --bg2:#0f0f12;
-  --bg3:#161619;
-  --gold:#c9a84c;
-  --gold2:#e2c36e;
-  --white:#f8f8f8;
-  --t1:#f0f0f0;
-  --t2:rgba(240,240,240,.6);
-  --t3:rgba(240,240,240,.35);
-  --t4:rgba(240,240,240,.18);
-  --bdr:rgba(255,255,255,.07);
-  --bdr2:rgba(255,255,255,.12);
-  --gold-bdr:rgba(201,168,76,.25);
-  --ff-h:'Syne',sans-serif;
-  --ff-m:'DM Mono',monospace;
-  --ff-b:'DM Sans',system-ui,sans-serif;
-  --r:12px;
-  --max:900px;
-}
-
-/* NAV */
-.nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr)}
-.nav-inner{max-width:var(--max);margin:0 auto;padding:0 20px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.nav-logo-bar{width:3px;height:22px;background:var(--gold);border-radius:2px}
-.nav-logo-text{font-family:var(--ff-h);font-weight:700;font-size:17px;color:var(--white);letter-spacing:-.01em}
-.nav-links{display:none;align-items:center;gap:24px}
-.nav-link{font-family:var(--ff-m);font-size:12px;color:var(--t3);text-decoration:none;letter-spacing:.04em;transition:color .2s}
-.nav-link:hover{color:var(--t1)}
-.nav-cta{font-family:var(--ff-h);font-weight:600;font-size:13px;background:var(--gold);color:#09090b;padding:8px 18px;border-radius:8px;text-decoration:none;transition:opacity .2s;white-space:nowrap}
-.nav-cta:hover{opacity:.85}
-.nav-wa{display:flex;align-items:center;gap:6px;font-family:var(--ff-m);font-size:11px;color:var(--t3);text-decoration:none;transition:color .2s}
-.nav-wa:hover{color:#4ade80}
-.hamburger{background:none;border:none;color:var(--t2);cursor:pointer;padding:4px;display:flex}
-.mob-menu{background:var(--bg2);border-bottom:1px solid var(--bdr);padding:16px 20px 24px}
-.mob-link{display:block;padding:12px 0;font-family:var(--ff-m);font-size:13px;color:var(--t3);text-decoration:none;border-bottom:1px solid var(--bdr);letter-spacing:.04em}
-.mob-link:last-of-type{border-bottom:none}
-.mob-cta{display:block;margin-top:16px;text-align:center;background:var(--gold);color:#09090b;font-family:var(--ff-h);font-weight:700;font-size:14px;padding:13px;border-radius:8px;text-decoration:none}
-
-/* WRAP */
-.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-
-/* SECTIONS */
-.sec{padding:52px 0;border-bottom:1px solid var(--bdr)}
-.sec-alt{background:var(--bg2)}
-.sec-last{border-bottom:none}
-
-/* EYEBROW */
-.eyebrow{font-family:var(--ff-m);font-size:10px;color:var(--gold);letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);opacity:.5}
-
-/* HEADINGS */
-.h1{font-family:var(--ff-h);font-weight:800;font-size:clamp(2.2rem,7vw,4rem);line-height:1.06;letter-spacing:-.025em;color:var(--white);margin-bottom:20px}
-.h2{font-family:var(--ff-h);font-weight:800;font-size:clamp(1.7rem,4.5vw,3rem);line-height:1.08;letter-spacing:-.02em;color:var(--white);margin-bottom:16px}
-.h3{font-family:var(--ff-h);font-weight:700;font-size:clamp(1.2rem,3vw,1.6rem);color:var(--white);margin-bottom:10px}
-.gold-word{background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.lead{font-size:clamp(1rem,2.2vw,1.12rem);line-height:1.78;color:var(--t2);font-weight:300;margin-bottom:32px}
-.body{font-size:15px;line-height:1.72;color:var(--t2);font-weight:300}
-.small{font-size:13px;color:var(--t3);line-height:1.6;font-weight:300}
-.mono{font-family:var(--ff-m);font-size:11px;color:var(--t4);letter-spacing:.06em}
-
-/* BUTTONS */
-.btn-gold{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#09090b;font-family:var(--ff-h);font-weight:700;font-size:15px;padding:14px 28px;border-radius:10px;text-decoration:none;transition:all .2s;white-space:nowrap}
-.btn-gold:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(201,168,76,.35)}
-.btn-white{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);color:var(--t2);font-family:var(--ff-h);font-weight:600;font-size:15px;padding:14px 28px;border-radius:10px;border:1px solid var(--bdr2);text-decoration:none;transition:all .2s}
-.btn-white:hover{background:rgba(255,255,255,.1);color:var(--white)}
-.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-
-/* QUALIFYING FORM */
-.form-card{background:var(--bg3);border:1px solid var(--bdr2);border-radius:16px;padding:28px 24px;margin-top:40px}
-.form-card-title{font-family:var(--ff-h);font-weight:700;font-size:18px;color:var(--white);margin-bottom:6px}
-.form-card-sub{font-size:14px;color:var(--t3);margin-bottom:24px;font-weight:300}
-.form-steps{display:none}
-.form-step{margin-bottom:20px}
-.form-label{font-family:var(--ff-m);font-size:10px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:block}
-.form-options{display:flex;gap:8px;flex-wrap:wrap}
-.form-opt{display:flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid var(--bdr2);border-radius:8px;font-size:14px;color:var(--t2);cursor:pointer;transition:all .2s;background:var(--bg2);font-family:var(--ff-b)}
-.form-opt:hover,.form-opt.active{border-color:var(--gold);color:var(--white);background:rgba(201,168,76,.08)}
-.form-input{width:100%;padding:12px 14px;background:var(--bg2);border:1px solid var(--bdr2);border-radius:8px;color:var(--t1);font-size:14px;font-family:var(--ff-b);outline:none;margin-bottom:10px;transition:border-color .2s}
-.form-input:focus{border-color:var(--gold-bdr)}
-.form-input::placeholder{color:var(--t4)}
-.form-submit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#09090b;font-family:var(--ff-h);font-weight:700;font-size:15px;border:none;border-radius:10px;cursor:pointer;text-decoration:none;transition:opacity .2s}
-.form-submit:hover{opacity:.88}
-.form-fine{font-family:var(--ff-m);font-size:11px;color:var(--t4);text-align:center;margin-top:10px}
-.pulse-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;display:inline-block;animation:pulse-dot 2s ease-in-out infinite}
-@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-
-/* TRUST BAR */
-.trust-bar{background:var(--bg2);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:16px 0}
-.trust-inner{max-width:var(--max);margin:0 auto;padding:0 20px}
-.trust-label{font-family:var(--ff-m);font-size:10px;color:var(--t4);letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-bottom:14px}
-.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:20px 32px;align-items:center}
-.trust-logo{font-family:var(--ff-h);font-size:13px;font-weight:700;color:var(--t4);letter-spacing:.02em;white-space:nowrap}
-
-/* STATS */
-.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bdr)}
-.stat-item{background:var(--bg2);padding:24px 20px;text-align:center}
-.stat-n{font-family:var(--ff-h);font-weight:800;font-size:clamp(1.8rem,5vw,2.4rem);color:var(--white);line-height:1;margin-bottom:4px}
-.stat-l{font-family:var(--ff-m);font-size:11px;color:var(--t4);letter-spacing:.06em}
-
-/* SERVICE CARDS */
-.svc-grid{display:grid;grid-template-columns:1fr;gap:16px}
-.svc-card{background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r);padding:24px 20px;transition:border-color .2s}
-.svc-card:hover{border-color:var(--bdr2)}
-.svc-card.featured{border-color:var(--gold-bdr);background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(201,168,76,.02))}
-.svc-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
-.svc-desde{font-family:var(--ff-m);font-size:11px;color:var(--t4);margin-bottom:6px;letter-spacing:.04em}
-.svc-title{font-family:var(--ff-h);font-weight:700;font-size:18px;color:var(--white);margin-bottom:10px}
-.svc-desc{font-size:14px;color:var(--t2);line-height:1.7;font-weight:300;margin-bottom:16px}
-.svc-link{font-family:var(--ff-m);font-size:12px;color:var(--gold);text-decoration:none;letter-spacing:.04em;transition:opacity .2s}
-.svc-link:hover{opacity:.7}
-.svc-badge{display:inline-block;font-family:var(--ff-m);font-size:9px;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);border-radius:999px;padding:2px 8px;letter-spacing:.08em;text-transform:uppercase;margin-left:8px;vertical-align:middle}
-
-/* CRISIS SECTION */
-.crisis-list{display:flex;flex-direction:column;gap:0}
-.crisis-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 0;border-bottom:1px solid var(--bdr)}
-.crisis-row:last-child{border-bottom:none}
-.crisis-text{font-size:15px;color:var(--t2);line-height:1.6;font-weight:300;flex:1}
-.crisis-tag{font-family:var(--ff-m);font-size:10px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;flex-shrink:0;text-align:right;min-width:70px;padding-top:2px}
-
-/* PROCESS */
-.process-list{display:flex;flex-direction:column;gap:0}
-.process-row{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--bdr);align-items:flex-start}
-.process-row:last-child{border-bottom:none}
-.process-num{font-family:var(--ff-m);font-size:13px;color:var(--gold);font-weight:500;padding-top:2px}
-.process-title{font-family:var(--ff-h);font-weight:600;font-size:16px;color:var(--white);margin-bottom:4px}
-.process-desc{font-size:14px;color:var(--t2);line-height:1.65;font-weight:300}
-
-/* RESULTS */
-.results-list{display:flex;flex-direction:column;gap:0}
-.result-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--bdr);align-items:start}
-.result-row:last-child{border-bottom:none}
-.result-stat{font-family:var(--ff-h);font-weight:800;font-size:clamp(1.4rem,4vw,1.9rem);color:var(--white);line-height:1}
-.result-desc{font-size:15px;color:var(--t2);line-height:1.65;font-weight:300;padding-top:2px}
-
-/* PAQUETES */
-.pkg-list{display:flex;flex-direction:column;gap:0}
-.pkg-row{display:grid;grid-template-columns:1fr auto;gap:16px;padding:24px 0;border-bottom:1px solid var(--bdr);align-items:start}
-.pkg-row:last-child{border-bottom:none}
-.pkg-name{font-family:var(--ff-h);font-weight:700;font-size:17px;color:var(--white);margin-bottom:6px}
-.pkg-name.hot{color:var(--gold)}
-.pkg-desc{font-size:14px;color:var(--t2);line-height:1.65;font-weight:300}
-.pkg-price{font-family:var(--ff-h);font-weight:800;font-size:22px;color:var(--white);white-space:nowrap;text-align:right}
-.pkg-link{display:block;font-family:var(--ff-m);font-size:11px;color:var(--t4);text-decoration:none;text-align:right;margin-top:4px;letter-spacing:.04em;transition:color .2s}
-.pkg-link:hover{color:var(--t2)}
-
-/* WHO WE SERVE */
-.serve-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.serve-item{background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r);padding:18px 16px}
-.serve-emoji{font-size:24px;margin-bottom:10px;display:block}
-.serve-title{font-family:var(--ff-h);font-weight:600;font-size:14px;color:var(--white);margin-bottom:4px}
-.serve-desc{font-size:12px;color:var(--t3);line-height:1.55;font-weight:300}
-
-/* FAQ */
-.faq-list{display:flex;flex-direction:column;gap:8px}
-details.faq-item{background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden}
-details.faq-item[open]{border-color:var(--bdr2)}
-.faq-q{padding:16px 18px;cursor:pointer;font-family:var(--ff-h);font-weight:600;font-size:14px;color:var(--white);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
-.faq-q::after{content:'▼';font-size:11px;color:var(--t4);flex-shrink:0;transition:transform .2s}
-details.faq-item[open] .faq-q::after{transform:rotate(180deg)}
-.faq-a{padding:0 18px 16px;font-size:14px;color:var(--t2);line-height:1.7;font-weight:300;border-top:1px solid var(--bdr)}
-
-/* TESTIMONIALS */
-.testi-grid{display:grid;grid-template-columns:1fr;gap:14px}
-.testi-card{background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r);padding:22px 20px}
-.testi-quote{font-size:15px;color:var(--t2);line-height:1.7;font-style:italic;font-weight:300;margin-bottom:16px}
-.testi-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid var(--bdr)}
-.testi-author{font-size:13px;color:var(--t3)}
-.testi-tag{font-family:var(--ff-m);font-size:10px;color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:999px;padding:3px 10px;letter-spacing:.04em;white-space:nowrap}
-
-/* FOOTER */
-.ft{background:#020407;border-top:1px solid var(--bdr)}
-.ft-inner{max-width:var(--max);margin:0 auto;padding:36px 20px 40px}
-.ft-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:28px}
-.ft-logo-row{display:flex;align-items:center;gap:8px;margin-bottom:12px}
-.ft-logo-bar{width:3px;height:20px;background:var(--gold);border-radius:2px}
-.ft-logo-name{font-family:var(--ff-h);font-weight:700;font-size:15px;color:var(--white)}
-.ft-tagline{font-size:13px;color:var(--t4);line-height:1.6;font-weight:300}
-.ft-col-label{font-family:var(--ff-m);font-size:10px;color:var(--t4);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;display:block}
-.ft-link{display:block;font-size:13px;color:var(--t3);text-decoration:none;margin-bottom:8px;transition:color .2s}
-.ft-link:hover{color:var(--t1)}
-.ft-divider{height:1px;background:var(--bdr);margin-bottom:20px}
-.ft-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
-.ft-copy{font-size:12px;color:var(--t4);font-family:var(--ff-m)}
-.ft-legal{display:flex;gap:16px;flex-wrap:wrap}
-.ft-legal-link{font-size:12px;color:var(--t4);text-decoration:none;font-family:var(--ff-m);transition:color .2s}
-.ft-legal-link:hover{color:var(--t2)}
-
-/* RESPONSIVE */
-@media(min-width:560px){
-  .nav-links,.nav-cta{display:flex}
-  .hamburger{display:none!important}
-  .stats-grid{grid-template-columns:repeat(4,1fr)}
-  .svc-grid{grid-template-columns:repeat(2,1fr)}
-  .svc-card.featured{grid-column:span 2}
-  .testi-grid{grid-template-columns:repeat(2,1fr)}
-  .serve-grid{grid-template-columns:repeat(4,1fr)}
-  .ft-grid{grid-template-columns:1.5fr 1fr 1fr}
-}
-@media(min-width:800px){
-  .svc-grid{grid-template-columns:repeat(3,1fr)}
-  .svc-card.featured{grid-column:span 1}
-  .sec{padding:64px 0}
-  .result-row{grid-template-columns:80px 1fr;gap:24px}
-  .form-card{margin-top:0}
-  .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
-  .hero-main{margin-bottom:0}
-}
-`;
-
-const faqSchema = JSON.stringify({
-  "@context":"https://schema.org","@type":"FAQPage",
-  mainEntity:[
-    {"@type":"Question","name":"¿Qué es la gestión de reputación digital?","acceptedAnswer":{"@type":"Answer","text":"Es el proceso de controlar, mejorar y proteger lo que aparece en Google, redes sociales y plataformas de IA cuando alguien busca tu nombre o marca. Incluye eliminar contenido dañino, construir autoridad digital y monitorizar tu presencia."}},
-    {"@type":"Question","name":"¿Cuánto tarda en verse resultados?","acceptedAnswer":{"@type":"Answer","text":"Depende del servicio: desindexación en Google: 2-6 semanas. Knowledge Panel: 4-8 semanas. Aparición editorial en medios: 4-12 semanas. Eliminación de contenido íntimo filtrado: gestión urgente en 24-48h."}},
-    {"@type":"Question","name":"¿Garantizáis la eliminación de contenido?","acceptedAnswer":{"@type":"Answer","text":"No prometemos garantías imposibles porque la decisión final depende de Google o la plataforma. Lo que sí garantizamos: contrato legal previo, máxima diligencia profesional, proceso 100% legal y política de crédito si el servicio no se ejecuta correctamente."}},
-    {"@type":"Question","name":"¿Trabajáis con confidencialidad?","acceptedAnswer":{"@type":"Answer","text":"Sí, absoluta. Nunca revelamos clientes, casos ni resultados. La confidencialidad es una condición no negociable de nuestro servicio."}},
-    {"@type":"Question","name":"¿Cuánto cuesta la gestión de reputación online?","acceptedAnswer":{"@type":"Answer","text":"Los precios varían según el servicio: desde 99€ por reseña falsa eliminada, hasta 690€ para casos de difamación, 1.490€ para el pack Presencia o 3.900€ para el pack Autoridad completo. Análisis gratuito sin compromiso."}},
-  ]
+const FAQ_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Cuánto cuesta la gestión de reputación digital?", acceptedAnswer: { "@type": "Answer", text: "Desde 690€ para casos de difamación o derecho al olvido, hasta 3.900€ para el pack Autoridad completo (Knowledge Panel + Forbes + wikis de autoridad). Análisis gratuito previo sin compromiso." } },
+    { "@type": "Question", name: "¿Garantizáis la eliminación de contenido?", acceptedAnswer: { "@type": "Answer", text: "No prometemos garantías imposibles. La decisión final depende de Google o la plataforma. Garantizamos contrato legal previo, proceso 100% correcto y política de crédito si el servicio no se ejecuta." } },
+    { "@type": "Question", name: "¿Cuánto tarda en verse resultados?", acceptedAnswer: { "@type": "Answer", text: "Desindexación en Google: 2-6 semanas. Knowledge Panel: 4-8 semanas. Aparición editorial en medios: 4-12 semanas. Contenido íntimo filtrado: gestión urgente en 24-48h." } },
+    { "@type": "Question", name: "¿Trabajáis con confidencialidad?", acceptedAnswer: { "@type": "Answer", text: "Sí, absoluta. Nunca revelamos clientes, casos ni resultados. Condición no negociable del servicio." } },
+  ],
 });
 
 export default function Home() {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: CSS }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
-      
-      {/* NAV */}
-      <NavComponent />
-      
-      {/* HERO */}
-      <section className="sec" style={{ borderBottom: "1px solid var(--bdr)", paddingTop: 48, paddingBottom: 56 }}>
-        <div className="wrap">
-          <div className="hero-grid">
-            <div className="hero-main">
-              <div className="eyebrow">Empresa registrada en España · Confidencial</div>
-              <h1 className="h1">
-                Tu reputación online<br />
-                <span className="gold-word">es tu activo más valioso.</span><br />
-                Protégela.
-              </h1>
-              <p className="lead">
-                Eliminamos contenido dañino de Google, construimos tu autoridad digital
-                y te blindamos ante amenazas futuras. Gestión profesional, proceso 100% legal.
-              </p>
-              <div className="btn-row" style={{ marginBottom: 32 }}>
-                <a href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-gold">
-                  Análisis gratuito →
-                </a>
-                <a href="https://wa.me/34684115988?text=Hola, quiero información sobre gestión de reputación" 
-                   target="_blank" rel="noopener" className="btn-white">
-                  <span style={{ fontSize: 16 }}>💬</span> WhatsApp
-                </a>
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {["✓ Contrato legal previo","🔒 Confidencial","🇪🇸 Empresa española","✓ Sin garantías falsas"].map(t=>(
-                  <span key={t} style={{ fontSize: 12, padding: "5px 12px", borderRadius: 999, background: "rgba(255,255,255,.04)", border: "1px solid var(--bdr)", color: "var(--t3)" }}>{t}</span>
-                ))}
-              </div>
-            </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: FAQ_SCHEMA }} />
+      <style dangerouslySetInnerHTML={{ __html: `
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
-            {/* FORM */}
-            <div className="form-card">
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-                <span className="pulse-dot" />
-                <span style={{ fontFamily: "var(--ff-m)", fontSize: 11, color: "var(--t4)" }}>Respuesta garantizada en 24h</span>
-              </div>
-              <p className="form-card-title">Análisis de reputación gratuito</p>
-              <p className="form-card-sub">Dinos tu situación y te enviamos un informe detallado. Sin coste ni compromiso.</p>
-              
-              <div style={{ marginBottom: 14 }}>
-                <span className="form-label">¿Qué necesitas?</span>
-                <div className="form-options">
-                  {["Eliminar contenido","Construir autoridad","Monitorización","No sé, quiero orientación"].map(o=>(
-                    <span key={o} className="form-opt">{o}</span>
-                  ))}
-                </div>
-              </div>
-              
-              <input className="form-input" type="text" placeholder="Nombre o marca a analizar" />
-              <input className="form-input" type="email" placeholder="Correo electrónico" />
-              
-              <a href="mailto:hola@prestior.es?subject=Solicito análisis gratuito de reputación" className="form-submit">
-                Solicitar análisis gratuito →
-              </a>
-              <p className="form-fine">🔒 Confidencial · Sin compromiso · Respuesta en 24h</p>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+          background: #0a0a0a; 
+          color: #f5f5f5; 
+          font-family: 'DM Sans', system-ui, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          overflow-x: hidden;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        /* ─── VARIABLES ─────────────────────────────── */
+        :root {
+          --gold: #c9a84c;
+          --gold2: #e2c36e;
+          --black: #0a0a0a;
+          --black2: #111111;
+          --black3: #1a1a1a;
+          --white: #f5f5f5;
+          --white2: rgba(245,245,245,0.65);
+          --white3: rgba(245,245,245,0.35);
+          --white4: rgba(245,245,245,0.15);
+          --bdr: rgba(255,255,255,0.08);
+          --bdr2: rgba(255,255,255,0.14);
+          --goldbdr: rgba(201,168,76,0.3);
+          --max: 1000px;
+          --px: 24px;
+        }
+
+        /* ─── NAV ───────────────────────────────────── */
+        .pnav {
+          position: sticky; top: 0; z-index: 100;
+          background: rgba(10,10,10,0.96);
+          backdrop-filter: blur(24px);
+          border-bottom: 1px solid var(--bdr);
+        }
+        .pnav-inner {
+          max-width: var(--max); margin: 0 auto;
+          padding: 0 var(--px); height: 62px;
+          display: flex; align-items: center; justify-content: space-between; gap: 20px;
+        }
+        .pnav-logo { display: flex; align-items: center; gap: 10px; }
+        .pnav-logo-stripe { width: 3px; height: 24px; background: var(--gold); border-radius: 2px; }
+        .pnav-logo-text { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); letter-spacing: -0.01em; }
+        .pnav-links { display: flex; align-items: center; gap: 28px; }
+        .pnav-link { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--white3); letter-spacing: 0.04em; transition: color 0.2s; }
+        .pnav-link:hover { color: var(--white); }
+        .pnav-cta { 
+          font-family: 'Syne', sans-serif; font-weight: 600; font-size: 13px;
+          background: var(--gold); color: var(--black);
+          padding: 9px 20px; border-radius: 8px; transition: all 0.2s; white-space: nowrap;
+        }
+        .pnav-cta:hover { background: var(--gold2); }
+        .pnav-ham { display: none; background: none; border: none; color: var(--white3); cursor: pointer; font-size: 22px; padding: 4px; }
+
+        /* ─── HERO ──────────────────────────────────── */
+        .hero { 
+          background: var(--black);
+          border-bottom: 1px solid var(--bdr);
+          position: relative; overflow: hidden;
+        }
+        .hero::before {
+          content: '';
+          position: absolute; inset: 0;
+          background: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 60%),
+                      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(100,150,255,0.05) 0%, transparent 60%);
+          pointer-events: none;
+        }
+        .hero-inner {
+          max-width: var(--max); margin: 0 auto; padding: 64px var(--px) 72px;
+          display: grid; grid-template-columns: 1fr; gap: 48px; position: relative; z-index: 1;
+        }
+        .hero-badge {
+          display: inline-flex; align-items: center; gap: 8px;
+          background: rgba(201,168,76,0.1); border: 1px solid var(--goldbdr);
+          border-radius: 999px; padding: 5px 14px; margin-bottom: 24px;
+          font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold2);
+          letter-spacing: 0.06em;
+        }
+        .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+        .hero-h1 {
+          font-family: 'Syne', sans-serif; font-weight: 800;
+          font-size: clamp(2.4rem, 6vw, 4.2rem);
+          line-height: 1.06; letter-spacing: -0.025em; color: var(--white);
+          margin-bottom: 22px;
+        }
+        .hero-h1 span { 
+          background: linear-gradient(135deg, var(--gold), var(--gold2), #f5e09a);
+          -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-sub {
+          font-size: clamp(1rem, 2vw, 1.1rem); line-height: 1.78;
+          color: var(--white2); font-weight: 300; max-width: 540px; margin-bottom: 36px;
+        }
+        .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+        .btn-primary {
+          display: inline-flex; align-items: center; gap: 8px;
+          background: linear-gradient(135deg, var(--gold), var(--gold2));
+          color: var(--black); font-family: 'Syne', sans-serif; font-weight: 700;
+          font-size: 15px; padding: 14px 28px; border-radius: 10px;
+          transition: all 0.2s; white-space: nowrap;
+        }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(201,168,76,0.4); }
+        .btn-wa {
+          display: inline-flex; align-items: center; gap: 8px;
+          background: rgba(255,255,255,0.06); border: 1px solid var(--bdr2);
+          color: var(--white2); font-family: 'Syne', sans-serif; font-weight: 600;
+          font-size: 15px; padding: 14px 24px; border-radius: 10px; transition: all 0.2s;
+        }
+        .btn-wa:hover { background: rgba(255,255,255,0.1); border-color: rgba(74,222,128,0.4); color: #4ade80; }
+        .hero-trust { display: flex; flex-wrap: wrap; gap: 8px; }
+        .trust-pill {
+          font-size: 12px; padding: 5px 12px; border-radius: 999px;
+          background: rgba(255,255,255,0.04); border: 1px solid var(--bdr); color: var(--white3);
+        }
+
+        /* Hero form */
+        .hero-form {
+          background: var(--black2);
+          border: 1px solid var(--bdr2); border-radius: 16px; padding: 28px 24px;
+        }
+        .form-live { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+        .form-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; animation: blink 2s ease-in-out infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+        .form-live-text { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--white4); letter-spacing: 0.06em; }
+        .form-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 19px; color: var(--white); margin-bottom: 4px; }
+        .form-sub { font-size: 13px; color: var(--white3); margin-bottom: 20px; font-weight: 300; }
+        .form-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 10px; }
+        .form-opts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+        .form-opt {
+          padding: 9px 14px; border: 1px solid var(--bdr); border-radius: 8px;
+          font-size: 13px; color: var(--white3); cursor: pointer;
+          background: transparent; transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+        }
+        .form-opt:hover { border-color: var(--goldbdr); color: var(--white); background: rgba(201,168,76,0.06); }
+        .finput {
+          width: 100%; padding: 12px 14px; margin-bottom: 10px;
+          background: rgba(255,255,255,0.04); border: 1px solid var(--bdr);
+          border-radius: 8px; color: var(--white); font-size: 14px;
+          font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s;
+        }
+        .finput:focus { border-color: var(--goldbdr); }
+        .finput::placeholder { color: var(--white4); }
+        .form-submit {
+          display: flex; align-items: center; justify-content: center; gap: 8px;
+          width: 100%; padding: 14px; margin-top: 2px;
+          background: linear-gradient(135deg, var(--gold), var(--gold2));
+          color: var(--black); font-family: 'Syne', sans-serif; font-weight: 700;
+          font-size: 15px; border: none; border-radius: 10px; cursor: pointer;
+          transition: opacity 0.2s;
+        }
+        .form-submit:hover { opacity: 0.88; }
+        .form-fine { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--white4); text-align: center; margin-top: 10px; }
+
+        /* ─── TRUST BAR ─────────────────────────────── */
+        .trust-bar {
+          background: var(--black2); border-bottom: 1px solid var(--bdr);
+          padding: 20px var(--px);
+        }
+        .trust-bar-inner { max-width: var(--max); margin: 0 auto; }
+        .trust-bar-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--white4); letter-spacing: 0.14em; text-transform: uppercase; text-align: center; margin-bottom: 14px; }
+        .trust-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; }
+        .trust-logo-item { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 13px; color: var(--white4); letter-spacing: 0.02em; }
+
+        /* ─── SECTION BASE ──────────────────────────── */
+        .section { border-bottom: 1px solid var(--bdr); }
+        .section-alt { background: var(--black2); }
+        .section-inner { max-width: var(--max); margin: 0 auto; padding: 56px var(--px); }
+        .eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+        .eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); opacity: 0.5; }
+        .sh2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--white); margin-bottom: 14px; }
+        .sh2 span { background: linear-gradient(135deg, var(--gold), var(--gold2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .slead { font-size: 16px; color: var(--white2); line-height: 1.75; font-weight: 300; }
+
+        /* ─── STATS ─────────────────────────────────── */
+        .stats-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--bdr); }
+        .stat-box { background: var(--black2); padding: 28px 20px; text-align: center; }
+        .stat-n { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem, 5vw, 2.6rem); color: var(--white); line-height: 1; margin-bottom: 6px; }
+        .stat-l { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--white4); letter-spacing: 0.06em; }
+
+        /* ─── PROBLEM ROWS ──────────────────────────── */
+        .prob-row { 
+          display: flex; align-items: flex-start; justify-content: space-between;
+          gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--bdr);
+        }
+        .prob-row:last-child { border-bottom: none; }
+        .prob-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--white4); flex-shrink: 0; padding-top: 2px; min-width: 24px; }
+        .prob-text { font-size: 15px; color: var(--white2); line-height: 1.65; font-weight: 300; flex: 1; }
+        .prob-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase; flex-shrink: 0; text-align: right; min-width: 80px; padding-top: 2px; }
+
+        /* ─── SERVICE CARDS ─────────────────────────── */
+        .svc-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+        .svc-card {
+          background: var(--black3); border: 1px solid var(--bdr);
+          border-radius: 14px; padding: 26px 22px; transition: border-color 0.2s;
+        }
+        .svc-card:hover { border-color: var(--bdr2); }
+        .svc-card.hot { border-color: var(--goldbdr); background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(201,168,76,0.02) 100%); }
+        .svc-icon-wrap { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px; }
+        .svc-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+        .svc-desde { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--white4); margin-bottom: 4px; }
+        .svc-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 19px; color: var(--white); }
+        .svc-desc { font-size: 14px; color: var(--white2); line-height: 1.72; font-weight: 300; margin: 10px 0 18px; }
+        .svc-link { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--gold); letter-spacing: 0.04em; transition: opacity 0.2s; }
+        .svc-link:hover { opacity: 0.7; }
+        .svc-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25); border-radius: 999px; padding: 3px 9px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+        /* ─── PROCESS ───────────────────────────────── */
+        .proc-row { display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--bdr); align-items: start; }
+        .proc-row:last-child { border-bottom: none; }
+        .proc-num { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--goldbdr); background: rgba(201,168,76,0.06); display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 12px; color: var(--gold); flex-shrink: 0; }
+        .proc-title { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 16px; color: var(--white); margin-bottom: 4px; }
+        .proc-desc { font-size: 14px; color: var(--white2); line-height: 1.7; font-weight: 300; }
+
+        /* ─── RESULTS ───────────────────────────────── */
+        .res-row { display: grid; grid-template-columns: 80px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--bdr); align-items: start; }
+        .res-row:last-child { border-bottom: none; }
+        .res-stat { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2rem); color: var(--white); line-height: 1; }
+        .res-desc { font-size: 15px; color: var(--white2); line-height: 1.65; font-weight: 300; padding-top: 4px; }
+        .res-tag { display: inline-block; margin-top: 6px; font-family: 'DM Mono', monospace; font-size: 10px; color: #4ade80; background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2); border-radius: 999px; padding: 2px 8px; letter-spacing: 0.04em; }
+
+        /* ─── PRICING ───────────────────────────────── */
+        .pkg-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+        .pkg-card {
+          background: var(--black3); border: 1px solid var(--bdr); border-radius: 14px;
+          padding: 28px 24px; display: flex; flex-direction: column; gap: 0;
+        }
+        .pkg-card.hot { border-color: var(--goldbdr); background: linear-gradient(160deg, rgba(201,168,76,0.07) 0%, rgba(201,168,76,0.02) 100%); }
+        .pkg-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+        .pkg-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); }
+        .pkg-name.gold { color: var(--gold); }
+        .pkg-price { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 28px; color: var(--white); line-height: 1; white-space: nowrap; text-align: right; }
+        .pkg-desc { font-size: 14px; color: var(--white2); line-height: 1.7; font-weight: 300; margin-bottom: 20px; }
+        .pkg-features { list-style: none; margin-bottom: 22px; }
+        .pkg-feature { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; font-size: 13px; color: var(--white2); border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .pkg-feature:last-child { border-bottom: none; }
+        .pkg-check { color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+        .pkg-cta { 
+          display: flex; align-items: center; justify-content: center;
+          padding: 13px; border-radius: 10px; font-family: 'Syne', sans-serif;
+          font-weight: 700; font-size: 14px; transition: all 0.2s; margin-top: auto;
+        }
+        .pkg-cta-gold { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: var(--black); }
+        .pkg-cta-gold:hover { opacity: 0.88; }
+        .pkg-cta-outline { background: transparent; border: 1px solid var(--bdr2); color: var(--white2); }
+        .pkg-cta-outline:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+
+        /* ─── WHO ───────────────────────────────────── */
+        .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+        .who-card { background: var(--black3); border: 1px solid var(--bdr); border-radius: 14px; padding: 20px 18px; transition: border-color 0.2s; }
+        .who-card:hover { border-color: var(--bdr2); }
+        .who-emoji { font-size: 26px; display: block; margin-bottom: 12px; }
+        .who-title { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 15px; color: var(--white); margin-bottom: 6px; }
+        .who-desc { font-size: 12px; color: var(--white3); line-height: 1.6; font-weight: 300; }
+
+        /* ─── TESTIMONIALS ──────────────────────────── */
+        .testi-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
+        .testi-card { background: var(--black3); border: 1px solid var(--bdr); border-radius: 14px; padding: 24px 22px; }
+        .testi-stars { display: flex; gap: 3px; margin-bottom: 14px; }
+        .star { color: var(--gold); font-size: 14px; }
+        .testi-q { font-size: 14px; color: var(--white2); line-height: 1.7; font-style: italic; font-weight: 300; margin-bottom: 18px; }
+        .testi-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; border-top: 1px solid var(--bdr); }
+        .testi-author { font-size: 12px; color: var(--white3); }
+        .testi-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: #4ade80; background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2); border-radius: 999px; padding: 3px 10px; letter-spacing: 0.04em; white-space: nowrap; }
+
+        /* ─── FAQ ───────────────────────────────────── */
+        .faq-list { display: flex; flex-direction: column; gap: 8px; margin-top: 28px; }
+        details.faq { background: var(--black3); border: 1px solid var(--bdr); border-radius: 12px; overflow: hidden; }
+        details.faq[open] { border-color: var(--bdr2); }
+        .faq summary { 
+          padding: 18px 20px; cursor: pointer; list-style: none;
+          font-family: 'Syne', sans-serif; font-weight: 600; font-size: 14px; color: var(--white);
+          display: flex; justify-content: space-between; align-items: center; gap: 12px;
+          user-select: none;
+        }
+        .faq summary::after { content: '＋'; font-size: 18px; color: var(--gold); flex-shrink: 0; font-family: 'DM Mono', monospace; transition: transform 0.2s; font-weight: 400; }
+        details.faq[open] summary::after { content: '−'; }
+        .faq-body { padding: 0 20px 18px; font-size: 14px; color: var(--white2); line-height: 1.75; font-weight: 300; border-top: 1px solid var(--bdr); padding-top: 14px; }
+
+        /* ─── FINAL CTA ─────────────────────────────── */
+        .final-cta { 
+          background: var(--black);
+          position: relative; overflow: hidden;
+        }
+        .final-cta::before {
+          content: '';
+          position: absolute; inset: 0;
+          background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 65%);
+          pointer-events: none;
+        }
+        .cta-bar { width: 40px; height: 3px; background: var(--gold); border-radius: 2px; margin-bottom: 32px; }
+
+        /* ─── FOOTER ────────────────────────────────── */
+        .pfooter { background: #050505; border-top: 1px solid var(--bdr); }
+        .pfooter-inner { max-width: var(--max); margin: 0 auto; padding: 40px var(--px) 44px; }
+        .pfooter-grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 28px; }
+        .pfooter-logo { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+        .pfooter-stripe { width: 3px; height: 20px; background: var(--gold); border-radius: 2px; }
+        .pfooter-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--white); }
+        .pfooter-tag { font-size: 13px; color: var(--white4); line-height: 1.6; font-weight: 300; }
+        .pfooter-col-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--white4); letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-bottom: 14px; }
+        .pfooter-link { display: block; font-size: 13px; color: var(--white3); margin-bottom: 9px; transition: color 0.2s; }
+        .pfooter-link:hover { color: var(--white); }
+        .pfooter-divider { height: 1px; background: var(--bdr); margin-bottom: 20px; }
+        .pfooter-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+        .pfooter-copy { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--white4); }
+        .pfooter-legal { display: flex; gap: 18px; flex-wrap: wrap; }
+        .pfooter-legal a { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--white4); transition: color 0.2s; }
+        .pfooter-legal a:hover { color: var(--white3); }
+
+        /* ─── RESPONSIVE ────────────────────────────── */
+        @media (min-width: 640px) {
+          .pnav-links { display: flex !important; }
+          .pnav-cta { display: inline-flex !important; }
+          .pnav-ham { display: none !important; }
+          .hero-inner { grid-template-columns: 1fr 1fr; align-items: start; gap: 56px; }
+          .stats-row { grid-template-columns: repeat(4, 1fr); }
+          .svc-grid { grid-template-columns: repeat(2, 1fr); }
+          .testi-grid { grid-template-columns: repeat(2, 1fr); }
+          .who-grid { grid-template-columns: repeat(4, 1fr); }
+          .pkg-grid { grid-template-columns: repeat(3, 1fr); }
+          .pfooter-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+        }
+        @media (max-width: 639px) {
+          .pnav-links { display: none !important; }
+          .pnav-cta { display: none !important; }
+          .pnav-ham { display: flex !important; }
+        }
+      ` }} />
+
+      {/* ── NAV ── */}
+      <nav className="pnav">
+        <div className="pnav-inner">
+          <div className="pnav-logo">
+            <span className="pnav-logo-stripe" />
+            <span className="pnav-logo-text">Prestior</span>
+          </div>
+          <div className="pnav-links">
+            {[["Protección","/proteccion-reputacion/"],["Autoridad","/autoridad-digital/"],["Resultados","/casos-de-exito/"],["Precios","/precios/"]].map(([l,h])=>(
+              <Link key={h} href={h} className="pnav-link">{l}</Link>
+            ))}
+          </div>
+          <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="pnav-cta">
+            Análisis gratuito
+          </Link>
+          <button className="pnav-ham" aria-label="Menú">☰</button>
+        </div>
+      </nav>
+
+      {/* ── HERO ── */}
+      <section className="hero">
+        <div className="hero-inner">
+          {/* Left */}
+          <div>
+            <div className="hero-badge">
+              <span className="hero-badge-dot" />
+              Empresa registrada · Confidencial · Sin garantías falsas
             </div>
+            <h1 className="hero-h1">
+              Tu reputación online<br />
+              <span>es tu activo</span><br />
+              más valioso.
+            </h1>
+            <p className="hero-sub">
+              Eliminamos contenido dañino de Google, construimos tu autoridad 
+              en medios y blindamos tu presencia ante amenazas futuras. 
+              Proceso 100% legal. Empresa española.
+            </p>
+            <div className="hero-btns">
+              <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-primary">
+                Análisis gratuito →
+              </Link>
+              <a href="https://wa.me/34684115988?text=Hola, quiero información sobre gestión de reputación" 
+                 target="_blank" rel="noopener" className="btn-wa">
+                💬 WhatsApp
+              </a>
+            </div>
+            <div className="hero-trust">
+              {["✓ Contrato previo","🔒 100% confidencial","🇪🇸 Empresa española","✓ Sin promesas falsas"].map(t=>(
+                <span key={t} className="trust-pill">{t}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Form */}
+          <div className="hero-form">
+            <div className="form-live">
+              <span className="form-dot" />
+              <span className="form-live-text">Respondemos en menos de 24 horas</span>
+            </div>
+            <p className="form-title">Análisis de reputación gratuito</p>
+            <p className="form-sub">Dinos tu situación y te enviamos un informe detallado. Sin coste ni compromiso.</p>
+            <span className="form-label">¿Qué necesitas?</span>
+            <div className="form-opts">
+              {["Eliminar contenido","Construir autoridad","Monitorización","No sé, necesito orientación"].map(o=>(
+                <span key={o} className="form-opt">{o}</span>
+              ))}
+            </div>
+            <input className="finput" type="text" placeholder="Nombre completo o marca a analizar" />
+            <input className="finput" type="email" placeholder="Correo electrónico" />
+            <a href="mailto:hola@prestior.es?subject=Solicito análisis gratuito de reputación" className="form-submit">
+              Solicitar análisis gratuito →
+            </a>
+            <p className="form-fine">🔒 Confidencial · Sin compromiso · Sin coste</p>
           </div>
         </div>
       </section>
 
-      {/* TRUST BAR */}
+      {/* ── TRUST BAR ── */}
       <div className="trust-bar">
-        <div className="trust-inner">
-          <p className="trust-label">Gestionamos presencia en</p>
+        <div className="trust-bar-inner">
+          <p className="trust-bar-label">Gestionamos presencia en</p>
           <div className="trust-logos">
-            {["Google","Forbes","BBC","NYPost","Wired","LinkedIn","Trustpilot","Wikipedia"].map(l=>(
-              <span key={l} className="trust-logo">{l}</span>
+            {["Google","Forbes","BBC","NYPost","Wired","LinkedIn","Trustpilot","Wikipedia","Perplexity","ChatGPT"].map(l=>(
+              <span key={l} className="trust-logo-item">{l}</span>
             ))}
           </div>
         </div>
       </div>
 
-      {/* STATS */}
-      <section style={{ background: "var(--bg2)", borderBottom: "1px solid var(--bdr)" }}>
-        <div className="wrap">
-          <div className="stats-grid">
-            {[["100+","Casos resueltos"],["48h","Primera respuesta"],["3.900€","Ticket medio"],["100%","Confidencial"]].map(([n,l])=>(
-              <div key={l} className="stat-item">
-                <div className="stat-n">{n}</div>
-                <div className="stat-l">{l}</div>
-              </div>
-            ))}
+      {/* ── STATS ── */}
+      <div className="stats-row" style={{ borderBottom: "1px solid var(--bdr)" }}>
+        {[["100+","Casos resueltos"],["48h","Primera respuesta"],["€3.9k","Ticket medio"],["100%","Confidencial"]].map(([n,l])=>(
+          <div key={l} className="stat-box">
+            <div className="stat-n">{n}</div>
+            <div className="stat-l">{l}</div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
 
-      {/* CUÁNDO NOS LLAMAN */}
-      <section className="sec">
-        <div className="wrap">
-          <div className="eyebrow">Cuándo nos llaman</div>
-          <h2 className="h2">¿Te identificas<br />con alguna de estas situaciones?</h2>
-          <div className="crisis-list">
+      {/* ── CUÁNDO NOS LLAMAN ── */}
+      <section className="section">
+        <div className="section-inner">
+          <div className="eyebrow">Situaciones que gestionamos</div>
+          <h2 className="sh2">¿Te identificas con alguna<br />de estas situaciones?</h2>
+          <p className="slead" style={{ marginBottom: 32 }}>Si alguna te suena, tienes que hablar con nosotros hoy.</p>
+          <div>
             {[
-              ["Un artículo falso o difamatorio aparece cuando buscan tu nombre en Google.","Difamación"],
-              ["Alguien publicó fotos o vídeos íntimos sin tu consentimiento.","Urgente — 24h"],
-              ["Hay una cuenta haciéndose pasar por ti en redes sociales.","Suplantación"],
-              ["Reseñas falsas coordinadas están dañando tu negocio.","Reseñas"],
-              ["ChatGPT o Perplexity describe tu empresa de forma incorrecta o dañina.","IA / GEO"],
-              ["Quieres que Google muestre quién eres realmente antes de un lanzamiento.","Autoridad"],
-            ].map(([t,tag])=>(
-              <div key={tag} className="crisis-row">
-                <p className="crisis-text">{t}</p>
-                <span className="crisis-tag">{tag}</span>
+              ["01","Aparece un artículo falso o difamatorio cuando buscan tu nombre en Google.","Difamación"],
+              ["02","Alguien publicó fotos o vídeos íntimos tuyos sin tu consentimiento.","Urgente — 24h"],
+              ["03","Hay una cuenta haciéndose pasar por ti en Instagram, TikTok o YouTube.","Suplantación"],
+              ["04","Reseñas falsas coordinadas están hundiendo la nota de tu negocio.","Reseñas falsas"],
+              ["05","ChatGPT o Perplexity describe tu empresa de forma incorrecta o dañina.","IA / GEO"],
+              ["06","Quieres que Google muestre quién eres realmente antes de tu próximo lanzamiento.","Autoridad digital"],
+            ].map(([n,t,tag])=>(
+              <div key={n} className="prob-row">
+                <span className="prob-num">{n}</span>
+                <p className="prob-text">{t}</p>
+                <span className="prob-tag">{tag}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SERVICIOS */}
-      <section className="sec sec-alt">
-        <div className="wrap">
+      {/* ── SERVICIOS ── */}
+      <section className="section section-alt">
+        <div className="section-inner">
           <div className="eyebrow">Servicios</div>
-          <h2 className="h2">Todo lo que<br />necesitas en un lugar.</h2>
-          <div className="svc-grid" style={{ marginTop: 28 }}>
+          <h2 className="sh2">Todo lo que necesitas,<br /><span>en un solo lugar.</span></h2>
+          <div className="svc-grid">
             {[
-              { icon:"🛡️", desde:"Desde 690€", title:"Protección", desc:"Difamación, derecho al olvido, suplantación de identidad, contenido íntimo filtrado, reseñas falsas. Proceso legal, sin garantías imposibles.", href:"/proteccion-reputacion/", featured:false },
-              { icon:"📈", desde:"Desde 390€", title:"Autoridad digital", desc:"Knowledge Panel en Google, apariciones editoriales en medios (Forbes, BBC, NYPost), wikis de autoridad, marca personal y reputación en IA.", href:"/autoridad-digital/", featured:true },
-              { icon:"👁️", desde:"Desde 197€/mes", title:"Blindaje continuo", desc:"Monitorización activa de tu nombre y marca. Alertas tempranas y reacción antes de que el daño escale. Incluye gestión de reputación en IA.", href:"/monitorizacion-reputacion/", featured:false },
-            ].map(({icon,desde,title,desc,href,featured})=>(
-              <div key={title} className={`svc-card${featured?" featured":""}`}>
-                <div className="svc-icon" style={{ background: featured ? "rgba(201,168,76,.12)" : "rgba(255,255,255,.04)" }}>
-                  {icon}
+              { icon:"🛡️", desde:"Desde 690€", title:"Protección", desc:"Difamación y calumnias, derecho al olvido, suplantación de identidad, contenido íntimo filtrado, reseñas ilegítimas. Proceso legal, sin garantías imposibles.", href:"/proteccion-reputacion/", hot:false, badge:null },
+              { icon:"📈", desde:"Desde 390€", title:"Autoridad digital", desc:"Knowledge Panel en Google, apariciones editoriales en Forbes y medios internacionales, wikis de autoridad, marca personal en buscadores, reputación en IA.", href:"/autoridad-digital/", hot:true, badge:"Más contratado" },
+              { icon:"👁️", desde:"Desde 197€/mes", title:"Blindaje continuo", desc:"Monitorización activa de nombre y marca. Alertas tempranas y reacción antes de que el daño escale. Incluye gestión de presencia en plataformas de IA.", href:"/monitorizacion-reputacion/", hot:false, badge:null },
+            ].map(({icon,desde,title,desc,href,hot,badge})=>(
+              <div key={title} className={`svc-card${hot?" hot":""}`}>
+                <div className="svc-icon-wrap" style={{ background: hot ? "rgba(201,168,76,0.12)" : "rgba(255,255,255,0.04)" }}>{icon}</div>
+                <p className="svc-desde">{desde}</p>
+                <div className="svc-top">
+                  <p className="svc-title">{title}</p>
+                  {badge && <span className="svc-badge">{badge}</span>}
                 </div>
-                <p className="svc-desde">{desde}{featured && <span className="svc-badge">Más vendido</span>}</p>
-                <h3 className="svc-title">{title}</h3>
                 <p className="svc-desc">{desc}</p>
-                <a href={href} className="svc-link">Ver servicios →</a>
+                <Link href={href} className="svc-link">Ver servicios →</Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PROCESO */}
-      <section className="sec">
-        <div className="wrap">
+      {/* ── PROCESO ── */}
+      <section className="section">
+        <div className="section-inner">
           <div className="eyebrow">Proceso</div>
-          <h2 className="h2">Cómo lo hacemos</h2>
-          <div className="process-list" style={{ marginTop: 24 }}>
+          <h2 className="sh2">Cómo lo hacemos</h2>
+          <div style={{ marginTop: 28 }}>
             {[
-              ["01","Análisis gratuito","Revisamos tu situación actual en Google, redes, medios y plataformas de IA. Te decimos exactamente qué es viable y qué no. Sin coste, sin compromiso."],
-              ["02","Estrategia personalizada","Diseñamos el plan concreto para tu caso: qué servicios, en qué orden y con qué plazos reales. Sin promesas que no podemos cumplir."],
-              ["03","Contrato legal previo","Firmamos antes de que pagues. El contrato especifica el servicio exacto, los plazos y la política de garantía. Sin letra pequeña."],
+              ["01","Análisis gratuito","Revisamos tu situación en Google, redes, medios y plataformas de IA. Te decimos exactamente qué es viable y qué no. Sin coste, sin compromiso."],
+              ["02","Estrategia personalizada","Diseñamos el plan concreto para tu caso: servicios, orden y plazos reales. Sin promesas que no podemos cumplir."],
+              ["03","Contrato legal previo","Firmamos antes de que pagues. El contrato especifica el servicio exacto, plazos y garantías. Sin letra pequeña."],
               ["04","Ejecución profesional","Gestionamos todo. Te mantenemos informado en cada fase con informes de progreso claros."],
               ["05","Blindaje posterior","Una vez resuelto, configuramos la monitorización continua para que no vuelva a ocurrir."],
             ].map(([n,t,d])=>(
-              <div key={n} className="process-row">
-                <span className="process-num">{n}</span>
+              <div key={n} className="proc-row">
+                <div className="proc-num">{n}</div>
                 <div>
-                  <p className="process-title">{t}</p>
-                  <p className="process-desc">{d}</p>
+                  <p className="proc-title">{t}</p>
+                  <p className="proc-desc">{d}</p>
                 </div>
               </div>
             ))}
@@ -408,98 +532,113 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RESULTADOS */}
-      <section className="sec sec-alt">
-        <div className="wrap">
+      {/* ── RESULTADOS ── */}
+      <section className="section section-alt">
+        <div className="section-inner">
           <div className="eyebrow">Resultados</div>
-          <h2 className="h2">Hechos, no promesas.</h2>
-          <div className="results-list" style={{ marginTop: 24 }}>
+          <h2 className="sh2">Hechos, no promesas.</h2>
+          <div style={{ marginTop: 28 }}>
             {[
-              ["4 sem.","Artículo difamatorio desindexado de Google. CEO empresa tech, Madrid."],
-              ["48h","Cuenta de suplantación eliminada en Instagram. Influencer, 180K seguidores."],
-              ["€80K","Generados en lanzamiento tras construir Knowledge Panel + Forbes editorial."],
-              ["7/7","Reseñas falsas coordinadas eliminadas de Google. Clínica dental, Valencia."],
-              ["24h","Contenido íntimo filtrado retirado de plataformas principales. Urgente."],
-            ].map(([s,d])=>(
-              <div key={s} className="result-row">
-                <span className="result-stat">{s}</span>
-                <p className="result-desc">{d}</p>
+              ["4 sem.","Artículo difamatorio desindexado de Google. CEO empresa tech, Madrid.","Desindexación"],
+              ["48h","Cuenta de suplantación eliminada en Instagram. Influencer, 180K seguidores.","Suplantación"],
+              ["€80K","Generados en lanzamiento tras construir Knowledge Panel + Forbes editorial.","Pack Autoridad"],
+              ["7/7","Reseñas falsas coordinadas eliminadas de Google. Clínica dental, Valencia.","Reseñas"],
+              ["24h","Contenido íntimo filtrado retirado de plataformas principales.","Urgente"],
+            ].map(([s,d,t])=>(
+              <div key={s} className="res-row">
+                <span className="res-stat">{s}</span>
+                <div>
+                  <p className="res-desc">{d}</p>
+                  <span className="res-tag">{t}</span>
+                </div>
               </div>
             ))}
           </div>
           <div style={{ marginTop: 28 }}>
-            <a href="/casos-de-exito/" style={{ fontFamily:"var(--ff-m)", fontSize:12, color:"var(--t3)", textDecoration:"none", borderBottom:"1px solid var(--bdr)", paddingBottom:2 }}>
+            <Link href="/casos-de-exito/" style={{ fontFamily:"'DM Mono',monospace", fontSize:12, color:"var(--white3)", borderBottom:"1px solid var(--bdr)", paddingBottom:2 }}>
               Ver todos los casos →
-            </a>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* PAQUETES */}
-      <section className="sec">
-        <div className="wrap">
+      {/* ── PAQUETES ── */}
+      <section className="section">
+        <div className="section-inner">
           <div className="eyebrow">Inversión</div>
-          <h2 className="h2">Paquetes completos</h2>
-          <p className="body" style={{ marginBottom: 28 }}>Los servicios sueltos funcionan. Los paquetes completos transforman. El cerebro elige el del medio — donde está el mayor valor.</p>
-          <div className="pkg-list">
+          <h2 className="sh2">Paquetes completos</h2>
+          <p className="slead">El cerebro elige el del medio — donde está el mayor valor.</p>
+          <div className="pkg-grid">
             {[
-              { n:"Presencia", p:"1.490€", d:"Knowledge Panel personal, 1-2 medios de entrada y optimización de nombre en Google. Para quienes quieren empezar a controlar su narrativa.", hot:false },
-              { n:"Autoridad", p:"3.900€", d:"Knowledge Panel + pack wikis de autoridad + Forbes Argentina editorial + posicionamiento en Google e IA. El más contratado. Autoridad documentada y duradera.", hot:true },
-              { n:"Dominio", p:"9.900€", d:"Todo el pack Autoridad más pack de medios top internacionales (NYPost, BBC, Wired, People). Para dominar tu espacio a nivel global.", hot:false },
-            ].map(({n,p,d,hot})=>(
-              <div key={n} className="pkg-row">
-                <div>
-                  <p className={`pkg-name${hot?" hot":""}`}>{n}{hot && <span className="svc-badge">Recomendado</span>}</p>
-                  <p className="pkg-desc">{d}</p>
-                </div>
-                <div>
+              { n:"Presencia", p:"1.490€", d:"Para empezar a controlar cómo apareces en Google.", items:["Knowledge Panel personal","1-2 medios de entrada","Optimización nombre en Google","Informe de estado inicial"], hot:false },
+              { n:"Autoridad", p:"3.900€", d:"Autoridad documentada, verificable y duradera. El más contratado.", items:["Knowledge Panel personal","Pack wikis de autoridad","Forbes Argentina editorial","Posicionamiento Google + IA","Informe mensual de resultados"], hot:true },
+              { n:"Dominio", p:"9.900€", d:"Domina tu espacio a nivel internacional.", items:["Todo AUTORIDAD incluido","Pack medios top (NYPost, BBC, Wired)","Gestión continua 3 meses","Estrategia personalizada"], hot:false },
+            ].map(({n,p,d,items,hot})=>(
+              <div key={n} className={`pkg-card${hot?" hot":""}`}>
+                <div className="pkg-top">
+                  <p className={`pkg-name${hot?" gold":""}`}>{n}{hot && <> <span className="svc-badge" style={{ marginLeft:8 }}>Recomendado</span></>}</p>
                   <p className="pkg-price">{p}</p>
-                  <a href="/contacto/" className="pkg-link">Solicitar →</a>
                 </div>
+                <p className="pkg-desc">{d}</p>
+                <ul className="pkg-features">
+                  {items.map(i=>(
+                    <li key={i} className="pkg-feature">
+                      <span className="pkg-check">✓</span>
+                      <span>{i}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contacto/" className={`pkg-cta ${hot?"pkg-cta-gold":"pkg-cta-outline"}`}>
+                  Solicitar información →
+                </Link>
               </div>
             ))}
           </div>
-          <p className="mono" style={{ marginTop: 20 }}>Presupuesto personalizado tras análisis gratuito · IVA no incluido · <a href="/precios/" style={{ color:"var(--t3)", textDecoration:"none" }}>Ver todos los precios →</a></p>
+          <p style={{ marginTop:20, fontFamily:"'DM Mono',monospace", fontSize:11, color:"var(--white4)" }}>
+            Presupuesto personalizado · IVA no incluido ·{" "}
+            <Link href="/precios/" style={{ color:"var(--white3)" }}>Ver todos los precios →</Link>
+          </p>
         </div>
       </section>
 
-      {/* PARA QUIÉN */}
-      <section className="sec sec-alt">
-        <div className="wrap">
+      {/* ── PARA QUIÉN ── */}
+      <section className="section section-alt">
+        <div className="section-inner">
           <div className="eyebrow">Para quién</div>
-          <h2 className="h2">Trabajamos con</h2>
-          <div className="serve-grid" style={{ marginTop: 24 }}>
+          <h2 className="sh2">Trabajamos con</h2>
+          <div className="who-grid">
             {[
-              { e:"👔", t:"Directivos y CEOs", d:"Protección de reputación ejecutiva, Knowledge Panel y presencia en medios." },
+              { e:"👔", t:"Directivos y CEOs", d:"Protección ejecutiva, Knowledge Panel y presencia en medios de primer nivel." },
               { e:"📱", t:"Creadores e influencers", d:"Cuentas falsas, contenido filtrado, crisis de imagen en redes sociales." },
               { e:"🏢", t:"Empresas", d:"Reseñas falsas, difamación corporativa, crisis de reputación online." },
               { e:"⭐", t:"Coaches y expertos", d:"Autoridad digital, apariciones en medios, marca personal en Google." },
             ].map(({e,t,d})=>(
-              <div key={t} className="serve-item">
-                <span className="serve-emoji">{e}</span>
-                <p className="serve-title">{t}</p>
-                <p className="serve-desc">{d}</p>
+              <div key={t} className="who-card">
+                <span className="who-emoji">{e}</span>
+                <p className="who-title">{t}</p>
+                <p className="who-desc">{d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIOS */}
-      <section className="sec">
-        <div className="wrap">
-          <div className="eyebrow">Clientes</div>
-          <h2 className="h2">Lo que dicen</h2>
-          <div className="testi-grid" style={{ marginTop: 24 }}>
+      {/* ── TESTIMONIOS ── */}
+      <section className="section">
+        <div className="section-inner">
+          <div className="eyebrow">Testimonios</div>
+          <h2 className="sh2">Lo que dicen<br /><span>nuestros clientes.</span></h2>
+          <div className="testi-grid">
             {[
               { q:"Tenía un artículo difamatorio en el primer resultado de Google desde hace 3 años. Desindexado en 4 semanas.", a:"CEO empresa tech, Madrid", t:"Desindexación" },
               { q:"Knowledge Panel activo y Forbes editorial antes del lanzamiento. El curso generó €80K en ventas.", a:"Coach y formadora online", t:"Pack Autoridad" },
               { q:"7 reseñas falsas de un ex-empleado. Todas eliminadas antes de un mes. Servicio impecable.", a:"Dr. C.V. · Clínica dental, Valencia", t:"Reseñas eliminadas" },
-              { q:"Cuenta falsa con mis fotos enviando DMs fraudulentos. Eliminada en 48 horas. Muy discretos.", a:"Influencer, 180K seguidores", t:"Suplantación resuelta" },
+              { q:"Cuenta falsa con mis fotos enviando DMs fraudulentos a mis seguidores. Eliminada en 48 horas.", a:"Influencer, 180K seguidores", t:"Suplantación resuelta" },
             ].map((t,i)=>(
               <div key={i} className="testi-card">
-                <p className="testi-quote">"{t.q}"</p>
-                <div className="testi-bottom">
+                <div className="testi-stars">{[1,2,3,4,5].map(s=><span key={s} className="star">★</span>)}</div>
+                <p className="testi-q">"{t.q}"</p>
+                <div className="testi-footer">
                   <span className="testi-author">{t.a}</span>
                   <span className="testi-tag">{t.t}</span>
                 </div>
@@ -509,110 +648,87 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="sec sec-alt">
-        <div className="wrap">
+      {/* ── FAQ ── */}
+      <section className="section section-alt">
+        <div className="section-inner">
           <div className="eyebrow">FAQ</div>
-          <h2 className="h2">Preguntas frecuentes</h2>
-          <div className="faq-list" style={{ marginTop: 24 }}>
+          <h2 className="sh2">Preguntas frecuentes</h2>
+          <div className="faq-list">
             {[
-              ["¿Cuánto cuesta la gestión de reputación online?","Los precios varían según el servicio: desde 99€ por reseña eliminada, hasta 690€ para casos de difamación o 3.900€ para el pack Autoridad completo. Análisis inicial gratuito y sin compromiso."],
-              ["¿Cuánto tarda en verse resultados?","Depende del servicio: desindexación en Google 2-6 semanas, Knowledge Panel 4-8 semanas, aparición en medios 4-12 semanas. Contenido filtrado urgente: gestión en 24-48h."],
-              ["¿Garantizáis la eliminación de contenido?","No prometemos garantías imposibles. La decisión final depende de Google o la plataforma. Garantizamos contrato legal previo, proceso 100% correcto y política de crédito si el servicio no se ejecuta."],
+              ["¿Cuánto cuesta la gestión de reputación digital?","Desde 690€ para casos de difamación o derecho al olvido, hasta 3.900€ para el pack Autoridad completo. El precio exacto depende del caso. Análisis gratuito sin compromiso."],
+              ["¿Cuánto tarda en verse resultados?","Desindexación en Google: 2-6 semanas. Knowledge Panel: 4-8 semanas. Aparición en medios: 4-12 semanas. Contenido íntimo urgente: 24-48h."],
+              ["¿Garantizáis la eliminación?","No prometemos garantías imposibles. La decisión final depende de Google o la plataforma. Garantizamos contrato legal previo, proceso correcto y política de crédito."],
               ["¿Trabajáis con confidencialidad?","Absoluta. Nunca revelamos clientes, casos ni resultados. Condición no negociable del servicio."],
-              ["¿Sois una empresa registrada en España?","Sí. CIF disponible bajo solicitud. Actividad 100% legal. Podéis verificar nuestros datos en el Registro Mercantil."],
+              ["¿Sois una empresa registrada en España?","Sí. CIF disponible bajo solicitud. Actividad 100% legal. Verificable en el Registro Mercantil."],
             ].map(([q,a])=>(
-              <details key={q} className="faq-item">
-                <summary className="faq-q">{q}</summary>
-                <div className="faq-a" style={{ paddingTop: 12 }}>{a}</div>
+              <details key={q} className="faq">
+                <summary className="faq summary">{q}</summary>
+                <div className="faq-body">{a}</div>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="sec sec-last" style={{ background:"var(--bg)", paddingTop:56, paddingBottom:64 }}>
-        <div className="wrap" style={{ textAlign:"center" }}>
-          <div style={{ width:40, height:3, background:"var(--gold)", borderRadius:2, margin:"0 auto 32px" }} />
-          <h2 className="h2" style={{ maxWidth:600, margin:"0 auto 16px" }}>
-            ¿Qué aparece cuando<br />
-            <span className="gold-word">buscan tu nombre en Google?</span>
+      {/* ── CTA FINAL ── */}
+      <section className="final-cta section" style={{ borderBottom: "none" }}>
+        <div className="section-inner" style={{ textAlign: "center", paddingTop: 72, paddingBottom: 80 }}>
+          <div className="cta-bar" style={{ margin: "0 auto 32px" }} />
+          <h2 className="sh2" style={{ maxWidth: 640, margin: "0 auto 16px" }}>
+            ¿Qué aparece cuando<br /><span>buscan tu nombre en Google?</span>
           </h2>
-          <p className="lead" style={{ maxWidth:500, margin:"0 auto 36px" }}>
+          <p style={{ fontSize: 17, color: "var(--white2)", fontWeight: 300, lineHeight: 1.75, maxWidth: 480, margin: "0 auto 40px" }}>
             Búscate ahora. Si lo que ves te perjudica, cuéntanoslo. El análisis es gratuito y la respuesta llega en 24 horas.
           </p>
-          <div className="btn-row" style={{ justifyContent:"center", marginBottom:16 }}>
-            <a href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-gold" style={{ fontSize:16, padding:"16px 36px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center", marginBottom: 16 }}>
+            <Link href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="btn-primary" style={{ fontSize: 16, padding: "15px 36px" }}>
               Análisis gratuito →
-            </a>
-            <a href="https://wa.me/34684115988" target="_blank" rel="noopener" className="btn-white" style={{ fontSize:15 }}>
+            </Link>
+            <a href="https://wa.me/34684115988" target="_blank" rel="noopener" className="btn-wa" style={{ fontSize: 15 }}>
               💬 WhatsApp
             </a>
           </div>
-          <p style={{ fontFamily:"var(--ff-m)", fontSize:11, color:"var(--t4)" }}>Sin coste · Respuesta en 24h · Confidencial</p>
+          <p style={{ fontFamily: "'DM Mono',monospace", fontSize: 11, color: "var(--white4)" }}>
+            Sin coste · Respuesta en 24h · Confidencial
+          </p>
         </div>
       </section>
 
-      <FooterComponent />
-    </>
-  );
-}
-
-function NavComponent() {
-  return (
-    <nav className="nav">
-      <div className="nav-inner">
-        <a href="/" className="nav-logo">
-          <span className="nav-logo-bar" />
-          <span className="nav-logo-text">Prestior</span>
-        </a>
-        <div className="nav-links">
-          {[["Protección","/proteccion-reputacion/"],["Autoridad","/autoridad-digital/"],["Resultados","/casos-de-exito/"],["Precios","/precios/"]].map(([l,h])=>(
-            <a key={h} href={h} className="nav-link">{l}</a>
-          ))}
-        </div>
-        <a href="/monitorizacion-reputacion/auditoria-reputacion-online/" className="nav-cta">Análisis gratuito</a>
-      </div>
-    </nav>
-  );
-}
-
-function FooterComponent() {
-  return (
-    <footer className="ft">
-      <div className="ft-inner">
-        <div className="ft-grid">
-          <div>
-            <div className="ft-logo-row">
-              <span className="ft-logo-bar" />
-              <span className="ft-logo-name">Prestior</span>
+      {/* ── FOOTER ── */}
+      <footer className="pfooter">
+        <div className="pfooter-inner">
+          <div className="pfooter-grid">
+            <div>
+              <div className="pfooter-logo">
+                <span className="pfooter-stripe" />
+                <span className="pfooter-name">Prestior</span>
+              </div>
+              <p className="pfooter-tag">Agencia de reputación y autoridad digital.<br />Empresa registrada en España.</p>
             </div>
-            <p className="ft-tagline">Agencia de reputación y autoridad digital.<br />Empresa registrada en España.</p>
+            <div>
+              <span className="pfooter-col-label">Servicios</span>
+              {[["Protección","/proteccion-reputacion/"],["Autoridad","/autoridad-digital/"],["Blindaje","/monitorizacion-reputacion/"],["Precios","/precios/"]].map(([l,h])=>(
+                <Link key={h} href={h} className="pfooter-link">{l}</Link>
+              ))}
+            </div>
+            <div>
+              <span className="pfooter-col-label">Empresa</span>
+              {[["Casos de éxito","/casos-de-exito/"],["Blog","/blog/"],["Sobre nosotros","/sobre-nosotros/"],["Contacto","/contacto/"]].map(([l,h])=>(
+                <Link key={h} href={h} className="pfooter-link">{l}</Link>
+              ))}
+            </div>
           </div>
-          <div>
-            <span className="ft-col-label">Servicios</span>
-            {[["Protección","/proteccion-reputacion/"],["Autoridad","/autoridad-digital/"],["Blindaje","/monitorizacion-reputacion/"],["Precios","/precios/"]].map(([l,h])=>(
-              <a key={h} href={h} className="ft-link">{l}</a>
-            ))}
-          </div>
-          <div>
-            <span className="ft-col-label">Empresa</span>
-            {[["Casos de éxito","/casos-de-exito/"],["Blog","/blog/"],["Sobre nosotros","/sobre-nosotros/"],["Contacto","/contacto/"]].map(([l,h])=>(
-              <a key={h} href={h} className="ft-link">{l}</a>
-            ))}
+          <div className="pfooter-divider" />
+          <div className="pfooter-bottom">
+            <p className="pfooter-copy">© {new Date().getFullYear()} Prestior · Empresa registrada en España · CIF disponible</p>
+            <div className="pfooter-legal">
+              {[["Aviso legal","/aviso-legal/"],["Privacidad","/privacidad/"],["Cookies","/cookies/"]].map(([l,h])=>(
+                <Link key={h} href={h}>{l}</Link>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="ft-divider" />
-        <div className="ft-bottom">
-          <p className="ft-copy">© {new Date().getFullYear()} Prestior · Empresa registrada en España · CIF disponible</p>
-          <div className="ft-legal">
-            {[["Aviso legal","/aviso-legal/"],["Privacidad","/privacidad/"],["Cookies","/cookies/"]].map(([l,h])=>(
-              <a key={h} href={h} className="ft-legal-link">{l}</a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
