@@ -86,7 +86,7 @@ export default function Page() {
       </div>
 
       <section className="sec">
-        <div className="sec-inner">
+        <div className="sec-inner" style={{ paddingTop: 48 }}>
           <Table title="Protección" desc="Eliminar lo que te daña. Gestión profesional, proceso legal." rows={PROT} />
           <Table title="Autoridad" desc="Construir presencia. Servicios sueltos o paquetes completos." rows={AUTO} />
           <Table title="Blindaje continuo" desc="Monitorización activa y reacción rápida." rows={BLIND} />
