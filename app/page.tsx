@@ -52,13 +52,13 @@ export default function Home() {
       {/* ════════════════════════════════════════
           HERO — Aurora + dot grid + grain
       ════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center pt-24 pb-20 px-5 overflow-hidden grain">
+      <section className="relative min-h-screen flex items-center pb-20 px-5 overflow-hidden grain">
         {/* Aurora background */}
         <div className="aurora-bg" />
         {/* Dot grid */}
         <div className="absolute inset-0 dot-grid opacity-40" />
 
-        <div className="relative z-10 max-w-6xl mx-auto w-full grid lg:grid-cols-[1fr_400px] gap-14 items-center">
+        <div className="relative z-10 max-w-6xl mx-auto w-full grid lg:grid-cols-[1fr_400px] gap-8 lg:gap-14 items-center">
           {/* LEFT — oversized editorial type */}
           <div>
             <div className="badge mb-7">

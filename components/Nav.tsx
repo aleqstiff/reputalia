@@ -39,7 +39,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "nav-blur shadow-2xl shadow-black/30" : "bg-transparent"}`}>
+    <nav className={`sticky top-0 z-50 transition-all duration-500 ${scrolled ? "nav-blur shadow-2xl shadow-black/30" : "bg-transparent"}`}>
       <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
