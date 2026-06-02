@@ -22,7 +22,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,15,30,.96);backdrop-filt
 .nav-link:hover{color:#f0f0f0}
 .nav-cta{background:#c9a84c;color:#0a0a0a;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;padding:9px 20px;border-radius:8px}
 .nav-cta:hover{background:#e2c36e}
-@media(max-width:640px){.nav-links,.nav-cta{display:none}}
+@media(max-width:640px){.nav-links,.nav-cta,.nav-phone{display:none!important}}
+@media(min-width:900px){.nav-phone{display:flex!important}}
 
 /* HERO */
 .hero{padding:64px 24px 72px;max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px;border-bottom:1px solid rgba(255,255,255,.08)}
@@ -77,7 +78,7 @@ input:focus{border-color:rgba(201,168,76,.4)}
 .sec-inner{max-width:1000px;margin:0 auto}
 .eyebrow{font-family:'DM Mono',monospace;font-size:10px;color:#c9a84c;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .eyebrow::before{content:'';width:20px;height:1px;background:#c9a84c;opacity:.5}
-h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.1;letter-spacing:-.02em;color:#f0f0f0;margin-bottom:14px}
+h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.3rem,3vw,1.9rem);line-height:1.1;letter-spacing:-.02em;color:#f0f0f0;margin-bottom:14px}
 .lead{font-size:16px;color:rgba(240,240,240,.6);line-height:1.75;font-weight:300;margin-bottom:28px}
 
 /* PROBLEM ROWS */
@@ -119,7 +120,7 @@ h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.7rem,4vw,2.6r
 @media(min-width:600px){.pkg-grid{grid-template-columns:repeat(3,1fr)}}
 .pkg{background:#0f1f38;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column}
 .pkg.hot{border-color:rgba(201,168,76,.3);background:linear-gradient(160deg,rgba(201,168,76,.07),rgba(201,168,76,.02))}
-.pkg-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px}
+.pkg-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap}
 .pkg-name{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:#f0f0f0}
 .pkg-name.gold{color:#c9a84c}
 .pkg-price{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;color:#f0f0f0;white-space:nowrap;text-align:right}
@@ -188,6 +189,16 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.06);padding:40p
 </head>
 <body>
 
+<!-- URGENCY BAR -->
+<div style="background:#c9a84c;padding:9px 20px;text-align:center;position:relative;z-index:101">
+  <p style="font-size:12px;font-weight:600;color:#080f1e;letter-spacing:.03em;font-family:'Inter',sans-serif;margin:0">
+    🔴 <strong>Atención 24/7</strong> para casos urgentes · 
+    <a href="https://wa.me/34684115988" target="_blank" style="color:#080f1e;font-weight:700;text-decoration:none;border-bottom:2px solid #080f1e">
+      WhatsApp: +34 684 115 988
+    </a>
+    · Respuesta en menos de 2 horas
+  </p>
+</div>
 <!-- NAV -->
 <nav>
   <div class="logo">
@@ -200,6 +211,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.06);padding:40p
     <a href="/casos-de-exito/" class="nav-link">Resultados</a>
     <a href="/precios/" class="nav-link">Precios</a>
   </div>
+  <a href="tel:+34684115988" style="display:none;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(240,240,240,.7);text-decoration:none;font-family:'Inter',sans-serif" class="nav-phone">
+    📞 +34 684 115 988
+  </a>
   <div style="display:flex;align-items:center;gap:12px">
     <a href="https://wa.me/34684115988" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;color:rgba(240,240,240,.4);letter-spacing:.04em">
       <span style="width:7px;height:7px;border-radius:50%;background:#4ade80;display:inline-block"></span>
@@ -258,9 +272,14 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.06);padding:40p
   <div class="trust-bar-inner">
     <p class="trust-label">Gestionamos presencia en</p>
     <div class="trust-logos">
-      <span class="trust-logo">Google</span><span class="trust-logo">Forbes</span><span class="trust-logo">BBC</span>
-      <span class="trust-logo">NYPost</span><span class="trust-logo">Wired</span><span class="trust-logo">LinkedIn</span>
-      <span class="trust-logo">Trustpilot</span><span class="trust-logo">Wikipedia</span><span class="trust-logo">ChatGPT</span>
+      <span class="trust-logo" style="font-style:italic;font-size:15px;font-weight:700">Forbes</span>
+      <span class="trust-logo" style="font-size:15px;font-weight:700">BBC</span>
+      <span class="trust-logo" style="font-size:13px;font-weight:700">NYPost</span>
+      <span class="trust-logo" style="font-size:15px;font-weight:700">Wired</span>
+      <span class="trust-logo" style="font-size:13px;font-weight:600">Yahoo Finance</span>
+      <span class="trust-logo" style="font-size:13px;font-weight:600">LinkedIn</span>
+      <span class="trust-logo" style="font-size:13px;font-weight:600">Trustpilot ★★★★★</span>
+      <span class="trust-logo" style="font-size:13px;font-weight:600">Wikipedia</span>
     </div>
   </div>
 </div>
